@@ -1,0 +1,797 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>mainWindow</class>
+ <widget class="QMainWindow" name="mainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1154</width>
+    <height>650</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="documentMode">
+   <bool>false</bool>
+  </property>
+  <property name="dockNestingEnabled">
+   <bool>false</bool>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>1070</x>
+      <y>0</y>
+      <width>51</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="mouseTracking">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+border: 1px solid #555;
+padding: 5 px ;
+border-top-right-radius: 11px;
+background: qradialgradient(cx: 0.3, cy: -0.4, 
+fx: 0.3, fy: -0.4, radius: 1.35, stop: 0 rgb(58, 58, 58), stop: 1 rgb(50, 50, 50));
+}
+QPushButton:hover { background: rgba(255,255,255,.2); }
+QPushButton:pressed { background: white; }</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>111.png</normaloff>111.png</iconset>
+    </property>
+    <property name="default">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>0</y>
+      <width>1051</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{
+	font: 75 italic 22pt &quot;MS Sans Serif&quot;;
+color: white;
+border: 1px solid #555;
+border-top-left-radius: 11px;
+background: qradialgradient(cx: 0.3, cy: -0.4, 
+fx: 0.3, fy: -0.4, radius: 1.35, stop: 0 rgb(58, 58, 58), stop: 1 rgb(50, 50, 50));
+font-weight: 3;
+text-transform: capitalize;
+font-size: 25;
+}</string>
+    </property>
+    <property name="text">
+     <string>Построение сечений</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>50</y>
+      <width>1111</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QGroupBox{
+background-color: grey;
+color: #333;
+border: 1 px solid #555;
+background: qradialgradient(cx: 0.3, cy: -0.4, 
+fx: 0.3, fy: -0.4, radius: 1.35, stop: 0 rgb(53, 53, 53), stop: 1 rgb(22, 22, 22));
+}</string>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QProgressBar" name="progressBar">
+     <property name="geometry">
+      <rect>
+       <x>480</x>
+       <y>32</y>
+       <width>621</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QProgressBar {
+    border: 2px solid grey;
+    border-radius:15px;
+    color: white;
+    background-color: rgb(50, 50, 50);
+	font: 75 12pt  &quot;MS Sans Serif&quot;;
+    text-align: center;
+
+}
+
+QProgressBar::chunk {
+    border-radius:13px;
+    background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0,  stop:0 rgba(201, 81, 149, 255), stop:1 rgba(179, 65, 244, 255));
+}</string>
+     </property>
+     <property name="value">
+      <number>24</number>
+     </property>
+    </widget>
+    <widget class="QLabel" name="namelabel">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>30</y>
+       <width>331</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel{
+	font: 75 italic 22pt &quot;MS Sans Serif&quot;;
+color: white;
+font-weight: 3;
+text-transform: capitalize;
+font-size: 25;
+}</string>
+     </property>
+     <property name="text">
+      <string>1</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="photo">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>10</y>
+       <width>91</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>160</y>
+      <width>1111</width>
+      <height>431</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QGroupBox{
+border-bottom-left-radius: 11px;
+border-bottom-right-radius: 11px;
+background: qradialgradient(cx: 0.3, cy: -0.4, 
+fx: 0.3, fy: -0.4, radius: 1.35, stop: 0 rgb(35, 35, 35), stop: 1 rgb(0, 0, 0));
+}</string>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QLabel" name="label_13">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>47</width>
+       <height>13</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_14">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>30</y>
+       <width>47</width>
+       <height>13</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_3">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>1071</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QGroupBox{
+background-color: black;
+color: #333;
+ border: 2px solid white;
+  border-radius: 1px;
+}</string>
+     </property>
+     <property name="title">
+      <string/>
+     </property>
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="geometry">
+       <rect>
+        <x>600</x>
+        <y>20</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="mouseTracking">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  user-select: none;
+  outline: none;
+  border: 2px solid white;
+  border-radius: 1px;
+  transition: 0.2s;
+} 
+QPushButton:hover { background: rgba(255,255,255,.2); }
+QPushButton:pressed { background: white; }</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../../../Pictures/кнопка.png</normaloff>../../../Pictures/кнопка.png</iconset>
+      </property>
+      <property name="default">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_5">
+      <property name="geometry">
+       <rect>
+        <x>540</x>
+        <y>20</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+        <underline>false</underline>
+        <strikeout>false</strikeout>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  user-select: none;
+  outline: none;
+  border: 2px solid white;
+  border-radius: 1px;
+  transition: 0.2s;
+} 
+QPushButton:hover { background: rgba(255,255,255,.2); }
+QPushButton:pressed { background: white; }</string>
+      </property>
+      <property name="text">
+       <string>?</string>
+      </property>
+     </widget>
+     <widget class="QProgressBar" name="progressBar_2">
+      <property name="geometry">
+       <rect>
+        <x>660</x>
+        <y>20</y>
+        <width>401</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QProgressBar {
+    border: 2px solid grey;
+    border-radius:15px;
+    color: white;
+    background-color: rgb(50, 50, 50);
+	font: 12pt &quot;MS Sans Serif&quot;;
+    text-align: center;
+
+}
+
+QProgressBar::chunk {
+    border-radius:13px;
+    background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0,  stop:0 rgb(64, 83, 255), stop:1 rgb(0, 255, 255));
+}</string>
+      </property>
+      <property name="value">
+       <number>24</number>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>10</y>
+        <width>411</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+font: 75 italic 26pt &quot;MS Sans Serif&quot;;
+color: white;
+}</string>
+      </property>
+      <property name="text">
+       <string>Метод следов</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_4">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>320</y>
+       <width>1071</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QGroupBox{
+background-color: black;
+color: #333;
+border: 2px solid white;
+border-radius: 1px;
+font: 75 italic 22pt &quot;MS Sans Serif&quot;;
+color: white;
+}</string>
+     </property>
+     <property name="title">
+      <string/>
+     </property>
+     <widget class="QPushButton" name="pushButton_3">
+      <property name="geometry">
+       <rect>
+        <x>600</x>
+        <y>20</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="mouseTracking">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  user-select: none;
+  outline: none;
+  border: 2px solid white;
+  border-radius: 1px;
+  transition: 0.2s;
+} 
+QPushButton:hover { background: rgba(255,255,255,.2); }
+QPushButton:pressed { background: white; }</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../../../Pictures/кнопка.png</normaloff>../../../Pictures/кнопка.png</iconset>
+      </property>
+      <property name="default">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_6">
+      <property name="geometry">
+       <rect>
+        <x>540</x>
+        <y>20</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+        <underline>false</underline>
+        <strikeout>false</strikeout>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  user-select: none;
+  outline: none;
+  border: 2px solid white;
+  border-radius: 1px;
+  transition: 0.2s;
+} 
+QPushButton:hover { background: rgba(255,255,255,.2); }
+QPushButton:pressed { background: white; }</string>
+      </property>
+      <property name="text">
+       <string>?</string>
+      </property>
+     </widget>
+     <widget class="QProgressBar" name="progressBar_3">
+      <property name="geometry">
+       <rect>
+        <x>660</x>
+        <y>20</y>
+        <width>401</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QProgressBar {
+    border: 2px solid grey;
+    border-radius:15px;
+    color: white;
+    background-color: rgb(50, 50, 50);
+	font: 12pt &quot;MS Sans Serif&quot;;
+    text-align: center;
+
+}
+
+QProgressBar::chunk {
+    border-radius:13px;
+    background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0,  stop:0 rgb(0, 255, 0), stop:1 rgb(255, 255, 127));
+}</string>
+      </property>
+      <property name="value">
+       <number>24</number>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>10</y>
+        <width>411</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+font: 75 italic 26pt &quot;MS Sans Serif&quot;;
+color: white;
+}</string>
+      </property>
+      <property name="text">
+       <string>Контрольное задание</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_6">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>120</y>
+       <width>1071</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QGroupBox{
+background-color: black;
+color: #333;
+ border: 2px solid white;
+  border-radius: 1px;
+}</string>
+     </property>
+     <property name="title">
+      <string/>
+     </property>
+     <widget class="QPushButton" name="pushButton_8">
+      <property name="geometry">
+       <rect>
+        <x>600</x>
+        <y>20</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="mouseTracking">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  user-select: none;
+  outline: none;
+  border: 2px solid white;
+  border-radius: 1px;
+  transition: 0.2s;
+} 
+QPushButton:hover { background: rgba(255,255,255,.2); }
+QPushButton:pressed { background: white; }</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../../../Pictures/кнопка.png</normaloff>../../../Pictures/кнопка.png</iconset>
+      </property>
+      <property name="default">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_9">
+      <property name="geometry">
+       <rect>
+        <x>540</x>
+        <y>20</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+        <underline>false</underline>
+        <strikeout>false</strikeout>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  user-select: none;
+  outline: none;
+  border: 2px solid white;
+  border-radius: 1px;
+  transition: 0.2s;
+} 
+QPushButton:hover { background: rgba(255,255,255,.2); }
+QPushButton:pressed { background: white; }</string>
+      </property>
+      <property name="text">
+       <string>?</string>
+      </property>
+     </widget>
+     <widget class="QProgressBar" name="progressBar_5">
+      <property name="geometry">
+       <rect>
+        <x>660</x>
+        <y>20</y>
+        <width>401</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QProgressBar {
+    border: 2px solid grey;
+    border-radius:15px;
+    color: white;
+    background-color: rgb(50, 50, 50);
+	font: 12pt &quot;MS Sans Serif&quot;;
+    text-align: center;
+
+}
+
+QProgressBar::chunk {
+    border-radius:13px;
+    background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0,  stop:0 rgb(64, 83, 255), stop:1 rgb(0, 255, 255));
+}</string>
+      </property>
+      <property name="value">
+       <number>24</number>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>10</y>
+        <width>481</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+font: 75 italic 24pt &quot;MS Sans Serif&quot;;
+color: white;
+}</string>
+      </property>
+      <property name="text">
+       <string>Метод вспомагательных сечений</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_5">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>220</y>
+       <width>1071</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QGroupBox{
+background-color: black;
+color: #333;
+ border: 2px solid white;
+  border-radius: 1px;
+}</string>
+     </property>
+     <property name="title">
+      <string/>
+     </property>
+     <widget class="QPushButton" name="pushButton_4">
+      <property name="geometry">
+       <rect>
+        <x>600</x>
+        <y>20</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="mouseTracking">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  user-select: none;
+  outline: none;
+  border: 2px solid white;
+  border-radius: 1px;
+  transition: 0.2s;
+} 
+QPushButton:hover { background: rgba(255,255,255,.2); }
+QPushButton:pressed { background: white; }</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../../../Pictures/кнопка.png</normaloff>../../../Pictures/кнопка.png</iconset>
+      </property>
+      <property name="default">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_7">
+      <property name="geometry">
+       <rect>
+        <x>540</x>
+        <y>20</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+        <underline>false</underline>
+        <strikeout>false</strikeout>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  user-select: none;
+  outline: none;
+  border: 2px solid white;
+  border-radius: 1px;
+  transition: 0.2s;
+} 
+QPushButton:hover { background: rgba(255,255,255,.2); }
+QPushButton:pressed { background: white; }</string>
+      </property>
+      <property name="text">
+       <string>?</string>
+      </property>
+     </widget>
+     <widget class="QProgressBar" name="progressBar_4">
+      <property name="geometry">
+       <rect>
+        <x>660</x>
+        <y>20</y>
+        <width>401</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QProgressBar {
+    border: 2px solid grey;
+    border-radius:15px;
+    color: white;
+    background-color: rgb(50, 50, 50);
+	font: 12pt &quot;MS Sans Serif&quot;;
+    text-align: center;
+
+}
+
+QProgressBar::chunk {
+    border-radius:13px;
+    background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0,  stop:0 rgb(64, 83, 255), stop:1 rgb(0, 255, 255));
+}</string>
+      </property>
+      <property name="value">
+       <number>24</number>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>10</y>
+        <width>441</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+font: 75 italic 26pt &quot;MS Sans Serif&quot;;
+color: white;
+}</string>
+      </property>
+      <property name="text">
+       <string>Комбинированный метод</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <zorder>groupBox_2</zorder>
+   <zorder>groupBox</zorder>
+   <zorder>pushButton</zorder>
+   <zorder>label</zorder>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1154</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
