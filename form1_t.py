@@ -11,13 +11,13 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_mainWindow(object):
-    def setupUi(self, mainWindow):
-        mainWindow.setObjectName("mainWindow")
-        mainWindow.resize(936, 475)
-        mainWindow.setDocumentMode(False)
-        mainWindow.setDockNestingEnabled(False)
-        self.centralwidget = QtWidgets.QWidget(mainWindow)
+class Ui_teor1(object):
+    def setupUi(self, teor1):
+        teor1.setObjectName("teor1")
+        teor1.resize(936, 475)
+        teor1.setDocumentMode(False)
+        teor1.setDockNestingEnabled(False)
+        self.centralwidget = QtWidgets.QWidget(teor1)
         self.centralwidget.setObjectName("centralwidget")
         self.closebutton = QtWidgets.QPushButton(self.centralwidget)
         self.closebutton.setGeometry(QtCore.QRect(880, 0, 51, 41))
@@ -228,26 +228,26 @@ class Ui_mainWindow(object):
         self.groupBox_2.raise_()
         self.closebutton.raise_()
         self.label.raise_()
-        mainWindow.setCentralWidget(self.centralwidget)
-        self.menubar = QtWidgets.QMenuBar(mainWindow)
+        teor1.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(teor1)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 936, 21))
         self.menubar.setObjectName("menubar")
-        mainWindow.setMenuBar(self.menubar)
-        self.statusbar = QtWidgets.QStatusBar(mainWindow)
+        teor1.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(teor1)
         self.statusbar.setObjectName("statusbar")
-        mainWindow.setStatusBar(self.statusbar)
+        teor1.setStatusBar(self.statusbar)
 
-        self.retranslateUi(mainWindow)
+        self.retranslateUi(teor1)
         self.stackedWidget.setCurrentIndex(3)
-        QtCore.QMetaObject.connectSlotsByName(mainWindow)
+        QtCore.QMetaObject.connectSlotsByName(teor1)
 
-    def retranslateUi(self, mainWindow):
+    def retranslateUi(self, teor1):
         _translate = QtCore.QCoreApplication.translate
-        mainWindow.setWindowTitle(_translate("mainWindow", "MainWindow"))
-        self.label.setText(_translate("mainWindow", "Метод следов.Теория."))
-        self.label_13.setText(_translate("mainWindow", "TextLabel"))
-        self.label_14.setText(_translate("mainWindow", "TextLabel"))
-        self.textBrowser.setHtml(_translate("mainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        teor1.setWindowTitle(_translate("teor1", "MainWindow"))
+        self.label.setText(_translate("teor1", "Метод следов.Теория."))
+        self.label_13.setText(_translate("teor1", "TextLabel"))
+        self.label_14.setText(_translate("teor1", "TextLabel"))
+        self.textBrowser.setHtml(_translate("teor1", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:0; font-style:normal;\">\n"
@@ -258,13 +258,13 @@ class Ui_mainWindow(object):
 "<li style=\" font-family:\'Georgia,Times New Roman,serif\'; font-size:11pt; font-weight:400; color:#ffffff;\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'georgia,serif\'; font-size:large;\">Если дана (или уже построена) прямая пересечения плоскости сечения с основанием многогранника (след на основании) и есть точка, принадлежащая определенной боковой грани, то нужно определить точку пересечения данного следа с этой боковой гранью ( точка пересечения данного следа с общей прямой основания и данной боковой грани)</span></li>\n"
 "<li style=\" font-family:\'Georgia,Times New Roman,serif\'; font-size:11pt; font-weight:400; color:#ffffff;\" style=\" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'georgia,serif\'; font-size:large;\">Точку пересечения плоскости сечения с основанием можно определить как точку пересечения какой-либо прямой в плоскости сечения с ее проекцией на плоскость основания.</span></li></ul>\n"
 "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'georgia,serif\'; font-size:11pt; font-weight:400; color:#ffffff;\">  То есть, суть метода заключается в построении вспомогательной прямой, являющейся изображением линии пересечения секущей плоскости с плоскостью какой-либо грани фигуры. Удобнее всего строить изображение линии пересечения секущей плоскости с плоскостью нижнего основания. Используя след, легко построить изображения точек секущей плоскости, находящихся на боковых ребрах или гранях фигуры. </span></p></body></html>"))
-        self.label_2.setText(_translate("mainWindow", "Пример 1"))
-        self.textBrowser_2.setHtml(_translate("mainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.label_2.setText(_translate("teor1", "Пример 1"))
+        self.textBrowser_2.setHtml(_translate("teor1", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:0; font-style:normal;\">\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Calibri\'; font-size:11pt; font-weight:600; font-style:italic; color:#ffffff;\">Задача:</span><span style=\" font-family:\'Calibri\'; font-size:11pt; color:#ffffff;\"> постройте сечение тетраэдра плоскостью, проходящей через точки М, N, K. Точка М лежит на ребре AD, N — на ребре DC, К — на ребре АВ.</span></p></body></html>"))
-        self.textBrowser_3.setHtml(_translate("mainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.textBrowser_3.setHtml(_translate("teor1", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:0; font-style:normal;\">\n"
@@ -273,9 +273,9 @@ class Ui_mainWindow(object):
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Calibri\'; font-size:12pt; font-style:italic; color:#ffffff;\">Продлим отрезки MN и АС.</span><span style=\" font-size:12pt; font-style:italic; color:#ffffff;\"> </span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Calibri\'; font-size:12pt; font-style:italic; color:#ffffff;\">Проведем РК в плоскости нижней грани.</span><span style=\" font-size:12pt; font-style:italic; color:#ffffff;\"> </span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Calibri\'; font-size:12pt; font-style:italic; color:#ffffff;\">Получившийся четырехугольник  — искомое сечение.</span><span style=\" font-size:12pt; font-style:italic; color:#ffffff;\"> </span></p></body></html>"))
-        self.label_5.setText(_translate("mainWindow", "Пример 2"))
-        self.label_12.setText(_translate("mainWindow", "Задача: Построить сечение куба, проходящее через точки М, N, L"))
-        self.textBrowser_4.setHtml(_translate("mainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.label_5.setText(_translate("teor1", "Пример 2"))
+        self.label_12.setText(_translate("teor1", "Задача: Построить сечение куба, проходящее через точки М, N, L"))
+        self.textBrowser_4.setHtml(_translate("teor1", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:0; font-style:normal;\">\n"
@@ -285,13 +285,13 @@ class Ui_mainWindow(object):
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Calibri\'; font-size:12pt; font-style:italic; color:#ffffff;\">Соединим X1 и N в плоскости A1B1C1D1, поставим точку K на пересечении X1N и A1B1. </span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Calibri\'; font-size:12pt; font-style:italic; color:#ffffff;\">Продлим KN и пересечем с D1C1 в точке X3. Соединим X2 и X3 в плоскости DD1C1C и расставим точки T и P на пересечениях с гранями DC и C1C соответственною</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Calibri\'; font-size:12pt; font-style:italic; color:#ffffff;\">MNKTPL  — искомое сечение.</span><span style=\" font-size:12pt; font-style:italic; color:#ffffff;\"> </span></p></body></html>"))
-        self.label_6.setText(_translate("mainWindow", "Пример 3"))
-        self.textBrowser_5.setHtml(_translate("mainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.label_6.setText(_translate("teor1", "Пример 3"))
+        self.textBrowser_5.setHtml(_translate("teor1", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:0; font-style:normal;\">\n"
 "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Calibri\'; font-size:12pt; font-weight:600; color:#ffffff;\">Задача</span><span style=\" font-family:\'Calibri\'; font-size:12pt; font-weight:400; color:#ffffff;\">: построить методом следов  сечение шестиугольной призмы ABCDEFA1B1C1D1E1F1 плоскостью, проходящей через точки PQR.</span><span style=\" font-size:12pt; font-weight:400; color:#ffffff;\"> </span></p></body></html>"))
-        self.textBrowser_6.setHtml(_translate("mainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.textBrowser_6.setHtml(_translate("teor1", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:0; font-style:normal;\">\n"
@@ -303,5 +303,5 @@ class Ui_mainWindow(object):
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Calibri\'; font-size:10pt; color:#ffffff;\">Проведем также через точку P прямую, параллельную прямой VQ. Это можно сделать, так как грань CC1D1D параллельна грани AA1F1F. Прямая эта пересечет ребро AF в точке M.</span><span style=\" font-size:10pt; color:#ffffff;\"> </span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Calibri\'; font-size:10pt; color:#ffffff;\">Соединяем точки отрезками.</span><span style=\" font-size:10pt; color:#ffffff;\"> </span></p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;\"><br /></p></body></html>"))
-        self.tomainbutton.setText(_translate("mainWindow", "Главное меню"))
+        self.tomainbutton.setText(_translate("teor1", "Главное меню"))
 import photos_rc

@@ -11,13 +11,13 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_mainWindow(object):
-    def setupUi(self, mainWindow):
-        mainWindow.setObjectName("mainWindow")
-        mainWindow.resize(936, 489)
-        mainWindow.setDocumentMode(False)
-        mainWindow.setDockNestingEnabled(False)
-        self.centralwidget = QtWidgets.QWidget(mainWindow)
+class Ui_teor2(object):
+    def setupUi(self, teor2):
+        teor2.setObjectName("teor2")
+        teor2.resize(936, 489)
+        teor2.setDocumentMode(False)
+        teor2.setDockNestingEnabled(False)
+        self.centralwidget = QtWidgets.QWidget(teor2)
         self.centralwidget.setObjectName("centralwidget")
         self.closebutton = QtWidgets.QPushButton(self.centralwidget)
         self.closebutton.setGeometry(QtCore.QRect(880, 0, 51, 41))
@@ -230,26 +230,26 @@ class Ui_mainWindow(object):
         self.groupBox_2.raise_()
         self.closebutton.raise_()
         self.label.raise_()
-        mainWindow.setCentralWidget(self.centralwidget)
-        self.menubar = QtWidgets.QMenuBar(mainWindow)
+        teor2.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(teor2)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 936, 21))
         self.menubar.setObjectName("menubar")
-        mainWindow.setMenuBar(self.menubar)
-        self.statusbar = QtWidgets.QStatusBar(mainWindow)
+        teor2.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(teor2)
         self.statusbar.setObjectName("statusbar")
-        mainWindow.setStatusBar(self.statusbar)
+        teor2.setStatusBar(self.statusbar)
 
-        self.retranslateUi(mainWindow)
+        self.retranslateUi(teor2)
         self.stackedWidget.setCurrentIndex(3)
-        QtCore.QMetaObject.connectSlotsByName(mainWindow)
+        QtCore.QMetaObject.connectSlotsByName(teor2)
 
-    def retranslateUi(self, mainWindow):
+    def retranslateUi(self, teor2):
         _translate = QtCore.QCoreApplication.translate
-        mainWindow.setWindowTitle(_translate("mainWindow", "MainWindow"))
-        self.label.setText(_translate("mainWindow", "Метод внутреннего проектирования.Теория."))
-        self.label_13.setText(_translate("mainWindow", "TextLabel"))
-        self.label_14.setText(_translate("mainWindow", "TextLabel"))
-        self.textBrowser.setHtml(_translate("mainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        teor2.setWindowTitle(_translate("teor2", "MainWindow"))
+        self.label.setText(_translate("teor2", "Метод внутреннего проектирования.Теория."))
+        self.label_13.setText(_translate("teor2", "TextLabel"))
+        self.label_14.setText(_translate("teor2", "TextLabel"))
+        self.textBrowser.setHtml(_translate("teor2", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Sans Serif\'; font-size:8pt; font-weight:0; font-style:normal;\">\n"
@@ -263,13 +263,13 @@ class Ui_mainWindow(object):
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'MS Shell Dlg 2\'; font-size:11pt; color:#ffffff;\"> 1. Построить вспомогательные сечения и найти линию их пересечения.</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'MS Shell Dlg 2\'; font-size:11pt; color:#ffffff;\"> 2. Построить след сечения на ребре многогранника.</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'MS Shell Dlg 2\'; font-size:11pt; color:#ffffff;\"> 3. Если точек сечения не хватает для построения самого сечения повторить пп.1-2. </span></p></body></html>"))
-        self.label_2.setText(_translate("mainWindow", "Пример 1"))
-        self.textBrowser_2.setHtml(_translate("mainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.label_2.setText(_translate("teor2", "Пример 1"))
+        self.textBrowser_2.setHtml(_translate("teor2", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:0; font-style:normal;\">\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Calibri\'; font-size:11pt; font-weight:600; font-style:italic; color:#ffffff;\">Задача:</span><span style=\" font-family:\'Calibri\'; font-size:11pt; color:#ffffff;\"> постройте сечение тетраэдра плоскостью, проходящей через точки М, N, K. Точка М лежит на ребре AD, N — на ребре DC, К — на ребре АВ.</span></p></body></html>"))
-        self.textBrowser_3.setHtml(_translate("mainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.textBrowser_3.setHtml(_translate("teor2", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:0; font-style:normal;\">\n"
@@ -283,9 +283,9 @@ class Ui_mainWindow(object):
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'arial\'; font-size:8pt; font-weight:400; color:#ffffff;\">Из третьей вершины проведём прямую через точку </span><span style=\" font-family:\'arial\'; font-size:8pt; font-weight:400; font-style:italic; color:#ffffff;\">K</span><span style=\" font-family:\'arial\'; font-size:8pt; font-weight:400; color:#ffffff;\"> и найдём четвёртую вершину сечения.</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'arial\'; font-size:8pt; font-weight:400; color:#ffffff;\">Все четыре вершины сечения получены – построим сечение.</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8pt; color:#ffffff;\"><br /></span></p></body></html>"))
-        self.label_5.setText(_translate("mainWindow", "Пример 2"))
-        self.label_12.setText(_translate("mainWindow", "Задача: Построить сечение куба плоскостью, проходящей через точки M, N и К."))
-        self.textBrowser_4.setHtml(_translate("mainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.label_5.setText(_translate("teor2", "Пример 2"))
+        self.label_12.setText(_translate("teor2", "Задача: Построить сечение куба плоскостью, проходящей через точки M, N и К."))
+        self.textBrowser_4.setHtml(_translate("teor2", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:0; font-style:normal;\">\n"
@@ -295,13 +295,13 @@ class Ui_mainWindow(object):
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Calibri\'; font-size:12pt; color:#ffffff;\">Рассмотрим плоскость MM1АN. В этой плоскости прямые MN и M1A пересекаются. Обозначим точку их пересечения</span><span style=\" font-size:12pt; color:#ffffff;\"> </span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Calibri\'; font-size:12pt; color:#ffffff;\">через Х. Понятно, что точка Х лежит не только в плоскости MM1АN, но и в плоскости сечения, так как принадлежит</span><span style=\" font-size:12pt; color:#ffffff;\"> </span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Calibri\'; font-size:12pt; color:#ffffff;\">прямой MN. Дальше все становится ясным.</span><span style=\" font-size:12pt; color:#ffffff;\"> </span></p></body></html>"))
-        self.label_6.setText(_translate("mainWindow", "Пример 3"))
-        self.textBrowser_5.setHtml(_translate("mainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.label_6.setText(_translate("teor2", "Пример 3"))
+        self.textBrowser_5.setHtml(_translate("teor2", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Sans Serif\'; font-size:12pt; font-weight:0; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Calibri\'; font-size:11pt; font-weight:600; font-style:italic; color:#ffffff;\">Задача</span><span style=\" font-family:\'Calibri\'; font-size:11pt; color:#ffffff;\">: Построить сечение правильной пятиугольной призмы ABCDEA1B1C1D1E1 плоскостью, проходящей через точки  N, O, P методом внутреннего проецирования.</span><span style=\" font-size:11pt; color:#ffffff;\"> </span></p></body></html>"))
-        self.textBrowser_6.setHtml(_translate("mainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.textBrowser_6.setHtml(_translate("teor2", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:0; font-style:normal;\">\n"
@@ -319,5 +319,5 @@ class Ui_mainWindow(object):
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">5. Проведем прямую EQ, она пересекает прямую SA в точке F, которая является</p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">следом секущей плоскости на ребре SA.</p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Многоугольник EFKP - искомое сечение.</p></body></html>"))
-        self.tomainbutton.setText(_translate("mainWindow", "Главное меню"))
+        self.tomainbutton.setText(_translate("teor2", "Главное меню"))
 import photos_rc

@@ -11,13 +11,13 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_mainWindow(object):
-    def setupUi(self, mainWindow):
-        mainWindow.setObjectName("mainWindow")
-        mainWindow.resize(936, 473)
-        mainWindow.setDocumentMode(False)
-        mainWindow.setDockNestingEnabled(False)
-        self.centralwidget = QtWidgets.QWidget(mainWindow)
+class Ui_teor3(object):
+    def setupUi(self, teor3):
+        teor3.setObjectName("teor3")
+        teor3.resize(936, 473)
+        teor3.setDocumentMode(False)
+        teor3.setDockNestingEnabled(False)
+        self.centralwidget = QtWidgets.QWidget(teor3)
         self.centralwidget.setObjectName("centralwidget")
         self.closebutton = QtWidgets.QPushButton(self.centralwidget)
         self.closebutton.setGeometry(QtCore.QRect(880, 0, 51, 41))
@@ -213,26 +213,26 @@ class Ui_mainWindow(object):
         self.groupBox_2.raise_()
         self.closebutton.raise_()
         self.label.raise_()
-        mainWindow.setCentralWidget(self.centralwidget)
-        self.menubar = QtWidgets.QMenuBar(mainWindow)
+        teor3.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(teor3)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 936, 21))
         self.menubar.setObjectName("menubar")
-        mainWindow.setMenuBar(self.menubar)
-        self.statusbar = QtWidgets.QStatusBar(mainWindow)
+        teor3.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(teor3)
         self.statusbar.setObjectName("statusbar")
-        mainWindow.setStatusBar(self.statusbar)
+        teor3.setStatusBar(self.statusbar)
 
-        self.retranslateUi(mainWindow)
+        self.retranslateUi(teor3)
         self.stackedWidget.setCurrentIndex(0)
-        QtCore.QMetaObject.connectSlotsByName(mainWindow)
+        QtCore.QMetaObject.connectSlotsByName(teor3)
 
-    def retranslateUi(self, mainWindow):
+    def retranslateUi(self, teor3):
         _translate = QtCore.QCoreApplication.translate
-        mainWindow.setWindowTitle(_translate("mainWindow", "MainWindow"))
-        self.label.setText(_translate("mainWindow", "Комбинированный метод.Теория."))
-        self.label_13.setText(_translate("mainWindow", "TextLabel"))
-        self.label_14.setText(_translate("mainWindow", "TextLabel"))
-        self.textBrowser.setHtml(_translate("mainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        teor3.setWindowTitle(_translate("teor3", "MainWindow"))
+        self.label.setText(_translate("teor3", "Комбинированный метод.Теория."))
+        self.label_13.setText(_translate("teor3", "TextLabel"))
+        self.label_14.setText(_translate("teor3", "TextLabel"))
+        self.textBrowser.setHtml(_translate("teor3", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:0; font-style:normal;\">\n"
@@ -247,34 +247,34 @@ class Ui_mainWindow(object):
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Merriweather,Georgia,sans-serif\'; font-size:11pt; font-weight:600; color:#ffffff;\">Координатный метод построения сечений.</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Merriweather,Georgia,sans-serif\'; font-size:11pt; font-weight:400; color:#ffffff;\">Суть координатного метода заключается в вычислении координат точек пересечения ребер или многогранника с секущей плоскостью, которая задается уравнением плоскости. Уравнение плоскости сечения вычисляется на основе условий задачи.</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Merriweather,Georgia,sans-serif\'; font-size:11pt; font-weight:600; color:#ffffff;\">Заметим</span><span style=\" font-family:\'Merriweather,Georgia,sans-serif\'; font-size:11pt; font-weight:400; color:#ffffff;\">, что это способ построения сечения многогранника приемлем для компьютера, так как он связан с большим объемом вычислений и поэтому этот метод целесообразно реализовать с помощью ЭВМ.</span></p></body></html>"))
-        self.label_2.setText(_translate("mainWindow", "Пример "))
-        self.textBrowser_2.setHtml(_translate("mainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.label_2.setText(_translate("teor3", "Пример "))
+        self.textBrowser_2.setHtml(_translate("teor3", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:0; font-style:normal;\">\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Calibri\'; font-size:11pt; font-weight:600; font-style:italic; color:#ffffff;\">Задача: </span><span style=\" font-family:\'Calibri\'; font-size:11pt; color:#ffffff;\">построить сечение параллелепипеда АВСDА1В1С1D1 плоскостью α, заданной точками Р, Q и R, если точка Р лежит на диагонали А1C1, точка Q - на ребре ВВ1 и точка R - на ребре DD1</span><span style=\" font-size:11pt; color:#ffffff;\"> </span></p></body></html>"))
-        self.textBrowser_3.setHtml(_translate("mainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.textBrowser_3.setHtml(_translate("teor3", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:0; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Calibri\'; font-size:12pt; font-weight:600; font-style:italic; color:#ffffff;\">Решение:</span><span style=\" font-size:12pt; font-weight:600; font-style:italic; color:#ffffff;\"> </span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Calibri\'; font-size:12pt; font-style:italic; color:#ffffff;\">Вариантов решения этой задачи существует 2. Поэтому сейчас будут разобраны оба этих варианта.</span></p></body></html>"))
-        self.label_5.setText(_translate("mainWindow", "Решение а"))
-        self.label_12.setText(_translate("mainWindow", "Решим эту задачу с применением метода следов и теорем о параллельности прямых и плоскостей."))
-        self.textBrowser_4.setHtml(_translate("mainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.label_5.setText(_translate("teor3", "Решение а"))
+        self.label_12.setText(_translate("teor3", "Решим эту задачу с применением метода следов и теорем о параллельности прямых и плоскостей."))
+        self.textBrowser_4.setHtml(_translate("teor3", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:0; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Calibri\'; font-size:12pt; font-weight:600; font-style:italic; color:#ffffff;\">Решение:</span><span style=\" font-size:12pt; font-weight:600; font-style:italic; color:#ffffff;\"> </span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Calibri\'; font-size:12pt; color:#ffffff;\">Построим след секущей плоскости α = (РQR) на плоскости АВС Для этого строим точки Т1 = РQ ∩ Р1В, где PP1║AA1, P1 є AC, и T2 = RQ ∩ ВD. Построив след Т1Т2, замечаем, что точка Р лежит в плоскости А1B1C1, которая параллельна плоскости АВС. Это означает, что плоскость α пересекает плоскость А1B1C1 по прямой, проходящей через точку Р и параллельной прямой Т1Т2. Проведем эту прямую и обозначим через М и Е точки ее пересечения с ребрами соответственно А1B1 и А1D1. Получаем: М = α ∩ А1B1, Е =α∩ А1D1. Тогда отрезки ЕR и QМ являются сторонами искомого сечения.</span><span style=\" font-size:12pt; color:#ffffff;\"> </span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Calibri\'; font-size:12pt; color:#ffffff;\">Далее, так как плоскость ВСС1 параллельна плоскости грани ADD1A1, то плоскость α пересекает грань ВСC1B1 по от резку QF (F= α ∩ СС1), параллельному прямой ЕR. Таким образом, пятиугольник ERFQM - искомое сечение. Точку F можно получить, проведя RF║ MQ.</span><span style=\" font-size:12pt; color:#ffffff;\"> </span></p></body></html>"))
-        self.label_6.setText(_translate("mainWindow", "Решение б"))
-        self.textBrowser_5.setHtml(_translate("mainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.label_6.setText(_translate("teor3", "Решение б"))
+        self.textBrowser_5.setHtml(_translate("teor3", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:0; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Calibri\'; font-size:12pt; color:#ffffff;\">Решим эту задачу, применяя метод внутреннего проектирования и теоремы о параллельности прямых и плоскостей.</span><span style=\" font-size:12pt; color:#ffffff;\"> </span></p></body></html>"))
-        self.textBrowser_6.setHtml(_translate("mainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.textBrowser_6.setHtml(_translate("teor3", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:0; font-style:normal;\">\n"
@@ -282,5 +282,5 @@ class Ui_mainWindow(object):
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Calibri\'; font-size:10pt; color:#ffffff;\">Пусть Н=АС ∩ ВD (рис. 12). Проведя прямую НН1 параллельно ребру ВВ1 (Н1 є RQ), построим точку F: F=РН1 ∩ CC1.Tочка F является точкой пересечения плоскости α с ребром СС1, так как РН1 є α. Тогда отрезки RF и QF, по которым плоскость α пересекает соответственно грани CС1D1D и ВСС1В1 данного параллелепипеда, являются сторонами его искомого сечения.</span><span style=\" font-size:10pt; color:#ffffff;\"> </span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Calibri\'; font-size:10pt; color:#ffffff;\">Так как плоскость АВВ1 параллельна плоскости CDD1, то пересечением плоскости α и грани АВВ1А1 является отрезок QМ (М є А1В1), параллельный отрезку FR; отрезок QМ - сторона сечения. Далее, точка Е = МР ∩ А1D1 является точкой пересечения плоскости α и ребра А1D1, так как МР є α. Поэтому точка Е - еще одна вершина искомого сечения. Таким образом, пятиугольник ERFQM - искомое сечение. Точку Е можно построить, проведя прямую RЕ ║ FQ. Тогда М = РЕ ∩ А1B1.</span><span style=\" font-size:10pt; color:#ffffff;\"> </span></p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;\"><br /></p></body></html>"))
-        self.tomainbutton.setText(_translate("mainWindow", "Главное меню"))
+        self.tomainbutton.setText(_translate("teor3", "Главное меню"))
 import photos_rc
