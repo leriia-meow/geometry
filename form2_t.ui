@@ -1,0 +1,576 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>mainWindow</class>
+ <widget class="QMainWindow" name="mainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>936</width>
+    <height>489</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="documentMode">
+   <bool>false</bool>
+  </property>
+  <property name="dockNestingEnabled">
+   <bool>false</bool>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="closebutton">
+    <property name="geometry">
+     <rect>
+      <x>880</x>
+      <y>0</y>
+      <width>51</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="mouseTracking">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+border: 1px solid #555;
+padding: 5 px ;
+border-top-right-radius: 11px;
+background: black;
+}
+QPushButton:hover { background: rgba(255,255,255,.2); }
+QPushButton:pressed { background: white; }</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>photos/крестик.png</normaloff>photos/крестик.png</iconset>
+    </property>
+    <property name="default">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>0</y>
+      <width>861</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{
+	font: 75 italic 22pt &quot;MS Sans Serif&quot;;
+color: white;
+border: 1px solid #555;
+border-top-left-radius: 11px;
+background: black;
+font-weight: 3;
+text-transform: capitalize;
+font-size: 25;
+}</string>
+    </property>
+    <property name="text">
+     <string>Метод внутреннего проектирования.Теория.</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>50</y>
+      <width>921</width>
+      <height>381</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QGroupBox{
+border-bottom-left-radius: 11px;
+border-bottom-right-radius: 11px;
+background: black;
+}</string>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QLabel" name="label_13">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>47</width>
+       <height>13</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_14">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>30</y>
+       <width>47</width>
+       <height>13</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+    <widget class="QStackedWidget" name="stackedWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>901</width>
+       <height>351</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:white;
+background:black;
+</string>
+     </property>
+     <property name="currentIndex">
+      <number>3</number>
+     </property>
+     <widget class="QWidget" name="page">
+      <widget class="QTextBrowser" name="textBrowser">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>901</width>
+         <height>361</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QTextBrowser{
+	font: 8pt &quot;MS Sans Serif&quot;;
+color: white;
+border: 1px solid black;
+border-top-left-radius: 11px;
+background: black;
+font-weight: 3;
+text-transform: capitalize;
+font-size: 25;
+color: white;
+}</string>
+       </property>
+       <property name="html">
+        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Sans Serif'; font-size:8pt; font-weight:0; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:11pt; font-weight:600; font-style:italic; color:#ffffff;&quot;&gt;Построение сечения методом внутреннего проецирования. &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:11pt; color:#ffffff;&quot;&gt;Этот метод является в достаточной мере универсальным. В тех случаях, когда нужный след (или следы) секущей плоскости оказывается за пределами чертежа, этот метод имеет даже определенные преимущества. Вместе с тем следует иметь в виду, что построения, выполняемые при использовании этого метода, зачастую получаются «скученными». Тем не менее, в некоторых случаях метод внутреннего проектирования оказывается наиболее рациональным. &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Calibri'; font-size:11pt; color:#ffffff;&quot;&gt;Метод внутреннего проекти­рования называют еще методом соответствий, или методом диагональных сечений.&lt;/span&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:11pt; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Calibri'; font-size:11pt; color:#ffffff;&quot;&gt;При применении этого метода каждая заданная точка проектируется на плоскость основания. Существует два возможных вида проектирования: центральное и параллельное. Центральное проектирование, как правило, используется при построении сечений пирамид, вершина пирамиды при этом является центром проекции. Параллельное проектирование используется при построении сечений призм.&lt;/span&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:11pt; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:11pt; font-style:italic; color:#ffffff;&quot;&gt;Суть метода&lt;/span&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:11pt; color:#ffffff;&quot;&gt; – найти дополнительные точки с/п по проекциям ее известных точек на опорную плоскость при выбранном аппарате проецирования. проекции искомых точек с/п на опорную выбирают так, чтобы они были связаны с проекциями известных точек с/п, и чтобы число графических операций при решении задачи было минимальным. &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:11pt; color:#ffffff;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:11pt; font-weight:600; color:#ffffff;&quot;&gt;Алгоритм построения сечения методом внутреннего проецирования.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:11pt; color:#ffffff;&quot;&gt; 1. Построить вспомогательные сечения и найти линию их пересечения.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:11pt; color:#ffffff;&quot;&gt; 2. Построить след сечения на ребре многогранника.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:11pt; color:#ffffff;&quot;&gt; 3. Если точек сечения не хватает для построения самого сечения повторить пп.1-2. &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="page_2">
+      <widget class="QLabel" name="label_2">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>111</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">
+font: 18pt &quot;MS Sans Serif&quot;;</string>
+       </property>
+       <property name="text">
+        <string>Пример 1</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_4">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>90</y>
+         <width>231</width>
+         <height>221</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-image: url(:/newPrefix2/пирамидка 21.png);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_3">
+       <property name="geometry">
+        <rect>
+         <x>650</x>
+         <y>90</y>
+         <width>251</width>
+         <height>221</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-image: url(:/newPrefix2/пирамидка22.jpg.png);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QTextBrowser" name="textBrowser_2">
+       <property name="geometry">
+        <rect>
+         <x>120</x>
+         <y>0</y>
+         <width>741</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QTextBrowser{
+color: white;
+border: 1px solid black;
+border-top-left-radius: 11px;
+background: black;
+font-weight: 3;
+text-transform: capitalize;
+font-size: 25;
+color: white;
+}</string>
+       </property>
+       <property name="html">
+        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:0; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Calibri'; font-size:11pt; font-weight:600; font-style:italic; color:#ffffff;&quot;&gt;Задача:&lt;/span&gt;&lt;span style=&quot; font-family:'Calibri'; font-size:11pt; color:#ffffff;&quot;&gt; постройте сечение тетраэдра плоскостью, проходящей через точки М, N, K. Точка М лежит на ребре AD, N — на ребре DC, К — на ребре АВ.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QTextBrowser" name="textBrowser_3">
+       <property name="geometry">
+        <rect>
+         <x>240</x>
+         <y>50</y>
+         <width>401</width>
+         <height>391</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QTextBrowser{
+color: white;
+border: 1px solid black;
+border-top-left-radius: 11px;
+background: black;
+font-weight: 3;
+text-transform: capitalize;
+font-size: 25;
+color: white;
+}</string>
+       </property>
+       <property name="html">
+        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:0; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Calibri'; font-size:12pt; font-weight:600; font-style:italic; color:#ffffff;&quot;&gt;Решение:&lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; font-style:italic; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'arial'; font-size:8pt; font-weight:400; color:#ffffff;&quot;&gt;Построим &lt;/span&gt;&lt;span style=&quot; font-family:'arial'; font-size:8pt; font-weight:600; color:#ffffff;&quot;&gt;центральные проекции&lt;/span&gt;&lt;span style=&quot; font-family:'arial'; font-size:8pt; font-weight:400; color:#ffffff;&quot;&gt; точек &lt;/span&gt;&lt;span style=&quot; font-family:'arial'; font-size:8pt; font-weight:400; font-style:italic; color:#ffffff;&quot;&gt;K&lt;/span&gt;&lt;span style=&quot; font-family:'arial'; font-size:8pt; font-weight:400; color:#ffffff;&quot;&gt; и &lt;/span&gt;&lt;span style=&quot; font-family:'arial'; font-size:8pt; font-weight:400; font-style:italic; color:#ffffff;&quot;&gt;M&lt;/span&gt;&lt;span style=&quot; font-family:'arial'; font-size:8pt; font-weight:400; color:#ffffff;&quot;&gt; из точки &lt;/span&gt;&lt;span style=&quot; font-family:'arial'; font-size:8pt; font-weight:400; font-style:italic; color:#ffffff;&quot;&gt;C&lt;/span&gt;&lt;span style=&quot; font-family:'arial'; font-size:8pt; font-weight:400; color:#ffffff;&quot;&gt; на плоскость &lt;/span&gt;&lt;span style=&quot; font-family:'arial'; font-size:8pt; font-weight:400; font-style:italic; color:#ffffff;&quot;&gt;SAB&lt;/span&gt;&lt;span style=&quot; font-family:'arial'; font-size:8pt; font-weight:400; color:#ffffff;&quot;&gt; и обозначим их &lt;/span&gt;&lt;span style=&quot; font-family:'arial'; font-size:8pt; font-weight:400; font-style:italic; color:#ffffff;&quot;&gt;K&lt;/span&gt;&lt;span style=&quot; font-family:'arial'; font-size:8pt; font-weight:400; color:#ffffff; vertical-align:sub;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot; font-family:'arial'; font-size:8pt; font-weight:400; color:#ffffff;&quot;&gt; и &lt;/span&gt;&lt;span style=&quot; font-family:'arial'; font-size:8pt; font-weight:400; font-style:italic; color:#ffffff;&quot;&gt;M&lt;/span&gt;&lt;span style=&quot; font-family:'arial'; font-size:8pt; font-weight:400; color:#ffffff; vertical-align:sub;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot; font-family:'arial'; font-size:8pt; font-weight:400; color:#ffffff;&quot;&gt;.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'arial'; font-size:8pt; font-weight:400; color:#ffffff;&quot;&gt;Проведём прямые &lt;/span&gt;&lt;span style=&quot; font-family:'arial'; font-size:8pt; font-weight:400; font-style:italic; color:#ffffff;&quot;&gt;K&lt;/span&gt;&lt;span style=&quot; font-family:'arial'; font-size:8pt; font-weight:400; color:#ffffff; vertical-align:sub;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot; font-family:'arial'; font-size:8pt; font-weight:400; font-style:italic; color:#ffffff;&quot;&gt;M&lt;/span&gt;&lt;span style=&quot; font-family:'arial'; font-size:8pt; font-weight:400; color:#ffffff; vertical-align:sub;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot; font-family:'arial'; font-size:8pt; font-weight:400; color:#ffffff;&quot;&gt; и &lt;/span&gt;&lt;span style=&quot; font-family:'arial'; font-size:8pt; font-weight:400; font-style:italic; color:#ffffff;&quot;&gt;LB&lt;/span&gt;&lt;span style=&quot; font-family:'arial'; font-size:8pt; font-weight:400; color:#ffffff;&quot;&gt; и отметим точку их пересечения &lt;/span&gt;&lt;span style=&quot; font-family:'arial'; font-size:8pt; font-weight:400; font-style:italic; color:#ffffff;&quot;&gt;F&lt;/span&gt;&lt;span style=&quot; font-family:'arial'; font-size:8pt; font-weight:400; color:#ffffff; vertical-align:sub;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot; font-family:'arial'; font-size:8pt; font-weight:400; color:#ffffff;&quot;&gt;.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'arial'; font-size:8pt; font-weight:400; color:#ffffff;&quot;&gt;Проведём прямые &lt;/span&gt;&lt;span style=&quot; font-family:'arial'; font-size:8pt; font-weight:400; font-style:italic; color:#ffffff;&quot;&gt;CF&lt;/span&gt;&lt;span style=&quot; font-family:'arial'; font-size:8pt; font-weight:400; color:#ffffff; vertical-align:sub;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot; font-family:'arial'; font-size:8pt; font-weight:400; color:#ffffff;&quot;&gt; и &lt;/span&gt;&lt;span style=&quot; font-family:'arial'; font-size:8pt; font-weight:400; font-style:italic; color:#ffffff;&quot;&gt;KM&lt;/span&gt;&lt;span style=&quot; font-family:'arial'; font-size:8pt; font-weight:400; color:#ffffff;&quot;&gt; и отметим точку их пересечения &lt;/span&gt;&lt;span style=&quot; font-family:'arial'; font-size:8pt; font-weight:400; font-style:italic; color:#ffffff;&quot;&gt;F&lt;/span&gt;&lt;span style=&quot; font-family:'arial'; font-size:8pt; font-weight:400; color:#ffffff;&quot;&gt;.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'arial'; font-size:8pt; font-weight:400; color:#ffffff;&quot;&gt;Проведём прямую &lt;/span&gt;&lt;span style=&quot; font-family:'arial'; font-size:8pt; font-weight:400; font-style:italic; color:#ffffff;&quot;&gt;LF&lt;/span&gt;&lt;span style=&quot; font-family:'arial'; font-size:8pt; font-weight:400; color:#ffffff;&quot;&gt; и отметим точку её пересечения с ребром &lt;/span&gt;&lt;span style=&quot; font-family:'arial'; font-size:8pt; font-weight:400; font-style:italic; color:#ffffff;&quot;&gt;CB&lt;/span&gt;&lt;span style=&quot; font-family:'arial'; font-size:8pt; font-weight:400; color:#ffffff;&quot;&gt; – точку &lt;/span&gt;&lt;span style=&quot; font-family:'arial'; font-size:8pt; font-weight:400; font-style:italic; color:#ffffff;&quot;&gt;P&lt;/span&gt;&lt;span style=&quot; font-family:'arial'; font-size:8pt; font-weight:400; color:#ffffff;&quot;&gt;. Это первая вершина искомого сечения.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'arial'; font-size:8pt; font-weight:400; color:#ffffff;&quot;&gt;Проведём прямую &lt;/span&gt;&lt;span style=&quot; font-family:'arial'; font-size:8pt; font-weight:400; font-style:italic; color:#ffffff;&quot;&gt;PM&lt;/span&gt;&lt;span style=&quot; font-family:'arial'; font-size:8pt; font-weight:400; color:#ffffff;&quot;&gt; и отметим точку её пересечения с ребром &lt;/span&gt;&lt;span style=&quot; font-family:'arial'; font-size:8pt; font-weight:400; font-style:italic; color:#ffffff;&quot;&gt;SB&lt;/span&gt;&lt;span style=&quot; font-family:'arial'; font-size:8pt; font-weight:400; color:#ffffff;&quot;&gt;. Это вторая вершина сечения.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'arial'; font-size:8pt; font-weight:400; color:#ffffff;&quot;&gt;Из второй вершины проведём прямую через точку &lt;/span&gt;&lt;span style=&quot; font-family:'arial'; font-size:8pt; font-weight:400; font-style:italic; color:#ffffff;&quot;&gt;L&lt;/span&gt;&lt;span style=&quot; font-family:'arial'; font-size:8pt; font-weight:400; color:#ffffff;&quot;&gt; и найдём третью вершину сечения.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'arial'; font-size:8pt; font-weight:400; color:#ffffff;&quot;&gt;Из третьей вершины проведём прямую через точку &lt;/span&gt;&lt;span style=&quot; font-family:'arial'; font-size:8pt; font-weight:400; font-style:italic; color:#ffffff;&quot;&gt;K&lt;/span&gt;&lt;span style=&quot; font-family:'arial'; font-size:8pt; font-weight:400; color:#ffffff;&quot;&gt; и найдём четвёртую вершину сечения.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'arial'; font-size:8pt; font-weight:400; color:#ffffff;&quot;&gt;Все четыре вершины сечения получены – построим сечение.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt; color:#ffffff;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="page_3">
+      <widget class="QLabel" name="label_5">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>111</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">
+font: 18pt &quot;MS Sans Serif&quot;;</string>
+       </property>
+       <property name="text">
+        <string>Пример 2</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_7">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>70</y>
+         <width>211</width>
+         <height>211</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-image: url(:/newPrefix2/куб 21.png);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_8">
+       <property name="geometry">
+        <rect>
+         <x>590</x>
+         <y>90</y>
+         <width>291</width>
+         <height>191</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-image: url(:/newPrefix2/куб 22.png);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_12">
+       <property name="geometry">
+        <rect>
+         <x>130</x>
+         <y>10</y>
+         <width>641</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);
+font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+       </property>
+       <property name="text">
+        <string>Задача: Построить сечение куба плоскостью, проходящей через точки M, N и К.</string>
+       </property>
+      </widget>
+      <widget class="QTextBrowser" name="textBrowser_4">
+       <property name="geometry">
+        <rect>
+         <x>240</x>
+         <y>40</y>
+         <width>331</width>
+         <height>321</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QTextBrowser{
+color: white;
+border: 1px solid black;
+border-top-left-radius: 11px;
+background: black;
+font-weight: 3;
+text-transform: capitalize;
+font-size: 25;
+color: white;
+}</string>
+       </property>
+       <property name="html">
+        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:0; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Calibri'; font-size:12pt; font-weight:600; font-style:italic; color:#ffffff;&quot;&gt;Решение:&lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; font-style:italic; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Calibri'; font-size:12pt; color:#ffffff;&quot;&gt;Найдем ортогональные проекции точек М и N на плоскость АВС. Проекцию точки М обозначим М1.,ортогональная&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Calibri'; font-size:12pt; color:#ffffff;&quot;&gt;проекция точки N есть точка А.&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Calibri'; font-size:12pt; color:#ffffff;&quot;&gt;Рассмотрим плоскость MM1АN. В этой плоскости прямые MN и M1A пересекаются. Обозначим точку их пересечения&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Calibri'; font-size:12pt; color:#ffffff;&quot;&gt;через Х. Понятно, что точка Х лежит не только в плоскости MM1АN, но и в плоскости сечения, так как принадлежит&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Calibri'; font-size:12pt; color:#ffffff;&quot;&gt;прямой MN. Дальше все становится ясным.&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="page_4">
+      <widget class="QLabel" name="label_6">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>111</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">
+font: 18pt &quot;MS Sans Serif&quot;;</string>
+       </property>
+       <property name="text">
+        <string>Пример 3</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_9">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>80</y>
+         <width>291</width>
+         <height>241</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-image: url(:/newPrefix2/призма 21.png);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_10">
+       <property name="geometry">
+        <rect>
+         <x>630</x>
+         <y>70</y>
+         <width>261</width>
+         <height>251</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-image: url(:/newPrefix2/призма 22.png);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QTextBrowser" name="textBrowser_5">
+       <property name="geometry">
+        <rect>
+         <x>120</x>
+         <y>0</y>
+         <width>411</width>
+         <height>71</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QTextBrowser{
+font: 12pt &quot;MS Sans Serif&quot;;
+color: white;
+border: 1px solid black;
+border-top-left-radius: 11px;
+background: black;
+font-weight: 3;
+text-transform: capitalize;
+font-size: 25;
+color: white;
+}</string>
+       </property>
+       <property name="html">
+        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Sans Serif'; font-size:12pt; font-weight:0; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Calibri'; font-size:11pt; font-weight:600; font-style:italic; color:#ffffff;&quot;&gt;Задача&lt;/span&gt;&lt;span style=&quot; font-family:'Calibri'; font-size:11pt; color:#ffffff;&quot;&gt;: Построить сечение правильной пятиугольной призмы ABCDEA1B1C1D1E1 плоскостью, проходящей через точки  N, O, P методом внутреннего проецирования.&lt;/span&gt;&lt;span style=&quot; font-size:11pt; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QTextBrowser" name="textBrowser_6">
+       <property name="geometry">
+        <rect>
+         <x>310</x>
+         <y>70</y>
+         <width>311</width>
+         <height>281</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QTextBrowser{
+color: white;
+border: 1px solid black;
+border-top-left-radius: 11px;
+background: black;
+font-weight: 3;
+text-transform: capitalize;
+font-size: 25;
+color: white;
+}</string>
+       </property>
+       <property name="html">
+        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:0; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Решение:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;1. Построим вспомогательное сечение пирамиды плоскостью, проходящей через&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;точку S и прямые SQ и SC, т. е. плоскость SCQ1.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;2. Будем искать след плоскости PQR на прямой SD. Для этого построим второе&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;вспомогательное сечение пирамиды. Полученное сечение SDR - сечение, проходящее&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;через прямые SR и SD, на котором находим след секущей плоскости PQR.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;3. Строим прямую SN1, по которой пересекаются плоскости SCQ1 и SDR1, и затем&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;точку N, в которой пересекаются прямые PQ и SN1.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;4. Так как точка N лежит на прямой PQ, то она лежит и в секущей плоскости PQR.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Тогда прямая RN лежит в секущей плоскости, а также и точка Е - точка пересечения&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;прямых RN и SD.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;5. Проведем прямую EQ, она пересекает прямую SA в точке F, которая является&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;следом секущей плоскости на ребре SA.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Многоугольник EFKP - искомое сечение.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QPushButton" name="tomainbutton">
+     <property name="geometry">
+      <rect>
+       <x>810</x>
+       <y>340</y>
+       <width>91</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  user-select: none;
+  outline: none;
+  border: 2px solid white;
+  border-radius: 1px;
+  transition: 0.2s;
+} 
+QPushButton:hover { background: rgba(255,255,255,.2); }
+QPushButton:pressed { background: white; }</string>
+     </property>
+     <property name="text">
+      <string>Главное меню</string>
+     </property>
+    </widget>
+   </widget>
+   <zorder>groupBox_2</zorder>
+   <zorder>closebutton</zorder>
+   <zorder>label</zorder>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>936</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources>
+  <include location="photos/photos.qrc"/>
+ </resources>
+ <connections/>
+</ui>

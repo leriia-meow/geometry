@@ -20,7 +20,7 @@
    <bool>false</bool>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="closebutton">
     <property name="geometry">
      <rect>
       <x>880</x>
@@ -509,7 +509,7 @@ p, li { white-space: pre-wrap; }
       </widget>
      </widget>
     </widget>
-    <widget class="QPushButton" name="pushButton_2">
+    <widget class="QPushButton" name="tomainbutton">
      <property name="geometry">
       <rect>
        <x>814</x>
@@ -538,7 +538,7 @@ QPushButton:pressed { background: white; }</string>
     </widget>
    </widget>
    <zorder>groupBox_2</zorder>
-   <zorder>pushButton</zorder>
+   <zorder>closebutton</zorder>
    <zorder>label</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
