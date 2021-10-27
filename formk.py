@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_kontrless(object):
     def setupUi(self, kontrless):
         kontrless.setObjectName("kontrless")
-        kontrless.resize(939, 868)
+        kontrless.resize(939, 873)
         kontrless.setDocumentMode(False)
         kontrless.setDockNestingEnabled(False)
         self.centralwidget = QtWidgets.QWidget(kontrless)
