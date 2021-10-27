@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_authwindow(object):
     def setupUi(self, authwindow):
         authwindow.setObjectName("authwindow")
-        authwindow.resize(276, 286)
+        authwindow.resize(276, 355)
         authwindow.setDocumentMode(False)
         authwindow.setDockNestingEnabled(False)
         self.centralwidget = QtWidgets.QWidget(authwindow)
@@ -50,7 +50,7 @@ class Ui_authwindow(object):
 "}")
         self.label.setObjectName("label")
         self.groupBox_2 = QtWidgets.QGroupBox(self.centralwidget)
-        self.groupBox_2.setGeometry(QtCore.QRect(10, 50, 261, 191))
+        self.groupBox_2.setGeometry(QtCore.QRect(10, 50, 261, 231))
         self.groupBox_2.setStyleSheet("QGroupBox{\n"
 "border-bottom-left-radius: 11px;\n"
 "border-bottom-right-radius: 11px;\n"
@@ -65,7 +65,7 @@ class Ui_authwindow(object):
         self.label_14.setGeometry(QtCore.QRect(20, 30, 47, 13))
         self.label_14.setObjectName("label_14")
         self.label_2 = QtWidgets.QLabel(self.groupBox_2)
-        self.label_2.setGeometry(QtCore.QRect(40, 160, 101, 16))
+        self.label_2.setGeometry(QtCore.QRect(40, 200, 101, 16))
         self.label_2.setStyleSheet("color: white;")
         self.label_2.setObjectName("label_2")
         self.lineEdit = QtWidgets.QLineEdit(self.groupBox_2)
@@ -82,8 +82,43 @@ class Ui_authwindow(object):
         self.label_4.setGeometry(QtCore.QRect(20, 60, 121, 16))
         self.label_4.setStyleSheet("color:white;")
         self.label_4.setObjectName("label_4")
+        self.last = QtWidgets.QPushButton(self.groupBox_2)
+        self.last.setGeometry(QtCore.QRect(60, 160, 121, 31))
+        self.last.setStyleSheet("QPushButton {\n"
+"  display: inline-block;\n"
+"  color: white;\n"
+"  text-decoration: none;\n"
+"  user-select: none;\n"
+"  outline: none;\n"
+"  border: 2px solid white;\n"
+"  border-radius: 1px;\n"
+"  transition: 0.2s;\n"
+"} \n"
+"QPushButton:hover { background: rgba(255,255,255,.2); }\n"
+"QPushButton:pressed { background: white; }")
+        self.last.setObjectName("last")
+        self.other = QtWidgets.QPushButton(self.groupBox_2)
+        self.other.setGeometry(QtCore.QRect(150, 200, 31, 23))
+        self.other.setStyleSheet("QPushButton {\n"
+"  display: inline-block;\n"
+"  color: white;\n"
+"  text-decoration: none;\n"
+"  user-select: none;\n"
+"  outline: none;\n"
+"  border: 2px solid white;\n"
+"  border-radius: 1px;\n"
+"  transition: 0.2s;\n"
+"} \n"
+"QPushButton:hover { background: rgba(255,255,255,.2); }\n"
+"QPushButton:pressed { background: white; }")
+        self.other.setObjectName("other")
+        self.label_5 = QtWidgets.QLabel(self.groupBox_2)
+        self.label_5.setGeometry(QtCore.QRect(36, 120, 71, 20))
+        self.label_5.setStyleSheet("color: white;")
+        self.label_5.setText("")
+        self.label_5.setObjectName("label_5")
         self.pushButton = QtWidgets.QPushButton(self.groupBox_2)
-        self.pushButton.setGeometry(QtCore.QRect(60, 112, 121, 31))
+        self.pushButton.setGeometry(QtCore.QRect(130, 120, 101, 23))
         self.pushButton.setStyleSheet("QPushButton {\n"
 "  display: inline-block;\n"
 "  color: white;\n"
@@ -97,21 +132,6 @@ class Ui_authwindow(object):
 "QPushButton:hover { background: rgba(255,255,255,.2); }\n"
 "QPushButton:pressed { background: white; }")
         self.pushButton.setObjectName("pushButton")
-        self.pushButton_2 = QtWidgets.QPushButton(self.groupBox_2)
-        self.pushButton_2.setGeometry(QtCore.QRect(150, 160, 31, 23))
-        self.pushButton_2.setStyleSheet("QPushButton {\n"
-"  display: inline-block;\n"
-"  color: white;\n"
-"  text-decoration: none;\n"
-"  user-select: none;\n"
-"  outline: none;\n"
-"  border: 2px solid white;\n"
-"  border-radius: 1px;\n"
-"  transition: 0.2s;\n"
-"} \n"
-"QPushButton:hover { background: rgba(255,255,255,.2); }\n"
-"QPushButton:pressed { background: white; }")
-        self.pushButton_2.setObjectName("pushButton_2")
         self.groupBox_2.raise_()
         self.closebutton.raise_()
         self.label.raise_()
@@ -136,6 +156,7 @@ class Ui_authwindow(object):
         self.label_2.setText(_translate("authwindow", "Уже есть аккаунт?"))
         self.label_3.setText(_translate("authwindow", "Придумайте логин:"))
         self.label_4.setText(_translate("authwindow", "Придумайте пароль:"))
-        self.pushButton.setText(_translate("authwindow", "Зарегистрироваться"))
-        self.pushButton_2.setText(_translate("authwindow", "Да!"))
+        self.last.setText(_translate("authwindow", "Зарегистрироваться"))
+        self.other.setText(_translate("authwindow", "Да!"))
+        self.pushButton.setText(_translate("authwindow", "Выбрать фото"))
 import photos_rc
