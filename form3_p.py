@@ -11,13 +11,13 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_mainWindow(object):
-    def setupUi(self, mainWindow):
-        mainWindow.setObjectName("mainWindow")
-        mainWindow.resize(939, 868)
-        mainWindow.setDocumentMode(False)
-        mainWindow.setDockNestingEnabled(False)
-        self.centralwidget = QtWidgets.QWidget(mainWindow)
+class Ui_pract3(object):
+    def setupUi(self, pract3):
+        pract3.setObjectName("pract3")
+        pract3.resize(939, 868)
+        pract3.setDocumentMode(False)
+        pract3.setDockNestingEnabled(False)
+        self.centralwidget = QtWidgets.QWidget(pract3)
         self.centralwidget.setObjectName("centralwidget")
         self.closebutton = QtWidgets.QPushButton(self.centralwidget)
         self.closebutton.setGeometry(QtCore.QRect(880, 0, 51, 41))
@@ -198,24 +198,24 @@ class Ui_mainWindow(object):
         self.exe3.setStyleSheet("color:white;")
         self.exe3.setObjectName("exe3")
         self.tabWidget.addTab(self.ex3, "")
-        mainWindow.setCentralWidget(self.centralwidget)
-        self.menubar = QtWidgets.QMenuBar(mainWindow)
+        pract3.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(pract3)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 939, 21))
         self.menubar.setObjectName("menubar")
-        mainWindow.setMenuBar(self.menubar)
-        self.statusbar = QtWidgets.QStatusBar(mainWindow)
+        pract3.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(pract3)
         self.statusbar.setObjectName("statusbar")
-        mainWindow.setStatusBar(self.statusbar)
+        pract3.setStatusBar(self.statusbar)
 
-        self.retranslateUi(mainWindow)
+        self.retranslateUi(pract3)
         self.tabWidget.setCurrentIndex(0)
-        QtCore.QMetaObject.connectSlotsByName(mainWindow)
+        QtCore.QMetaObject.connectSlotsByName(pract3)
 
-    def retranslateUi(self, mainWindow):
+    def retranslateUi(self, pract3):
         _translate = QtCore.QCoreApplication.translate
-        mainWindow.setWindowTitle(_translate("mainWindow", "MainWindow"))
-        self.label.setText(_translate("mainWindow", "Комбинированный метод .Практика."))
-        self.textBrowser.setHtml(_translate("mainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        pract3.setWindowTitle(_translate("pract3", "MainWindow"))
+        self.label.setText(_translate("pract3", "Комбинированный метод .Практика."))
+        self.textBrowser.setHtml(_translate("pract3", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
@@ -229,17 +229,17 @@ class Ui_mainWindow(object):
 "<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#ffffff;\"><br /></p>\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:18pt; color:#ffffff;\">Удачи!</span></p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#ffffff;\"><br /></p></body></html>"))
-        self.tomain.setText(_translate("mainWindow", "Главное меню"))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.rules), _translate("mainWindow", "Правила"))
-        self.tomain1.setText(_translate("mainWindow", "Главное меню"))
-        self.go1.setText(_translate("mainWindow", "Сдать"))
-        self.exe1.setText(_translate("mainWindow", "Задача:"))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.ex1), _translate("mainWindow", "Задача 1"))
-        self.tomain2.setText(_translate("mainWindow", "Главное меню"))
-        self.go2.setText(_translate("mainWindow", "Сдать"))
-        self.exe2.setText(_translate("mainWindow", "Задача:"))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.ex2), _translate("mainWindow", "Задача 2"))
-        self.tomain3.setText(_translate("mainWindow", "Главное меню"))
-        self.go3.setText(_translate("mainWindow", "Сдать"))
-        self.exe3.setText(_translate("mainWindow", "Задача:"))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.ex3), _translate("mainWindow", "Задача 3"))
+        self.tomain.setText(_translate("pract3", "Главное меню"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.rules), _translate("pract3", "Правила"))
+        self.tomain1.setText(_translate("pract3", "Главное меню"))
+        self.go1.setText(_translate("pract3", "Сдать"))
+        self.exe1.setText(_translate("pract3", "Задача:"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.ex1), _translate("pract3", "Задача 1"))
+        self.tomain2.setText(_translate("pract3", "Главное меню"))
+        self.go2.setText(_translate("pract3", "Сдать"))
+        self.exe2.setText(_translate("pract3", "Задача:"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.ex2), _translate("pract3", "Задача 2"))
+        self.tomain3.setText(_translate("pract3", "Главное меню"))
+        self.go3.setText(_translate("pract3", "Сдать"))
+        self.exe3.setText(_translate("pract3", "Задача:"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.ex3), _translate("pract3", "Задача 3"))
