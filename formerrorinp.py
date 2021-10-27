@@ -106,4 +106,4 @@ class Ui_errorinpwindow(object):
         self.label_14.setText(_translate("errorinpwindow", "TextLabel"))
         self.label_3.setText(_translate("errorinpwindow", "Неправильно указан логин и/или пароль."))
         self.pushButton.setText(_translate("errorinpwindow", "Хорошо!"))
-import photos_rc
+import photos

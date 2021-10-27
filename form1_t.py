@@ -304,4 +304,4 @@ class Ui_teor1(object):
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Calibri\'; font-size:10pt; color:#ffffff;\">Соединяем точки отрезками.</span><span style=\" font-size:10pt; color:#ffffff;\"> </span></p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;\"><br /></p></body></html>"))
         self.tomainbutton.setText(_translate("teor1", "Главное меню"))
-import photos_rc
+import photos

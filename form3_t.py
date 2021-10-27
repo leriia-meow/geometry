@@ -283,4 +283,4 @@ class Ui_teor3(object):
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Calibri\'; font-size:10pt; color:#ffffff;\">Так как плоскость АВВ1 параллельна плоскости CDD1, то пересечением плоскости α и грани АВВ1А1 является отрезок QМ (М є А1В1), параллельный отрезку FR; отрезок QМ - сторона сечения. Далее, точка Е = МР ∩ А1D1 является точкой пересечения плоскости α и ребра А1D1, так как МР є α. Поэтому точка Е - еще одна вершина искомого сечения. Таким образом, пятиугольник ERFQM - искомое сечение. Точку Е можно построить, проведя прямую RЕ ║ FQ. Тогда М = РЕ ∩ А1B1.</span><span style=\" font-size:10pt; color:#ffffff;\"> </span></p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;\"><br /></p></body></html>"))
         self.tomainbutton.setText(_translate("teor3", "Главное меню"))
-import photos_rc
+import photos

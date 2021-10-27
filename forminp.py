@@ -117,4 +117,4 @@ class Ui_inputwindow(object):
         self.label_3.setText(_translate("inputwindow", "Введите логин:"))
         self.label_4.setText(_translate("inputwindow", "Введите пароль:"))
         self.pushButton.setText(_translate("inputwindow", "Вход"))
-import photos_rc
+import photos

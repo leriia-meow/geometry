@@ -106,4 +106,4 @@ class Ui_errorwindow(object):
         self.label_14.setText(_translate("errorwindow", "TextLabel"))
         self.label_3.setText(_translate("errorwindow", "Увы! Такой логин уже есть, придумайте новый!"))
         self.pushButton.setText(_translate("errorwindow", "Хорошо!"))
-import photos_rc
+import photos

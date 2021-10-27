@@ -159,4 +159,4 @@ class Ui_authwindow(object):
         self.last.setText(_translate("authwindow", "Зарегистрироваться"))
         self.other.setText(_translate("authwindow", "Да!"))
         self.pushButton.setText(_translate("authwindow", "Выбрать фото"))
-import photos_rc
+import photos

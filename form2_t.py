@@ -320,4 +320,4 @@ class Ui_teor2(object):
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">следом секущей плоскости на ребре SA.</p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Многоугольник EFKP - искомое сечение.</p></body></html>"))
         self.tomainbutton.setText(_translate("teor2", "Главное меню"))
-import photos_rc
+import photos
