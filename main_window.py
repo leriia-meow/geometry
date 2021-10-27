@@ -192,26 +192,6 @@ class Ui_mainWindow(object):
 "}")
         self.lesk.setTitle("")
         self.lesk.setObjectName("lesk")
-        self.buttk = QtWidgets.QPushButton(self.lesk)
-        self.buttk.setGeometry(QtCore.QRect(540, 20, 41, 41))
-        font = QtGui.QFont()
-        font.setPointSize(14)
-        font.setUnderline(False)
-        font.setStrikeOut(False)
-        self.buttk.setFont(font)
-        self.buttk.setStyleSheet("QPushButton {\n"
-"  display: inline-block;\n"
-"  color: white;\n"
-"  text-decoration: none;\n"
-"  user-select: none;\n"
-"  outline: none;\n"
-"  border: 2px solid white;\n"
-"  border-radius: 1px;\n"
-"  transition: 0.2s;\n"
-"} \n"
-"QPushButton:hover { background: rgba(255,255,255,.2); }\n"
-"QPushButton:pressed { background: white; }")
-        self.buttk.setObjectName("buttk")
         self.progress = QtWidgets.QProgressBar(self.lesk)
         self.progress.setGeometry(QtCore.QRect(660, 20, 401, 41))
         self.progress.setStyleSheet("QProgressBar {\n"
@@ -427,7 +407,6 @@ class Ui_mainWindow(object):
         self.namelabel.setText(_translate("mainWindow", "1"))
         self.butt1.setText(_translate("mainWindow", "?"))
         self.label_5.setText(_translate("mainWindow", "Метод следов"))
-        self.buttk.setText(_translate("mainWindow", "?"))
         self.label_2.setText(_translate("mainWindow", "Контрольное задание"))
         self.butt2.setText(_translate("mainWindow", "?"))
         self.label_4.setText(_translate("mainWindow", "Метод внутреннего проектирования"))
