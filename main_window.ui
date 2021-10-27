@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1154</width>
-    <height>650</height>
+    <height>640</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,7 +20,7 @@
    <bool>false</bool>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="closebutton">
     <property name="geometry">
      <rect>
       <x>1070</x>
@@ -48,7 +48,7 @@ QPushButton:pressed { background: white; }</string>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>111.png</normaloff>111.png</iconset>
+      <normaloff>photos/крестик.png</normaloff>photos/крестик.png</iconset>
     </property>
     <property name="default">
      <bool>false</bool>
@@ -80,7 +80,7 @@ font-size: 25;
      <string>Построение сечений</string>
     </property>
    </widget>
-   <widget class="QGroupBox" name="groupBox">
+   <widget class="QGroupBox" name="box1">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -101,7 +101,7 @@ fx: 0.3, fy: -0.4, radius: 1.35, stop: 0 rgb(53, 53, 53), stop: 1 rgb(22, 22, 22
     <property name="title">
      <string/>
     </property>
-    <widget class="QProgressBar" name="progressBar">
+    <widget class="QProgressBar" name="mainprogress">
      <property name="geometry">
       <rect>
        <x>480</x>
@@ -166,7 +166,7 @@ font-size: 25;
      </property>
     </widget>
    </widget>
-   <widget class="QGroupBox" name="groupBox_2">
+   <widget class="QGroupBox" name="mainbox">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -186,33 +186,7 @@ fx: 0.3, fy: -0.4, radius: 1.35, stop: 0 rgb(35, 35, 35), stop: 1 rgb(0, 0, 0));
     <property name="title">
      <string/>
     </property>
-    <widget class="QLabel" name="label_13">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>20</y>
-       <width>47</width>
-       <height>13</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>TextLabel</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_14">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>30</y>
-       <width>47</width>
-       <height>13</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>TextLabel</string>
-     </property>
-    </widget>
-    <widget class="QGroupBox" name="groupBox_3">
+    <widget class="QGroupBox" name="les1">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -232,7 +206,7 @@ color: #333;
      <property name="title">
       <string/>
      </property>
-     <widget class="QPushButton" name="pushButton_2">
+     <widget class="QPushButton" name="butp1">
       <property name="geometry">
        <rect>
         <x>600</x>
@@ -263,13 +237,13 @@ QPushButton:pressed { background: white; }</string>
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>../../../Pictures/кнопка.png</normaloff>../../../Pictures/кнопка.png</iconset>
+        <normaloff>photos/кнопка.png</normaloff>photos/кнопка.png</iconset>
       </property>
       <property name="default">
        <bool>false</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_5">
+     <widget class="QPushButton" name="butt1">
       <property name="geometry">
        <rect>
         <x>540</x>
@@ -303,7 +277,7 @@ QPushButton:pressed { background: white; }</string>
        <string>?</string>
       </property>
      </widget>
-     <widget class="QProgressBar" name="progressBar_2">
+     <widget class="QProgressBar" name="progress1">
       <property name="geometry">
        <rect>
         <x>660</x>
@@ -352,7 +326,7 @@ color: white;
       </property>
      </widget>
     </widget>
-    <widget class="QGroupBox" name="groupBox_4">
+    <widget class="QGroupBox" name="lesk">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -374,44 +348,7 @@ color: white;
      <property name="title">
       <string/>
      </property>
-     <widget class="QPushButton" name="pushButton_3">
-      <property name="geometry">
-       <rect>
-        <x>600</x>
-        <y>20</y>
-        <width>41</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="mouseTracking">
-       <bool>false</bool>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-  display: inline-block;
-  color: white;
-  text-decoration: none;
-  user-select: none;
-  outline: none;
-  border: 2px solid white;
-  border-radius: 1px;
-  transition: 0.2s;
-} 
-QPushButton:hover { background: rgba(255,255,255,.2); }
-QPushButton:pressed { background: white; }</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="icon">
-       <iconset>
-        <normaloff>../../../Pictures/кнопка.png</normaloff>../../../Pictures/кнопка.png</iconset>
-      </property>
-      <property name="default">
-       <bool>false</bool>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_6">
+     <widget class="QPushButton" name="buttk">
       <property name="geometry">
        <rect>
         <x>540</x>
@@ -445,7 +382,7 @@ QPushButton:pressed { background: white; }</string>
        <string>?</string>
       </property>
      </widget>
-     <widget class="QProgressBar" name="progressBar_3">
+     <widget class="QProgressBar" name="progress">
       <property name="geometry">
        <rect>
         <x>660</x>
@@ -493,28 +430,7 @@ color: white;
        <string>Контрольное задание</string>
       </property>
      </widget>
-    </widget>
-    <widget class="QGroupBox" name="groupBox_6">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>120</y>
-       <width>1071</width>
-       <height>81</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QGroupBox{
-background-color: black;
-color: #333;
- border: 2px solid white;
-  border-radius: 1px;
-}</string>
-     </property>
-     <property name="title">
-      <string/>
-     </property>
-     <widget class="QPushButton" name="pushButton_8">
+     <widget class="QPushButton" name="butpk">
       <property name="geometry">
        <rect>
         <x>600</x>
@@ -545,13 +461,34 @@ QPushButton:pressed { background: white; }</string>
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>../../../Pictures/кнопка.png</normaloff>../../../Pictures/кнопка.png</iconset>
+        <normaloff>photos/кнопка.png</normaloff>photos/кнопка.png</iconset>
       </property>
       <property name="default">
        <bool>false</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_9">
+    </widget>
+    <widget class="QGroupBox" name="les2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>120</y>
+       <width>1071</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QGroupBox{
+background-color: black;
+color: #333;
+ border: 2px solid white;
+  border-radius: 1px;
+}</string>
+     </property>
+     <property name="title">
+      <string/>
+     </property>
+     <widget class="QPushButton" name="butt2">
       <property name="geometry">
        <rect>
         <x>540</x>
@@ -585,7 +522,7 @@ QPushButton:pressed { background: white; }</string>
        <string>?</string>
       </property>
      </widget>
-     <widget class="QProgressBar" name="progressBar_5">
+     <widget class="QProgressBar" name="progress2">
       <property name="geometry">
        <rect>
         <x>660</x>
@@ -619,42 +556,21 @@ QProgressBar::chunk {
        <rect>
         <x>20</x>
         <y>10</y>
-        <width>481</width>
+        <width>521</width>
         <height>61</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true">QLabel{
-font: 75 italic 24pt &quot;MS Sans Serif&quot;;
+font: 75 italic 19pt &quot;MS Sans Serif&quot;;
 color: white;
 }</string>
       </property>
       <property name="text">
-       <string>Метод вспомагательных сечений</string>
+       <string>Метод внутреннего проектирования</string>
       </property>
      </widget>
-    </widget>
-    <widget class="QGroupBox" name="groupBox_5">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>220</y>
-       <width>1071</width>
-       <height>81</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QGroupBox{
-background-color: black;
-color: #333;
- border: 2px solid white;
-  border-radius: 1px;
-}</string>
-     </property>
-     <property name="title">
-      <string/>
-     </property>
-     <widget class="QPushButton" name="pushButton_4">
+     <widget class="QPushButton" name="butp2">
       <property name="geometry">
        <rect>
         <x>600</x>
@@ -685,13 +601,34 @@ QPushButton:pressed { background: white; }</string>
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>../../../Pictures/кнопка.png</normaloff>../../../Pictures/кнопка.png</iconset>
+        <normaloff>photos/кнопка.png</normaloff>photos/кнопка.png</iconset>
       </property>
       <property name="default">
        <bool>false</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_7">
+    </widget>
+    <widget class="QGroupBox" name="les3">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>220</y>
+       <width>1071</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QGroupBox{
+background-color: black;
+color: #333;
+ border: 2px solid white;
+  border-radius: 1px;
+}</string>
+     </property>
+     <property name="title">
+      <string/>
+     </property>
+     <widget class="QPushButton" name="butt4">
       <property name="geometry">
        <rect>
         <x>540</x>
@@ -725,7 +662,7 @@ QPushButton:pressed { background: white; }</string>
        <string>?</string>
       </property>
      </widget>
-     <widget class="QProgressBar" name="progressBar_4">
+     <widget class="QProgressBar" name="progress3">
       <property name="geometry">
        <rect>
         <x>660</x>
@@ -773,11 +710,48 @@ color: white;
        <string>Комбинированный метод</string>
       </property>
      </widget>
+     <widget class="QPushButton" name="butp3">
+      <property name="geometry">
+       <rect>
+        <x>600</x>
+        <y>20</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="mouseTracking">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  user-select: none;
+  outline: none;
+  border: 2px solid white;
+  border-radius: 1px;
+  transition: 0.2s;
+} 
+QPushButton:hover { background: rgba(255,255,255,.2); }
+QPushButton:pressed { background: white; }</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>photos/кнопка.png</normaloff>photos/кнопка.png</iconset>
+      </property>
+      <property name="default">
+       <bool>false</bool>
+      </property>
+     </widget>
     </widget>
    </widget>
-   <zorder>groupBox_2</zorder>
-   <zorder>groupBox</zorder>
-   <zorder>pushButton</zorder>
+   <zorder>mainbox</zorder>
+   <zorder>box1</zorder>
+   <zorder>closebutton</zorder>
    <zorder>label</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
