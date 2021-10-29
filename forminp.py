@@ -64,12 +64,12 @@ class Ui_inputwindow(object):
         self.label_14 = QtWidgets.QLabel(self.groupBox_2)
         self.label_14.setGeometry(QtCore.QRect(20, 30, 47, 13))
         self.label_14.setObjectName("label_14")
-        self.lineEdit = QtWidgets.QLineEdit(self.groupBox_2)
-        self.lineEdit.setGeometry(QtCore.QRect(100, 30, 113, 20))
-        self.lineEdit.setObjectName("lineEdit")
-        self.lineEdit_2 = QtWidgets.QLineEdit(self.groupBox_2)
-        self.lineEdit_2.setGeometry(QtCore.QRect(100, 80, 113, 20))
-        self.lineEdit_2.setObjectName("lineEdit_2")
+        self.login = QtWidgets.QLineEdit(self.groupBox_2)
+        self.login.setGeometry(QtCore.QRect(100, 30, 113, 20))
+        self.login.setObjectName("login")
+        self.password = QtWidgets.QLineEdit(self.groupBox_2)
+        self.password.setGeometry(QtCore.QRect(100, 80, 113, 20))
+        self.password.setObjectName("password")
         self.label_3 = QtWidgets.QLabel(self.groupBox_2)
         self.label_3.setGeometry(QtCore.QRect(20, 10, 101, 16))
         self.label_3.setStyleSheet("color:white;")
@@ -78,9 +78,9 @@ class Ui_inputwindow(object):
         self.label_4.setGeometry(QtCore.QRect(20, 60, 121, 16))
         self.label_4.setStyleSheet("color:white;")
         self.label_4.setObjectName("label_4")
-        self.pushButton = QtWidgets.QPushButton(self.groupBox_2)
-        self.pushButton.setGeometry(QtCore.QRect(80, 112, 71, 31))
-        self.pushButton.setStyleSheet("QPushButton {\n"
+        self.enter = QtWidgets.QPushButton(self.groupBox_2)
+        self.enter.setGeometry(QtCore.QRect(80, 112, 71, 31))
+        self.enter.setStyleSheet("QPushButton {\n"
 "  display: inline-block;\n"
 "  color: white;\n"
 "  text-decoration: none;\n"
@@ -92,7 +92,7 @@ class Ui_inputwindow(object):
 "} \n"
 "QPushButton:hover { background: rgba(255,255,255,.2); }\n"
 "QPushButton:pressed { background: white; }")
-        self.pushButton.setObjectName("pushButton")
+        self.enter.setObjectName("enter")
         self.back = QtWidgets.QPushButton(self.groupBox_2)
         self.back.setGeometry(QtCore.QRect(60, 150, 111, 23))
         self.back.setStyleSheet("QPushButton {\n"
@@ -131,6 +131,6 @@ class Ui_inputwindow(object):
         self.label_14.setText(_translate("inputwindow", "TextLabel"))
         self.label_3.setText(_translate("inputwindow", "Введите логин:"))
         self.label_4.setText(_translate("inputwindow", "Введите пароль:"))
-        self.pushButton.setText(_translate("inputwindow", "Вход"))
+        self.enter.setText(_translate("inputwindow", "Вход"))
         self.back.setText(_translate("inputwindow", "Вернуться назад"))
 import photos_rc

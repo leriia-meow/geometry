@@ -139,7 +139,7 @@ background: black;
       <string>Уже есть аккаунт?</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit">
+    <widget class="QLineEdit" name="login">
      <property name="geometry">
       <rect>
        <x>120</x>
@@ -149,7 +149,7 @@ background: black;
       </rect>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_2">
+    <widget class="QLineEdit" name="password">
      <property name="geometry">
       <rect>
        <x>120</x>
@@ -261,7 +261,7 @@ QPushButton:pressed { background: white; }</string>
       <string/>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton">
+    <widget class="QPushButton" name="photo">
      <property name="geometry">
       <rect>
        <x>130</x>

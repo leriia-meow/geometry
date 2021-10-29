@@ -68,12 +68,12 @@ class Ui_authwindow(object):
         self.label_2.setGeometry(QtCore.QRect(40, 200, 101, 16))
         self.label_2.setStyleSheet("color: white;")
         self.label_2.setObjectName("label_2")
-        self.lineEdit = QtWidgets.QLineEdit(self.groupBox_2)
-        self.lineEdit.setGeometry(QtCore.QRect(120, 30, 113, 20))
-        self.lineEdit.setObjectName("lineEdit")
-        self.lineEdit_2 = QtWidgets.QLineEdit(self.groupBox_2)
-        self.lineEdit_2.setGeometry(QtCore.QRect(120, 80, 113, 20))
-        self.lineEdit_2.setObjectName("lineEdit_2")
+        self.login = QtWidgets.QLineEdit(self.groupBox_2)
+        self.login.setGeometry(QtCore.QRect(120, 30, 113, 20))
+        self.login.setObjectName("login")
+        self.password = QtWidgets.QLineEdit(self.groupBox_2)
+        self.password.setGeometry(QtCore.QRect(120, 80, 113, 20))
+        self.password.setObjectName("password")
         self.label_3 = QtWidgets.QLabel(self.groupBox_2)
         self.label_3.setGeometry(QtCore.QRect(20, 10, 101, 16))
         self.label_3.setStyleSheet("color:white;")
@@ -117,9 +117,9 @@ class Ui_authwindow(object):
         self.label_5.setStyleSheet("color: white;")
         self.label_5.setText("")
         self.label_5.setObjectName("label_5")
-        self.pushButton = QtWidgets.QPushButton(self.groupBox_2)
-        self.pushButton.setGeometry(QtCore.QRect(130, 120, 101, 23))
-        self.pushButton.setStyleSheet("QPushButton {\n"
+        self.photo = QtWidgets.QPushButton(self.groupBox_2)
+        self.photo.setGeometry(QtCore.QRect(130, 120, 101, 23))
+        self.photo.setStyleSheet("QPushButton {\n"
 "  display: inline-block;\n"
 "  color: white;\n"
 "  text-decoration: none;\n"
@@ -131,7 +131,7 @@ class Ui_authwindow(object):
 "} \n"
 "QPushButton:hover { background: rgba(255,255,255,.2); }\n"
 "QPushButton:pressed { background: white; }")
-        self.pushButton.setObjectName("pushButton")
+        self.photo.setObjectName("photo")
         self.groupBox_2.raise_()
         self.closebutton.raise_()
         self.label.raise_()
@@ -158,5 +158,5 @@ class Ui_authwindow(object):
         self.label_4.setText(_translate("authwindow", "Придумайте пароль:"))
         self.last.setText(_translate("authwindow", "Зарегистрироваться"))
         self.other.setText(_translate("authwindow", "Да!"))
-        self.pushButton.setText(_translate("authwindow", "Выбрать фото"))
-import photos
+        self.photo.setText(_translate("authwindow", "Выбрать фото"))
+import photos_rc
