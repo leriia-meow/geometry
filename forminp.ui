@@ -202,7 +202,7 @@ QPushButton:pressed { background: white; }</string>
       <string>Вход</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="other">
+    <widget class="QPushButton" name="back">
      <property name="geometry">
       <rect>
        <x>60</x>
@@ -226,7 +226,7 @@ QPushButton:hover { background: rgba(255,255,255,.2); }
 QPushButton:pressed { background: white; }</string>
      </property>
      <property name="text">
-      <string>Вернуться назад.</string>
+      <string>Вернуться назад</string>
      </property>
     </widget>
    </widget>

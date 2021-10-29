@@ -93,9 +93,9 @@ class Ui_inputwindow(object):
 "QPushButton:hover { background: rgba(255,255,255,.2); }\n"
 "QPushButton:pressed { background: white; }")
         self.pushButton.setObjectName("pushButton")
-        self.other = QtWidgets.QPushButton(self.groupBox_2)
-        self.other.setGeometry(QtCore.QRect(60, 150, 111, 23))
-        self.other.setStyleSheet("QPushButton {\n"
+        self.back = QtWidgets.QPushButton(self.groupBox_2)
+        self.back.setGeometry(QtCore.QRect(60, 150, 111, 23))
+        self.back.setStyleSheet("QPushButton {\n"
 "  display: inline-block;\n"
 "  color: white;\n"
 "  text-decoration: none;\n"
@@ -107,7 +107,7 @@ class Ui_inputwindow(object):
 "} \n"
 "QPushButton:hover { background: rgba(255,255,255,.2); }\n"
 "QPushButton:pressed { background: white; }")
-        self.other.setObjectName("other")
+        self.back.setObjectName("back")
         self.groupBox_2.raise_()
         self.closebutton.raise_()
         self.label.raise_()
@@ -132,5 +132,5 @@ class Ui_inputwindow(object):
         self.label_3.setText(_translate("inputwindow", "Введите логин:"))
         self.label_4.setText(_translate("inputwindow", "Введите пароль:"))
         self.pushButton.setText(_translate("inputwindow", "Вход"))
-        self.other.setText(_translate("inputwindow", "Вернуться назад."))
+        self.back.setText(_translate("inputwindow", "Вернуться назад"))
 import photos_rc
