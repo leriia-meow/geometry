@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_inputwindow(object):
     def setupUi(self, inputwindow):
         inputwindow.setObjectName("inputwindow")
-        inputwindow.resize(276, 250)
+        inputwindow.resize(276, 354)
         inputwindow.setDocumentMode(False)
         inputwindow.setDockNestingEnabled(False)
         self.centralwidget = QtWidgets.QWidget(inputwindow)
@@ -50,7 +50,7 @@ class Ui_inputwindow(object):
 "}")
         self.label.setObjectName("label")
         self.groupBox_2 = QtWidgets.QGroupBox(self.centralwidget)
-        self.groupBox_2.setGeometry(QtCore.QRect(10, 50, 241, 151))
+        self.groupBox_2.setGeometry(QtCore.QRect(10, 50, 241, 181))
         self.groupBox_2.setStyleSheet("QGroupBox{\n"
 "border-bottom-left-radius: 11px;\n"
 "border-bottom-right-radius: 11px;\n"
@@ -79,7 +79,7 @@ class Ui_inputwindow(object):
         self.label_4.setStyleSheet("color:white;")
         self.label_4.setObjectName("label_4")
         self.pushButton = QtWidgets.QPushButton(self.groupBox_2)
-        self.pushButton.setGeometry(QtCore.QRect(90, 112, 61, 31))
+        self.pushButton.setGeometry(QtCore.QRect(80, 112, 71, 31))
         self.pushButton.setStyleSheet("QPushButton {\n"
 "  display: inline-block;\n"
 "  color: white;\n"
@@ -93,6 +93,21 @@ class Ui_inputwindow(object):
 "QPushButton:hover { background: rgba(255,255,255,.2); }\n"
 "QPushButton:pressed { background: white; }")
         self.pushButton.setObjectName("pushButton")
+        self.other = QtWidgets.QPushButton(self.groupBox_2)
+        self.other.setGeometry(QtCore.QRect(60, 150, 111, 23))
+        self.other.setStyleSheet("QPushButton {\n"
+"  display: inline-block;\n"
+"  color: white;\n"
+"  text-decoration: none;\n"
+"  user-select: none;\n"
+"  outline: none;\n"
+"  border: 2px solid white;\n"
+"  border-radius: 1px;\n"
+"  transition: 0.2s;\n"
+"} \n"
+"QPushButton:hover { background: rgba(255,255,255,.2); }\n"
+"QPushButton:pressed { background: white; }")
+        self.other.setObjectName("other")
         self.groupBox_2.raise_()
         self.closebutton.raise_()
         self.label.raise_()
@@ -117,4 +132,5 @@ class Ui_inputwindow(object):
         self.label_3.setText(_translate("inputwindow", "Введите логин:"))
         self.label_4.setText(_translate("inputwindow", "Введите пароль:"))
         self.pushButton.setText(_translate("inputwindow", "Вход"))
-import photos
+        self.other.setText(_translate("inputwindow", "Вернуться назад."))
+import photos_rc

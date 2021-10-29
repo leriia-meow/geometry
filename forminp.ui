@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>276</width>
-    <height>250</height>
+    <height>354</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -84,7 +84,7 @@ font-size: 25;
       <x>10</x>
       <y>50</y>
       <width>241</width>
-      <height>151</height>
+      <height>181</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -178,9 +178,9 @@ background: black;
     <widget class="QPushButton" name="pushButton">
      <property name="geometry">
       <rect>
-       <x>90</x>
+       <x>80</x>
        <y>112</y>
-       <width>61</width>
+       <width>71</width>
        <height>31</height>
       </rect>
      </property>
@@ -200,6 +200,33 @@ QPushButton:pressed { background: white; }</string>
      </property>
      <property name="text">
       <string>Вход</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="other">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>150</y>
+       <width>111</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  user-select: none;
+  outline: none;
+  border: 2px solid white;
+  border-radius: 1px;
+  transition: 0.2s;
+} 
+QPushButton:hover { background: rgba(255,255,255,.2); }
+QPushButton:pressed { background: white; }</string>
+     </property>
+     <property name="text">
+      <string>Вернуться назад.</string>
      </property>
     </widget>
    </widget>
