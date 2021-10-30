@@ -133,4 +133,4 @@ class Ui_inputwindow(object):
         self.label_4.setText(_translate("inputwindow", "Введите пароль:"))
         self.enter.setText(_translate("inputwindow", "Вход"))
         self.back.setText(_translate("inputwindow", "Вернуться назад"))
-import photos_rc
+import photos
