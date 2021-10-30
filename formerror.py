@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_errorwindow(object):
     def setupUi(self, errorwindow):
         errorwindow.setObjectName("errorwindow")
-        errorwindow.resize(276, 192)
+        errorwindow.resize(276, 228)
         errorwindow.setDocumentMode(False)
         errorwindow.setDockNestingEnabled(False)
         self.centralwidget = QtWidgets.QWidget(errorwindow)
@@ -50,7 +50,7 @@ class Ui_errorwindow(object):
 "}")
         self.label.setObjectName("label")
         self.groupBox_2 = QtWidgets.QGroupBox(self.centralwidget)
-        self.groupBox_2.setGeometry(QtCore.QRect(10, 50, 261, 91))
+        self.groupBox_2.setGeometry(QtCore.QRect(10, 50, 261, 101))
         self.groupBox_2.setStyleSheet("QGroupBox{\n"
 "border-bottom-left-radius: 11px;\n"
 "border-bottom-right-radius: 11px;\n"
@@ -68,9 +68,9 @@ class Ui_errorwindow(object):
         self.label_3.setGeometry(QtCore.QRect(10, 10, 241, 20))
         self.label_3.setStyleSheet("color:white;")
         self.label_3.setObjectName("label_3")
-        self.pushButton = QtWidgets.QPushButton(self.groupBox_2)
-        self.pushButton.setGeometry(QtCore.QRect(100, 40, 61, 31))
-        self.pushButton.setStyleSheet("QPushButton {\n"
+        self.teor = QtWidgets.QPushButton(self.groupBox_2)
+        self.teor.setGeometry(QtCore.QRect(10, 60, 111, 31))
+        self.teor.setStyleSheet("QPushButton {\n"
 "  display: inline-block;\n"
 "  color: white;\n"
 "  text-decoration: none;\n"
@@ -82,7 +82,26 @@ class Ui_errorwindow(object):
 "} \n"
 "QPushButton:hover { background: rgba(255,255,255,.2); }\n"
 "QPushButton:pressed { background: white; }")
-        self.pushButton.setObjectName("pushButton")
+        self.teor.setObjectName("teor")
+        self.repeat = QtWidgets.QPushButton(self.groupBox_2)
+        self.repeat.setGeometry(QtCore.QRect(130, 60, 121, 31))
+        self.repeat.setStyleSheet("QPushButton {\n"
+"  display: inline-block;\n"
+"  color: white;\n"
+"  text-decoration: none;\n"
+"  user-select: none;\n"
+"  outline: none;\n"
+"  border: 2px solid white;\n"
+"  border-radius: 1px;\n"
+"  transition: 0.2s;\n"
+"} \n"
+"QPushButton:hover { background: rgba(255,255,255,.2); }\n"
+"QPushButton:pressed { background: white; }")
+        self.repeat.setObjectName("repeat")
+        self.label_2 = QtWidgets.QLabel(self.groupBox_2)
+        self.label_2.setGeometry(QtCore.QRect(10, 30, 251, 20))
+        self.label_2.setStyleSheet("color:white;")
+        self.label_2.setObjectName("label_2")
         self.groupBox_2.raise_()
         self.closebutton.raise_()
         self.label.raise_()
@@ -104,6 +123,8 @@ class Ui_errorwindow(object):
         self.label.setText(_translate("errorwindow", "Ошибка"))
         self.label_13.setText(_translate("errorwindow", "TextLabel"))
         self.label_14.setText(_translate("errorwindow", "TextLabel"))
-        self.label_3.setText(_translate("errorwindow", "Увы! Такой логин уже есть, придумайте новый!"))
-        self.pushButton.setText(_translate("errorwindow", "Хорошо!"))
-import photos
+        self.label_3.setText(_translate("errorwindow", "Увы! Допущена ошибка!"))
+        self.teor.setText(_translate("errorwindow", "Вернуться к теории"))
+        self.repeat.setText(_translate("errorwindow", "Попробовать еще раз"))
+        self.label_2.setText(_translate("errorwindow", "Перепройдите теорию или попробуйте еще раз."))
+import photos_rc

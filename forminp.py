@@ -50,7 +50,7 @@ class Ui_inputwindow(object):
 "}")
         self.label.setObjectName("label")
         self.groupBox_2 = QtWidgets.QGroupBox(self.centralwidget)
-        self.groupBox_2.setGeometry(QtCore.QRect(10, 50, 241, 181))
+        self.groupBox_2.setGeometry(QtCore.QRect(10, 50, 241, 221))
         self.groupBox_2.setStyleSheet("QGroupBox{\n"
 "border-bottom-left-radius: 11px;\n"
 "border-bottom-right-radius: 11px;\n"
@@ -68,18 +68,18 @@ class Ui_inputwindow(object):
         self.login.setGeometry(QtCore.QRect(100, 30, 113, 20))
         self.login.setObjectName("login")
         self.password = QtWidgets.QLineEdit(self.groupBox_2)
-        self.password.setGeometry(QtCore.QRect(100, 80, 113, 20))
+        self.password.setGeometry(QtCore.QRect(100, 100, 113, 20))
         self.password.setObjectName("password")
         self.label_3 = QtWidgets.QLabel(self.groupBox_2)
         self.label_3.setGeometry(QtCore.QRect(20, 10, 101, 16))
         self.label_3.setStyleSheet("color:white;")
         self.label_3.setObjectName("label_3")
         self.label_4 = QtWidgets.QLabel(self.groupBox_2)
-        self.label_4.setGeometry(QtCore.QRect(20, 60, 121, 16))
+        self.label_4.setGeometry(QtCore.QRect(20, 80, 121, 16))
         self.label_4.setStyleSheet("color:white;")
         self.label_4.setObjectName("label_4")
         self.enter = QtWidgets.QPushButton(self.groupBox_2)
-        self.enter.setGeometry(QtCore.QRect(80, 112, 71, 31))
+        self.enter.setGeometry(QtCore.QRect(80, 150, 71, 31))
         self.enter.setStyleSheet("QPushButton {\n"
 "  display: inline-block;\n"
 "  color: white;\n"
@@ -94,7 +94,7 @@ class Ui_inputwindow(object):
 "QPushButton:pressed { background: white; }")
         self.enter.setObjectName("enter")
         self.back = QtWidgets.QPushButton(self.groupBox_2)
-        self.back.setGeometry(QtCore.QRect(60, 150, 111, 23))
+        self.back.setGeometry(QtCore.QRect(60, 190, 111, 23))
         self.back.setStyleSheet("QPushButton {\n"
 "  display: inline-block;\n"
 "  color: white;\n"
@@ -108,6 +108,16 @@ class Ui_inputwindow(object):
 "QPushButton:hover { background: rgba(255,255,255,.2); }\n"
 "QPushButton:pressed { background: white; }")
         self.back.setObjectName("back")
+        self.passerror = QtWidgets.QLabel(self.groupBox_2)
+        self.passerror.setGeometry(QtCore.QRect(100, 120, 121, 20))
+        self.passerror.setStyleSheet("color:white;")
+        self.passerror.setText("")
+        self.passerror.setObjectName("passerror")
+        self.logerror = QtWidgets.QLabel(self.groupBox_2)
+        self.logerror.setGeometry(QtCore.QRect(60, 50, 161, 20))
+        self.logerror.setStyleSheet("color:white;")
+        self.logerror.setText("")
+        self.logerror.setObjectName("logerror")
         self.groupBox_2.raise_()
         self.closebutton.raise_()
         self.label.raise_()
