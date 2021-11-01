@@ -1,0 +1,23 @@
+<RCC>
+  <qresource prefix="newPrefix">
+    <file>куб1.png</file>
+    <file>куб2.png</file>
+    <file>призма1.png</file>
+    <file>призма2.png</file>
+    <file>тет 2.jpg</file>
+    <file>тет 1.png</file>
+  </qresource>
+  <qresource prefix="newPrefix2">
+    <file>пирамидка 21.png</file>
+    <file>куб 21.png</file>
+    <file>куб 22.png</file>
+    <file>пирамидка22.jpg.png</file>
+    <file>призма 21.png</file>
+    <file>призма 22.png</file>
+  </qresource>
+  <qresource prefix="newPrefix3">
+    <file>параллБ.png</file>
+    <file>параллA.png</file>
+    <file>Паралл.jpg</file>
+  </qresource>
+</RCC>
