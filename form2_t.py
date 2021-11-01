@@ -65,7 +65,8 @@ class Ui_teor2(object):
         self.label_14.setGeometry(QtCore.QRect(20, 30, 47, 13))
         self.label_14.setObjectName("label_14")
         self.stackedWidget = QtWidgets.QStackedWidget(self.groupBox_2)
-        self.stackedWidget.setGeometry(QtCore.QRect(10, 10, 901, 351))
+        self.stackedWidget.setEnabled(True)
+        self.stackedWidget.setGeometry(QtCore.QRect(10, 10, 901, 361))
         self.stackedWidget.setStyleSheet("color:white;\n"
 "background:black;\n"
 "")
@@ -73,7 +74,7 @@ class Ui_teor2(object):
         self.page = QtWidgets.QWidget()
         self.page.setObjectName("page")
         self.textBrowser = QtWidgets.QTextBrowser(self.page)
-        self.textBrowser.setGeometry(QtCore.QRect(0, 0, 901, 361))
+        self.textBrowser.setGeometry(QtCore.QRect(0, 0, 901, 351))
         self.textBrowser.setStyleSheet("QTextBrowser{\n"
 "    font: 8pt \"MS Sans Serif\";\n"
 "color: white;\n"
@@ -86,6 +87,21 @@ class Ui_teor2(object):
 "color: white;\n"
 "}")
         self.textBrowser.setObjectName("textBrowser")
+        self.go1 = QtWidgets.QPushButton(self.page)
+        self.go1.setGeometry(QtCore.QRect(690, 330, 91, 31))
+        self.go1.setStyleSheet("QPushButton {\n"
+"  display: inline-block;\n"
+"  color: white;\n"
+"  text-decoration: none;\n"
+"  user-select: none;\n"
+"  outline: none;\n"
+"  border: 2px solid white;\n"
+"  border-radius: 1px;\n"
+"  transition: 0.2s;\n"
+"} \n"
+"QPushButton:hover { background: rgba(255,255,255,.2); }\n"
+"QPushButton:pressed { background: white; }")
+        self.go1.setObjectName("go1")
         self.stackedWidget.addWidget(self.page)
         self.page_2 = QtWidgets.QWidget()
         self.page_2.setObjectName("page_2")
@@ -130,6 +146,21 @@ class Ui_teor2(object):
 "color: white;\n"
 "}")
         self.textBrowser_3.setObjectName("textBrowser_3")
+        self.go2 = QtWidgets.QPushButton(self.page_2)
+        self.go2.setGeometry(QtCore.QRect(690, 330, 91, 31))
+        self.go2.setStyleSheet("QPushButton {\n"
+"  display: inline-block;\n"
+"  color: white;\n"
+"  text-decoration: none;\n"
+"  user-select: none;\n"
+"  outline: none;\n"
+"  border: 2px solid white;\n"
+"  border-radius: 1px;\n"
+"  transition: 0.2s;\n"
+"} \n"
+"QPushButton:hover { background: rgba(255,255,255,.2); }\n"
+"QPushButton:pressed { background: white; }")
+        self.go2.setObjectName("go2")
         self.stackedWidget.addWidget(self.page_2)
         self.page_3 = QtWidgets.QWidget()
         self.page_3.setObjectName("page_3")
@@ -166,6 +197,21 @@ class Ui_teor2(object):
 "color: white;\n"
 "}")
         self.textBrowser_4.setObjectName("textBrowser_4")
+        self.go3 = QtWidgets.QPushButton(self.page_3)
+        self.go3.setGeometry(QtCore.QRect(690, 330, 91, 31))
+        self.go3.setStyleSheet("QPushButton {\n"
+"  display: inline-block;\n"
+"  color: white;\n"
+"  text-decoration: none;\n"
+"  user-select: none;\n"
+"  outline: none;\n"
+"  border: 2px solid white;\n"
+"  border-radius: 1px;\n"
+"  transition: 0.2s;\n"
+"} \n"
+"QPushButton:hover { background: rgba(255,255,255,.2); }\n"
+"QPushButton:pressed { background: white; }")
+        self.go3.setObjectName("go3")
         self.stackedWidget.addWidget(self.page_3)
         self.page_4 = QtWidgets.QWidget()
         self.page_4.setObjectName("page_4")
@@ -240,13 +286,13 @@ class Ui_teor2(object):
         teor2.setStatusBar(self.statusbar)
 
         self.retranslateUi(teor2)
-        self.stackedWidget.setCurrentIndex(3)
+        self.stackedWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(teor2)
 
     def retranslateUi(self, teor2):
         _translate = QtCore.QCoreApplication.translate
         teor2.setWindowTitle(_translate("teor2", "MainWindow"))
-        self.label.setText(_translate("teor2", "Метод внутреннего проектирования.Теория."))
+        self.label.setText(_translate("teor2", "Применение метода внутреннего проектирования.Теория."))
         self.label_13.setText(_translate("teor2", "TextLabel"))
         self.label_14.setText(_translate("teor2", "TextLabel"))
         self.textBrowser.setHtml(_translate("teor2", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
@@ -263,6 +309,7 @@ class Ui_teor2(object):
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'MS Shell Dlg 2\'; font-size:11pt; color:#ffffff;\"> 1. Построить вспомогательные сечения и найти линию их пересечения.</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'MS Shell Dlg 2\'; font-size:11pt; color:#ffffff;\"> 2. Построить след сечения на ребре многогранника.</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'MS Shell Dlg 2\'; font-size:11pt; color:#ffffff;\"> 3. Если точек сечения не хватает для построения самого сечения повторить пп.1-2. </span></p></body></html>"))
+        self.go1.setText(_translate("teor2", "Далее"))
         self.label_2.setText(_translate("teor2", "Пример 1"))
         self.textBrowser_2.setHtml(_translate("teor2", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
@@ -283,6 +330,7 @@ class Ui_teor2(object):
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'arial\'; font-size:8pt; font-weight:400; color:#ffffff;\">Из третьей вершины проведём прямую через точку </span><span style=\" font-family:\'arial\'; font-size:8pt; font-weight:400; font-style:italic; color:#ffffff;\">K</span><span style=\" font-family:\'arial\'; font-size:8pt; font-weight:400; color:#ffffff;\"> и найдём четвёртую вершину сечения.</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'arial\'; font-size:8pt; font-weight:400; color:#ffffff;\">Все четыре вершины сечения получены – построим сечение.</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8pt; color:#ffffff;\"><br /></span></p></body></html>"))
+        self.go2.setText(_translate("teor2", "Далее"))
         self.label_5.setText(_translate("teor2", "Пример 2"))
         self.label_12.setText(_translate("teor2", "Задача: Построить сечение куба плоскостью, проходящей через точки M, N и К."))
         self.textBrowser_4.setHtml(_translate("teor2", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
@@ -295,6 +343,7 @@ class Ui_teor2(object):
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Calibri\'; font-size:12pt; color:#ffffff;\">Рассмотрим плоскость MM1АN. В этой плоскости прямые MN и M1A пересекаются. Обозначим точку их пересечения</span><span style=\" font-size:12pt; color:#ffffff;\"> </span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Calibri\'; font-size:12pt; color:#ffffff;\">через Х. Понятно, что точка Х лежит не только в плоскости MM1АN, но и в плоскости сечения, так как принадлежит</span><span style=\" font-size:12pt; color:#ffffff;\"> </span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Calibri\'; font-size:12pt; color:#ffffff;\">прямой MN. Дальше все становится ясным.</span><span style=\" font-size:12pt; color:#ffffff;\"> </span></p></body></html>"))
+        self.go3.setText(_translate("teor2", "Далее"))
         self.label_6.setText(_translate("teor2", "Пример 3"))
         self.textBrowser_5.setHtml(_translate("teor2", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"

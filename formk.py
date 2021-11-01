@@ -56,9 +56,6 @@ class Ui_kontrless(object):
         self.tabWidget.setObjectName("tabWidget")
         self.rules = QtWidgets.QWidget()
         self.rules.setObjectName("rules")
-        self.textBrowser = QtWidgets.QTextBrowser(self.rules)
-        self.textBrowser.setGeometry(QtCore.QRect(40, 10, 841, 651))
-        self.textBrowser.setObjectName("textBrowser")
         self.tomain = QtWidgets.QPushButton(self.rules)
         self.tomain.setGeometry(QtCore.QRect(800, 670, 101, 41))
         self.tomain.setStyleSheet("QPushButton {\n"
@@ -74,6 +71,19 @@ class Ui_kontrless(object):
 "QPushButton:hover { background: rgba(255,255,255,.2); }\n"
 "QPushButton:pressed { background: white; }")
         self.tomain.setObjectName("tomain")
+        self.textBrowser_3 = QtWidgets.QTextBrowser(self.rules)
+        self.textBrowser_3.setGeometry(QtCore.QRect(20, 50, 871, 601))
+        self.textBrowser_3.setStyleSheet("QTextBrowser{\n"
+"color: white;\n"
+"border: 1px solid black;\n"
+"border-top-left-radius: 11px;\n"
+"background: black;\n"
+"font-weight: 3;\n"
+"text-transform: capitalize;\n"
+"font-size: 25;\n"
+"color: white;\n"
+"}")
+        self.textBrowser_3.setObjectName("textBrowser_3")
         self.tabWidget.addTab(self.rules, "")
         self.ex1 = QtWidgets.QWidget()
         self.ex1.setObjectName("ex1")
@@ -215,12 +225,14 @@ class Ui_kontrless(object):
         _translate = QtCore.QCoreApplication.translate
         kontrless.setWindowTitle(_translate("kontrless", "MainWindow"))
         self.label.setText(_translate("kontrless", "Контрольный урок."))
-        self.textBrowser.setHtml(_translate("kontrless", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.tomain.setText(_translate("kontrless", "Главное меню"))
+        self.textBrowser_3.setHtml(_translate("kontrless", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:0; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:28pt; font-weight:600; font-style:italic; color:#ffffff;\">Как играть?</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:22pt; color:#ffffff;\">В этом уроке можно использовать все возможные методы, изученные раньше, а именно:</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:28pt; font-weight:600; font-style:italic; color:#ffffff;\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:22pt; color:#ffffff;\">Возможные построения этого урока:</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:22pt; color:#ffffff;\">     1) Точка. Чтобы поставить точку необходимо нажать левой кнопкой мыши на выбранное место. Важно! Точки можно ставить только на ПЕРЕСЕЧЕНИИ прямых. (+ скрещивающиеся прямые также могут выглядеть пересекающимися на картинке)</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:22pt; color:#ffffff;\">     2) Отрезок.Чтобы построить отрезок, необходимо выбрать 2 точки левой кнопкой мыши и нажать &quot;Enter&quot;.</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:22pt; color:#ffffff;\">     3) Прямая, параллельная данной. Чтобы построить прямую, параллельную данной, коснитесь левой кнопкой мыши прямой, затем какой-либо точки и нажмите &quot;Shift&quot;.</span></p>\n"
@@ -228,7 +240,6 @@ class Ui_kontrless(object):
 "<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#ffffff;\"><br /></p>\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:18pt; color:#ffffff;\">Удачи!</span></p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#ffffff;\"><br /></p></body></html>"))
-        self.tomain.setText(_translate("kontrless", "Главное меню"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.rules), _translate("kontrless", "Правила"))
         self.tomain1.setText(_translate("kontrless", "Главное меню"))
         self.go1.setText(_translate("kontrless", "Сдать"))

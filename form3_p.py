@@ -14,7 +14,8 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_pract3(object):
     def setupUi(self, pract3):
         pract3.setObjectName("pract3")
-        pract3.resize(939, 868)
+        pract3.setEnabled(True)
+        pract3.resize(949, 852)
         pract3.setDocumentMode(False)
         pract3.setDockNestingEnabled(False)
         self.centralwidget = QtWidgets.QWidget(pract3)
@@ -56,9 +57,6 @@ class Ui_pract3(object):
         self.tabWidget.setObjectName("tabWidget")
         self.rules = QtWidgets.QWidget()
         self.rules.setObjectName("rules")
-        self.textBrowser = QtWidgets.QTextBrowser(self.rules)
-        self.textBrowser.setGeometry(QtCore.QRect(40, 10, 841, 651))
-        self.textBrowser.setObjectName("textBrowser")
         self.tomain = QtWidgets.QPushButton(self.rules)
         self.tomain.setGeometry(QtCore.QRect(800, 670, 101, 41))
         self.tomain.setStyleSheet("QPushButton {\n"
@@ -74,6 +72,19 @@ class Ui_pract3(object):
 "QPushButton:hover { background: rgba(255,255,255,.2); }\n"
 "QPushButton:pressed { background: white; }")
         self.tomain.setObjectName("tomain")
+        self.textBrowser_3 = QtWidgets.QTextBrowser(self.rules)
+        self.textBrowser_3.setGeometry(QtCore.QRect(30, 60, 871, 601))
+        self.textBrowser_3.setStyleSheet("QTextBrowser{\n"
+"color: white;\n"
+"border: 1px solid black;\n"
+"border-top-left-radius: 11px;\n"
+"background: black;\n"
+"font-weight: 3;\n"
+"text-transform: capitalize;\n"
+"font-size: 25;\n"
+"color: white;\n"
+"}")
+        self.textBrowser_3.setObjectName("textBrowser_3")
         self.tabWidget.addTab(self.rules, "")
         self.ex1 = QtWidgets.QWidget()
         self.ex1.setObjectName("ex1")
@@ -200,7 +211,7 @@ class Ui_pract3(object):
         self.tabWidget.addTab(self.ex3, "")
         pract3.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(pract3)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 939, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 949, 21))
         self.menubar.setObjectName("menubar")
         pract3.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(pract3)
@@ -214,11 +225,12 @@ class Ui_pract3(object):
     def retranslateUi(self, pract3):
         _translate = QtCore.QCoreApplication.translate
         pract3.setWindowTitle(_translate("pract3", "MainWindow"))
-        self.label.setText(_translate("pract3", "Комбинированный метод .Практика."))
-        self.textBrowser.setHtml(_translate("pract3", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.label.setText(_translate("pract3", "Применение комбинированного метода. Практика."))
+        self.tomain.setText(_translate("pract3", "Главное меню"))
+        self.textBrowser_3.setHtml(_translate("pract3", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:0; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:28pt; font-weight:600; font-style:italic; color:#ffffff;\">Как играть?</span></p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:28pt; font-weight:600; font-style:italic; color:#ffffff;\"><br /></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:22pt; color:#ffffff;\">Возможные построения этого урока:</span></p>\n"
@@ -229,7 +241,6 @@ class Ui_pract3(object):
 "<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#ffffff;\"><br /></p>\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:18pt; color:#ffffff;\">Удачи!</span></p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#ffffff;\"><br /></p></body></html>"))
-        self.tomain.setText(_translate("pract3", "Главное меню"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.rules), _translate("pract3", "Правила"))
         self.tomain1.setText(_translate("pract3", "Главное меню"))
         self.go1.setText(_translate("pract3", "Сдать"))

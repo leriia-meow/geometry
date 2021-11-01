@@ -65,7 +65,7 @@ class Ui_teor3(object):
         self.label_14.setGeometry(QtCore.QRect(20, 30, 47, 13))
         self.label_14.setObjectName("label_14")
         self.stackedWidget = QtWidgets.QStackedWidget(self.groupBox_2)
-        self.stackedWidget.setGeometry(QtCore.QRect(10, 10, 901, 341))
+        self.stackedWidget.setGeometry(QtCore.QRect(10, 10, 901, 361))
         self.stackedWidget.setStyleSheet("color:white;\n"
 "background:black;\n"
 "")
@@ -85,6 +85,21 @@ class Ui_teor3(object):
 "color: white;\n"
 "}")
         self.textBrowser.setObjectName("textBrowser")
+        self.go1 = QtWidgets.QPushButton(self.page)
+        self.go1.setGeometry(QtCore.QRect(690, 330, 91, 31))
+        self.go1.setStyleSheet("QPushButton {\n"
+"  display: inline-block;\n"
+"  color: white;\n"
+"  text-decoration: none;\n"
+"  user-select: none;\n"
+"  outline: none;\n"
+"  border: 2px solid white;\n"
+"  border-radius: 1px;\n"
+"  transition: 0.2s;\n"
+"} \n"
+"QPushButton:hover { background: rgba(255,255,255,.2); }\n"
+"QPushButton:pressed { background: white; }")
+        self.go1.setObjectName("go1")
         self.stackedWidget.addWidget(self.page)
         self.page_2 = QtWidgets.QWidget()
         self.page_2.setObjectName("page_2")
@@ -124,6 +139,21 @@ class Ui_teor3(object):
         self.label_3.setStyleSheet("background-image: url(:/newPrefix3/Паралл.jpg);")
         self.label_3.setText("")
         self.label_3.setObjectName("label_3")
+        self.go2 = QtWidgets.QPushButton(self.page_2)
+        self.go2.setGeometry(QtCore.QRect(690, 330, 91, 31))
+        self.go2.setStyleSheet("QPushButton {\n"
+"  display: inline-block;\n"
+"  color: white;\n"
+"  text-decoration: none;\n"
+"  user-select: none;\n"
+"  outline: none;\n"
+"  border: 2px solid white;\n"
+"  border-radius: 1px;\n"
+"  transition: 0.2s;\n"
+"} \n"
+"QPushButton:hover { background: rgba(255,255,255,.2); }\n"
+"QPushButton:pressed { background: white; }")
+        self.go2.setObjectName("go2")
         self.stackedWidget.addWidget(self.page_2)
         self.page_3 = QtWidgets.QWidget()
         self.page_3.setObjectName("page_3")
@@ -155,6 +185,21 @@ class Ui_teor3(object):
 "color: white;\n"
 "}")
         self.textBrowser_4.setObjectName("textBrowser_4")
+        self.go3 = QtWidgets.QPushButton(self.page_3)
+        self.go3.setGeometry(QtCore.QRect(690, 330, 91, 31))
+        self.go3.setStyleSheet("QPushButton {\n"
+"  display: inline-block;\n"
+"  color: white;\n"
+"  text-decoration: none;\n"
+"  user-select: none;\n"
+"  outline: none;\n"
+"  border: 2px solid white;\n"
+"  border-radius: 1px;\n"
+"  transition: 0.2s;\n"
+"} \n"
+"QPushButton:hover { background: rgba(255,255,255,.2); }\n"
+"QPushButton:pressed { background: white; }")
+        self.go3.setObjectName("go3")
         self.stackedWidget.addWidget(self.page_3)
         self.page_4 = QtWidgets.QWidget()
         self.page_4.setObjectName("page_4")
@@ -229,7 +274,7 @@ class Ui_teor3(object):
     def retranslateUi(self, teor3):
         _translate = QtCore.QCoreApplication.translate
         teor3.setWindowTitle(_translate("teor3", "MainWindow"))
-        self.label.setText(_translate("teor3", "Комбинированный метод.Теория."))
+        self.label.setText(_translate("teor3", "Применение комбинированный метода.Теория."))
         self.label_13.setText(_translate("teor3", "TextLabel"))
         self.label_14.setText(_translate("teor3", "TextLabel"))
         self.textBrowser.setHtml(_translate("teor3", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
@@ -247,6 +292,7 @@ class Ui_teor3(object):
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Merriweather,Georgia,sans-serif\'; font-size:11pt; font-weight:600; color:#ffffff;\">Координатный метод построения сечений.</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Merriweather,Georgia,sans-serif\'; font-size:11pt; font-weight:400; color:#ffffff;\">Суть координатного метода заключается в вычислении координат точек пересечения ребер или многогранника с секущей плоскостью, которая задается уравнением плоскости. Уравнение плоскости сечения вычисляется на основе условий задачи.</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Merriweather,Georgia,sans-serif\'; font-size:11pt; font-weight:600; color:#ffffff;\">Заметим</span><span style=\" font-family:\'Merriweather,Georgia,sans-serif\'; font-size:11pt; font-weight:400; color:#ffffff;\">, что это способ построения сечения многогранника приемлем для компьютера, так как он связан с большим объемом вычислений и поэтому этот метод целесообразно реализовать с помощью ЭВМ.</span></p></body></html>"))
+        self.go1.setText(_translate("teor3", "Далее"))
         self.label_2.setText(_translate("teor3", "Пример "))
         self.textBrowser_2.setHtml(_translate("teor3", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
@@ -259,6 +305,7 @@ class Ui_teor3(object):
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:0; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Calibri\'; font-size:12pt; font-weight:600; font-style:italic; color:#ffffff;\">Решение:</span><span style=\" font-size:12pt; font-weight:600; font-style:italic; color:#ffffff;\"> </span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Calibri\'; font-size:12pt; font-style:italic; color:#ffffff;\">Вариантов решения этой задачи существует 2. Поэтому сейчас будут разобраны оба этих варианта.</span></p></body></html>"))
+        self.go2.setText(_translate("teor3", "Далее"))
         self.label_5.setText(_translate("teor3", "Решение а"))
         self.label_12.setText(_translate("teor3", "Решим эту задачу с применением метода следов и теорем о параллельности прямых и плоскостей."))
         self.textBrowser_4.setHtml(_translate("teor3", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
@@ -268,6 +315,7 @@ class Ui_teor3(object):
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Calibri\'; font-size:12pt; font-weight:600; font-style:italic; color:#ffffff;\">Решение:</span><span style=\" font-size:12pt; font-weight:600; font-style:italic; color:#ffffff;\"> </span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Calibri\'; font-size:12pt; color:#ffffff;\">Построим след секущей плоскости α = (РQR) на плоскости АВС Для этого строим точки Т1 = РQ ∩ Р1В, где PP1║AA1, P1 є AC, и T2 = RQ ∩ ВD. Построив след Т1Т2, замечаем, что точка Р лежит в плоскости А1B1C1, которая параллельна плоскости АВС. Это означает, что плоскость α пересекает плоскость А1B1C1 по прямой, проходящей через точку Р и параллельной прямой Т1Т2. Проведем эту прямую и обозначим через М и Е точки ее пересечения с ребрами соответственно А1B1 и А1D1. Получаем: М = α ∩ А1B1, Е =α∩ А1D1. Тогда отрезки ЕR и QМ являются сторонами искомого сечения.</span><span style=\" font-size:12pt; color:#ffffff;\"> </span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Calibri\'; font-size:12pt; color:#ffffff;\">Далее, так как плоскость ВСС1 параллельна плоскости грани ADD1A1, то плоскость α пересекает грань ВСC1B1 по от резку QF (F= α ∩ СС1), параллельному прямой ЕR. Таким образом, пятиугольник ERFQM - искомое сечение. Точку F можно получить, проведя RF║ MQ.</span><span style=\" font-size:12pt; color:#ffffff;\"> </span></p></body></html>"))
+        self.go3.setText(_translate("teor3", "Далее"))
         self.label_6.setText(_translate("teor3", "Решение б"))
         self.textBrowser_5.setHtml(_translate("teor3", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"

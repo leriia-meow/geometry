@@ -37,8 +37,7 @@
 border: 1px solid #555;
 padding: 5 px ;
 border-top-right-radius: 11px;
-background: qradialgradient(cx: 0.3, cy: -0.4, 
-fx: 0.3, fy: -0.4, radius: 1.35, stop: 0 rgb(58, 58, 58), stop: 1 rgb(50, 50, 50));
+background: black;
 }
 QPushButton:hover { background: rgba(255,255,255,.2); }
 QPushButton:pressed { background: white; }</string>
@@ -69,15 +68,14 @@ QPushButton:pressed { background: white; }</string>
 color: white;
 border: 1px solid #555;
 border-top-left-radius: 11px;
-background: qradialgradient(cx: 0.3, cy: -0.4, 
-fx: 0.3, fy: -0.4, radius: 1.35, stop: 0 rgb(58, 58, 58), stop: 1 rgb(50, 50, 50));
+background: black;
 font-weight: 3;
 text-transform: capitalize;
 font-size: 25;
 }</string>
     </property>
     <property name="text">
-     <string>Построение сечений</string>
+     <string>Решение задач построения сечений</string>
     </property>
    </widget>
    <widget class="QGroupBox" name="box1">
@@ -94,8 +92,7 @@ font-size: 25;
 background-color: grey;
 color: #333;
 border: 1 px solid #555;
-background: qradialgradient(cx: 0.3, cy: -0.4, 
-fx: 0.3, fy: -0.4, radius: 1.35, stop: 0 rgb(53, 53, 53), stop: 1 rgb(22, 22, 22));
+background: black;
 }</string>
     </property>
     <property name="title">
@@ -115,7 +112,7 @@ fx: 0.3, fy: -0.4, radius: 1.35, stop: 0 rgb(53, 53, 53), stop: 1 rgb(22, 22, 22
     border: 2px solid grey;
     border-radius:15px;
     color: white;
-    background-color: rgb(50, 50, 50);
+    background-color:rgb(25, 25, 25);
 	font: 75 12pt  &quot;MS Sans Serif&quot;;
     text-align: center;
 
@@ -156,9 +153,9 @@ font-size: 25;
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>10</y>
+       <y>0</y>
        <width>91</width>
-       <height>81</height>
+       <height>101</height>
       </rect>
      </property>
      <property name="text">
@@ -179,8 +176,7 @@ font-size: 25;
      <string notr="true">QGroupBox{
 border-bottom-left-radius: 11px;
 border-bottom-right-radius: 11px;
-background: qradialgradient(cx: 0.3, cy: -0.4, 
-fx: 0.3, fy: -0.4, radius: 1.35, stop: 0 rgb(35, 35, 35), stop: 1 rgb(0, 0, 0));
+background: black;
 }</string>
     </property>
     <property name="title">
@@ -291,7 +287,7 @@ QPushButton:pressed { background: white; }</string>
     border: 2px solid grey;
     border-radius:15px;
     color: white;
-    background-color: rgb(50, 50, 50);
+    background-color:rgb(25, 25, 25);
 	font: 12pt &quot;MS Sans Serif&quot;;
     text-align: center;
 
@@ -317,12 +313,12 @@ QProgressBar::chunk {
       </property>
       <property name="styleSheet">
        <string notr="true">QLabel{
-font: 75 italic 26pt &quot;MS Sans Serif&quot;;
+font: 75 italic 14pt &quot;MS Sans Serif&quot;;
 color: white;
 }</string>
       </property>
       <property name="text">
-       <string>Метод следов</string>
+       <string>Примение метода следов</string>
       </property>
      </widget>
     </widget>
@@ -362,7 +358,7 @@ color: white;
     border: 2px solid grey;
     border-radius:15px;
     color: white;
-    background-color: rgb(50, 50, 50);
+    background-color:rgb(25, 25, 25);
 	font: 12pt &quot;MS Sans Serif&quot;;
     text-align: center;
 
@@ -388,7 +384,7 @@ QProgressBar::chunk {
       </property>
       <property name="styleSheet">
        <string notr="true">QLabel{
-font: 75 italic 26pt &quot;MS Sans Serif&quot;;
+font: 75 italic 14pt &quot;MS Sans Serif&quot;;
 color: white;
 }</string>
       </property>
@@ -502,7 +498,7 @@ QPushButton:pressed { background: white; }</string>
     border: 2px solid grey;
     border-radius:15px;
     color: white;
-    background-color: rgb(50, 50, 50);
+    background-color:rgb(25, 25, 25);
 	font: 12pt &quot;MS Sans Serif&quot;;
     text-align: center;
 
@@ -528,12 +524,12 @@ QProgressBar::chunk {
       </property>
       <property name="styleSheet">
        <string notr="true">QLabel{
-font: 75 italic 19pt &quot;MS Sans Serif&quot;;
+font: 75 italic 14pt &quot;MS Sans Serif&quot;;
 color: white;
 }</string>
       </property>
       <property name="text">
-       <string>Метод внутреннего проектирования</string>
+       <string>Применение метода внутреннего проектирования</string>
       </property>
      </widget>
      <widget class="QPushButton" name="butp2">
@@ -594,7 +590,7 @@ color: #333;
      <property name="title">
       <string/>
      </property>
-     <widget class="QPushButton" name="butt4">
+     <widget class="QPushButton" name="butt3">
       <property name="geometry">
        <rect>
         <x>540</x>
@@ -642,7 +638,7 @@ QPushButton:pressed { background: white; }</string>
     border: 2px solid grey;
     border-radius:15px;
     color: white;
-    background-color: rgb(50, 50, 50);
+    background-color:rgb(25, 25, 25);
 	font: 12pt &quot;MS Sans Serif&quot;;
     text-align: center;
 
@@ -668,12 +664,12 @@ QProgressBar::chunk {
       </property>
       <property name="styleSheet">
        <string notr="true">QLabel{
-font: 75 italic 26pt &quot;MS Sans Serif&quot;;
+font: 75 italic 14pt &quot;MS Sans Serif&quot;;
 color: white;
 }</string>
       </property>
       <property name="text">
-       <string>Комбинированный метод</string>
+       <string>Применение комбинированного метода</string>
       </property>
      </widget>
      <widget class="QPushButton" name="butp3">

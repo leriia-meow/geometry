@@ -75,7 +75,7 @@ font-size: 25;
 }</string>
     </property>
     <property name="text">
-     <string>Метод внутреннего проектирования.Теория.</string>
+     <string>Применение метода внутреннего проектирования.Теория.</string>
     </property>
    </widget>
    <widget class="QGroupBox" name="groupBox_2">
@@ -124,12 +124,15 @@ background: black;
      </property>
     </widget>
     <widget class="QStackedWidget" name="stackedWidget">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
      <property name="geometry">
       <rect>
        <x>10</x>
        <y>10</y>
        <width>901</width>
-       <height>351</height>
+       <height>361</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -138,7 +141,7 @@ background:black;
 </string>
      </property>
      <property name="currentIndex">
-      <number>3</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="page">
       <widget class="QTextBrowser" name="textBrowser">
@@ -147,7 +150,7 @@ background:black;
          <x>0</x>
          <y>0</y>
          <width>901</width>
-         <height>361</height>
+         <height>351</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -178,6 +181,33 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:11pt; color:#ffffff;&quot;&gt; 1. Построить вспомогательные сечения и найти линию их пересечения.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:11pt; color:#ffffff;&quot;&gt; 2. Построить след сечения на ребре многогранника.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:11pt; color:#ffffff;&quot;&gt; 3. Если точек сечения не хватает для построения самого сечения повторить пп.1-2. &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="go1">
+       <property name="geometry">
+        <rect>
+         <x>690</x>
+         <y>330</y>
+         <width>91</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  user-select: none;
+  outline: none;
+  border: 2px solid white;
+  border-radius: 1px;
+  transition: 0.2s;
+} 
+QPushButton:hover { background: rgba(255,255,255,.2); }
+QPushButton:pressed { background: white; }</string>
+       </property>
+       <property name="text">
+        <string>Далее</string>
        </property>
       </widget>
      </widget>
@@ -298,6 +328,33 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt; color:#ffffff;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
+      <widget class="QPushButton" name="go2">
+       <property name="geometry">
+        <rect>
+         <x>690</x>
+         <y>330</y>
+         <width>91</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  user-select: none;
+  outline: none;
+  border: 2px solid white;
+  border-radius: 1px;
+  transition: 0.2s;
+} 
+QPushButton:hover { background: rgba(255,255,255,.2); }
+QPushButton:pressed { background: white; }</string>
+       </property>
+       <property name="text">
+        <string>Далее</string>
+       </property>
+      </widget>
      </widget>
      <widget class="QWidget" name="page_3">
       <widget class="QLabel" name="label_5">
@@ -398,6 +455,33 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Calibri'; font-size:12pt; color:#ffffff;&quot;&gt;Рассмотрим плоскость MM1АN. В этой плоскости прямые MN и M1A пересекаются. Обозначим точку их пересечения&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Calibri'; font-size:12pt; color:#ffffff;&quot;&gt;через Х. Понятно, что точка Х лежит не только в плоскости MM1АN, но и в плоскости сечения, так как принадлежит&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Calibri'; font-size:12pt; color:#ffffff;&quot;&gt;прямой MN. Дальше все становится ясным.&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="go3">
+       <property name="geometry">
+        <rect>
+         <x>690</x>
+         <y>330</y>
+         <width>91</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  user-select: none;
+  outline: none;
+  border: 2px solid white;
+  border-radius: 1px;
+  transition: 0.2s;
+} 
+QPushButton:hover { background: rgba(255,255,255,.2); }
+QPushButton:pressed { background: white; }</string>
+       </property>
+       <property name="text">
+        <string>Далее</string>
        </property>
       </widget>
      </widget>

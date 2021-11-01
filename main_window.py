@@ -26,8 +26,7 @@ class Ui_mainWindow(object):
 "border: 1px solid #555;\n"
 "padding: 5 px ;\n"
 "border-top-right-radius: 11px;\n"
-"background: qradialgradient(cx: 0.3, cy: -0.4, \n"
-"fx: 0.3, fy: -0.4, radius: 1.35, stop: 0 rgb(58, 58, 58), stop: 1 rgb(50, 50, 50));\n"
+"background: black;\n"
 "}\n"
 "QPushButton:hover { background: rgba(255,255,255,.2); }\n"
 "QPushButton:pressed { background: white; }")
@@ -44,8 +43,7 @@ class Ui_mainWindow(object):
 "color: white;\n"
 "border: 1px solid #555;\n"
 "border-top-left-radius: 11px;\n"
-"background: qradialgradient(cx: 0.3, cy: -0.4, \n"
-"fx: 0.3, fy: -0.4, radius: 1.35, stop: 0 rgb(58, 58, 58), stop: 1 rgb(50, 50, 50));\n"
+"background: black;\n"
 "font-weight: 3;\n"
 "text-transform: capitalize;\n"
 "font-size: 25;\n"
@@ -57,8 +55,7 @@ class Ui_mainWindow(object):
 "background-color: grey;\n"
 "color: #333;\n"
 "border: 1 px solid #555;\n"
-"background: qradialgradient(cx: 0.3, cy: -0.4, \n"
-"fx: 0.3, fy: -0.4, radius: 1.35, stop: 0 rgb(53, 53, 53), stop: 1 rgb(22, 22, 22));\n"
+"background: black;\n"
 "}")
         self.box1.setTitle("")
         self.box1.setObjectName("box1")
@@ -68,7 +65,7 @@ class Ui_mainWindow(object):
 "    border: 2px solid grey;\n"
 "    border-radius:15px;\n"
 "    color: white;\n"
-"    background-color: rgb(50, 50, 50);\n"
+"    background-color:rgb(25, 25, 25);\n"
 "    font: 75 12pt  \"MS Sans Serif\";\n"
 "    text-align: center;\n"
 "\n"
@@ -91,7 +88,7 @@ class Ui_mainWindow(object):
 "}")
         self.namelabel.setObjectName("namelabel")
         self.photo = QtWidgets.QLabel(self.box1)
-        self.photo.setGeometry(QtCore.QRect(20, 10, 91, 81))
+        self.photo.setGeometry(QtCore.QRect(20, 0, 91, 101))
         self.photo.setText("")
         self.photo.setObjectName("photo")
         self.mainbox = QtWidgets.QGroupBox(self.centralwidget)
@@ -99,8 +96,7 @@ class Ui_mainWindow(object):
         self.mainbox.setStyleSheet("QGroupBox{\n"
 "border-bottom-left-radius: 11px;\n"
 "border-bottom-right-radius: 11px;\n"
-"background: qradialgradient(cx: 0.3, cy: -0.4, \n"
-"fx: 0.3, fy: -0.4, radius: 1.35, stop: 0 rgb(35, 35, 35), stop: 1 rgb(0, 0, 0));\n"
+"background: black;\n"
 "}")
         self.mainbox.setTitle("")
         self.mainbox.setObjectName("mainbox")
@@ -161,7 +157,7 @@ class Ui_mainWindow(object):
 "    border: 2px solid grey;\n"
 "    border-radius:15px;\n"
 "    color: white;\n"
-"    background-color: rgb(50, 50, 50);\n"
+"    background-color:rgb(25, 25, 25);\n"
 "    font: 12pt \"MS Sans Serif\";\n"
 "    text-align: center;\n"
 "\n"
@@ -176,7 +172,7 @@ class Ui_mainWindow(object):
         self.label_5 = QtWidgets.QLabel(self.les1)
         self.label_5.setGeometry(QtCore.QRect(20, 10, 411, 61))
         self.label_5.setStyleSheet("QLabel{\n"
-"font: 75 italic 26pt \"MS Sans Serif\";\n"
+"font: 75 italic 14pt \"MS Sans Serif\";\n"
 "color: white;\n"
 "}")
         self.label_5.setObjectName("label_5")
@@ -198,7 +194,7 @@ class Ui_mainWindow(object):
 "    border: 2px solid grey;\n"
 "    border-radius:15px;\n"
 "    color: white;\n"
-"    background-color: rgb(50, 50, 50);\n"
+"    background-color:rgb(25, 25, 25);\n"
 "    font: 12pt \"MS Sans Serif\";\n"
 "    text-align: center;\n"
 "\n"
@@ -213,7 +209,7 @@ class Ui_mainWindow(object):
         self.label_2 = QtWidgets.QLabel(self.lesk)
         self.label_2.setGeometry(QtCore.QRect(20, 10, 411, 61))
         self.label_2.setStyleSheet("QLabel{\n"
-"font: 75 italic 26pt \"MS Sans Serif\";\n"
+"font: 75 italic 14pt \"MS Sans Serif\";\n"
 "color: white;\n"
 "}")
         self.label_2.setObjectName("label_2")
@@ -272,7 +268,7 @@ class Ui_mainWindow(object):
 "    border: 2px solid grey;\n"
 "    border-radius:15px;\n"
 "    color: white;\n"
-"    background-color: rgb(50, 50, 50);\n"
+"    background-color:rgb(25, 25, 25);\n"
 "    font: 12pt \"MS Sans Serif\";\n"
 "    text-align: center;\n"
 "\n"
@@ -287,7 +283,7 @@ class Ui_mainWindow(object):
         self.label_4 = QtWidgets.QLabel(self.les2)
         self.label_4.setGeometry(QtCore.QRect(20, 10, 521, 61))
         self.label_4.setStyleSheet("QLabel{\n"
-"font: 75 italic 19pt \"MS Sans Serif\";\n"
+"font: 75 italic 14pt \"MS Sans Serif\";\n"
 "color: white;\n"
 "}")
         self.label_4.setObjectName("label_4")
@@ -320,14 +316,14 @@ class Ui_mainWindow(object):
 "}")
         self.les3.setTitle("")
         self.les3.setObjectName("les3")
-        self.butt4 = QtWidgets.QPushButton(self.les3)
-        self.butt4.setGeometry(QtCore.QRect(540, 20, 41, 41))
+        self.butt3 = QtWidgets.QPushButton(self.les3)
+        self.butt3.setGeometry(QtCore.QRect(540, 20, 41, 41))
         font = QtGui.QFont()
         font.setPointSize(14)
         font.setUnderline(False)
         font.setStrikeOut(False)
-        self.butt4.setFont(font)
-        self.butt4.setStyleSheet("QPushButton {\n"
+        self.butt3.setFont(font)
+        self.butt3.setStyleSheet("QPushButton {\n"
 "  display: inline-block;\n"
 "  color: white;\n"
 "  text-decoration: none;\n"
@@ -339,14 +335,14 @@ class Ui_mainWindow(object):
 "} \n"
 "QPushButton:hover { background: rgba(255,255,255,.2); }\n"
 "QPushButton:pressed { background: white; }")
-        self.butt4.setObjectName("butt4")
+        self.butt3.setObjectName("butt3")
         self.progress3 = QtWidgets.QProgressBar(self.les3)
         self.progress3.setGeometry(QtCore.QRect(660, 20, 401, 41))
         self.progress3.setStyleSheet("QProgressBar {\n"
 "    border: 2px solid grey;\n"
 "    border-radius:15px;\n"
 "    color: white;\n"
-"    background-color: rgb(50, 50, 50);\n"
+"    background-color:rgb(25, 25, 25);\n"
 "    font: 12pt \"MS Sans Serif\";\n"
 "    text-align: center;\n"
 "\n"
@@ -361,7 +357,7 @@ class Ui_mainWindow(object):
         self.label_3 = QtWidgets.QLabel(self.les3)
         self.label_3.setGeometry(QtCore.QRect(20, 10, 441, 61))
         self.label_3.setStyleSheet("QLabel{\n"
-"font: 75 italic 26pt \"MS Sans Serif\";\n"
+"font: 75 italic 14pt \"MS Sans Serif\";\n"
 "color: white;\n"
 "}")
         self.label_3.setObjectName("label_3")
@@ -403,12 +399,12 @@ class Ui_mainWindow(object):
     def retranslateUi(self, mainWindow):
         _translate = QtCore.QCoreApplication.translate
         mainWindow.setWindowTitle(_translate("mainWindow", "MainWindow"))
-        self.label.setText(_translate("mainWindow", "Построение сечений"))
+        self.label.setText(_translate("mainWindow", "Решение задач построения сечений"))
         self.namelabel.setText(_translate("mainWindow", "1"))
         self.butt1.setText(_translate("mainWindow", "?"))
-        self.label_5.setText(_translate("mainWindow", "Метод следов"))
+        self.label_5.setText(_translate("mainWindow", "Примение метода следов"))
         self.label_2.setText(_translate("mainWindow", "Контрольное задание"))
         self.butt2.setText(_translate("mainWindow", "?"))
-        self.label_4.setText(_translate("mainWindow", "Метод внутреннего проектирования"))
-        self.butt4.setText(_translate("mainWindow", "?"))
-        self.label_3.setText(_translate("mainWindow", "Комбинированный метод"))
+        self.label_4.setText(_translate("mainWindow", "Применение метода внутреннего проектирования"))
+        self.butt3.setText(_translate("mainWindow", "?"))
+        self.label_3.setText(_translate("mainWindow", "Применение комбинированного метода"))

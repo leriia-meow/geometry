@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_teor1(object):
     def setupUi(self, teor1):
         teor1.setObjectName("teor1")
-        teor1.resize(936, 475)
+        teor1.resize(936, 538)
         teor1.setDocumentMode(False)
         teor1.setDockNestingEnabled(False)
         self.centralwidget = QtWidgets.QWidget(teor1)
@@ -50,7 +50,7 @@ class Ui_teor1(object):
 "}")
         self.label.setObjectName("label")
         self.groupBox_2 = QtWidgets.QGroupBox(self.centralwidget)
-        self.groupBox_2.setGeometry(QtCore.QRect(10, 50, 921, 381))
+        self.groupBox_2.setGeometry(QtCore.QRect(10, 50, 921, 371))
         self.groupBox_2.setStyleSheet("QGroupBox{\n"
 "border-bottom-left-radius: 11px;\n"
 "border-bottom-right-radius: 11px;\n"
@@ -65,7 +65,7 @@ class Ui_teor1(object):
         self.label_14.setGeometry(QtCore.QRect(20, 30, 47, 13))
         self.label_14.setObjectName("label_14")
         self.stackedWidget = QtWidgets.QStackedWidget(self.groupBox_2)
-        self.stackedWidget.setGeometry(QtCore.QRect(10, 10, 901, 331))
+        self.stackedWidget.setGeometry(QtCore.QRect(10, 10, 901, 361))
         self.stackedWidget.setStyleSheet("color:white;\n"
 "background:black;\n"
 "")
@@ -73,7 +73,7 @@ class Ui_teor1(object):
         self.page = QtWidgets.QWidget()
         self.page.setObjectName("page")
         self.textBrowser = QtWidgets.QTextBrowser(self.page)
-        self.textBrowser.setGeometry(QtCore.QRect(0, 10, 901, 341))
+        self.textBrowser.setGeometry(QtCore.QRect(0, 10, 901, 321))
         self.textBrowser.setStyleSheet("QTextBrowser{\n"
 "color: white;\n"
 "border: 1px solid black;\n"
@@ -85,6 +85,21 @@ class Ui_teor1(object):
 "color: white;\n"
 "}")
         self.textBrowser.setObjectName("textBrowser")
+        self.go1 = QtWidgets.QPushButton(self.page)
+        self.go1.setGeometry(QtCore.QRect(700, 320, 91, 31))
+        self.go1.setStyleSheet("QPushButton {\n"
+"  display: inline-block;\n"
+"  color: white;\n"
+"  text-decoration: none;\n"
+"  user-select: none;\n"
+"  outline: none;\n"
+"  border: 2px solid white;\n"
+"  border-radius: 1px;\n"
+"  transition: 0.2s;\n"
+"} \n"
+"QPushButton:hover { background: rgba(255,255,255,.2); }\n"
+"QPushButton:pressed { background: white; }")
+        self.go1.setObjectName("go1")
         self.stackedWidget.addWidget(self.page)
         self.page_2 = QtWidgets.QWidget()
         self.page_2.setObjectName("page_2")
@@ -99,7 +114,7 @@ class Ui_teor1(object):
         self.label_4.setText("")
         self.label_4.setObjectName("label_4")
         self.label_3 = QtWidgets.QLabel(self.page_2)
-        self.label_3.setGeometry(QtCore.QRect(600, 90, 291, 231))
+        self.label_3.setGeometry(QtCore.QRect(600, 70, 291, 231))
         self.label_3.setStyleSheet("background-image: url(:/newPrefix/тет 2.jpg);")
         self.label_3.setText("")
         self.label_3.setObjectName("label_3")
@@ -129,6 +144,21 @@ class Ui_teor1(object):
 "color: white;\n"
 "}")
         self.textBrowser_3.setObjectName("textBrowser_3")
+        self.go2 = QtWidgets.QPushButton(self.page_2)
+        self.go2.setGeometry(QtCore.QRect(700, 320, 91, 31))
+        self.go2.setStyleSheet("QPushButton {\n"
+"  display: inline-block;\n"
+"  color: white;\n"
+"  text-decoration: none;\n"
+"  user-select: none;\n"
+"  outline: none;\n"
+"  border: 2px solid white;\n"
+"  border-radius: 1px;\n"
+"  transition: 0.2s;\n"
+"} \n"
+"QPushButton:hover { background: rgba(255,255,255,.2); }\n"
+"QPushButton:pressed { background: white; }")
+        self.go2.setObjectName("go2")
         self.stackedWidget.addWidget(self.page_2)
         self.page_3 = QtWidgets.QWidget()
         self.page_3.setObjectName("page_3")
@@ -143,7 +173,7 @@ class Ui_teor1(object):
         self.label_7.setText("")
         self.label_7.setObjectName("label_7")
         self.label_8 = QtWidgets.QLabel(self.page_3)
-        self.label_8.setGeometry(QtCore.QRect(540, 70, 351, 241))
+        self.label_8.setGeometry(QtCore.QRect(540, 60, 351, 241))
         self.label_8.setStyleSheet("background-image: url(:/newPrefix/куб2.png);")
         self.label_8.setText("")
         self.label_8.setObjectName("label_8")
@@ -165,6 +195,21 @@ class Ui_teor1(object):
 "color: white;\n"
 "}")
         self.textBrowser_4.setObjectName("textBrowser_4")
+        self.go3 = QtWidgets.QPushButton(self.page_3)
+        self.go3.setGeometry(QtCore.QRect(700, 320, 91, 31))
+        self.go3.setStyleSheet("QPushButton {\n"
+"  display: inline-block;\n"
+"  color: white;\n"
+"  text-decoration: none;\n"
+"  user-select: none;\n"
+"  outline: none;\n"
+"  border: 2px solid white;\n"
+"  border-radius: 1px;\n"
+"  transition: 0.2s;\n"
+"} \n"
+"QPushButton:hover { background: rgba(255,255,255,.2); }\n"
+"QPushButton:pressed { background: white; }")
+        self.go3.setObjectName("go3")
         self.stackedWidget.addWidget(self.page_3)
         self.page_4 = QtWidgets.QWidget()
         self.page_4.setObjectName("page_4")
@@ -211,7 +256,7 @@ class Ui_teor1(object):
         self.textBrowser_6.setObjectName("textBrowser_6")
         self.stackedWidget.addWidget(self.page_4)
         self.tomainbutton = QtWidgets.QPushButton(self.groupBox_2)
-        self.tomainbutton.setGeometry(QtCore.QRect(814, 342, 91, 31))
+        self.tomainbutton.setGeometry(QtCore.QRect(814, 330, 91, 31))
         self.tomainbutton.setStyleSheet("QPushButton {\n"
 "  display: inline-block;\n"
 "  color: white;\n"
@@ -238,13 +283,13 @@ class Ui_teor1(object):
         teor1.setStatusBar(self.statusbar)
 
         self.retranslateUi(teor1)
-        self.stackedWidget.setCurrentIndex(3)
+        self.stackedWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(teor1)
 
     def retranslateUi(self, teor1):
         _translate = QtCore.QCoreApplication.translate
         teor1.setWindowTitle(_translate("teor1", "MainWindow"))
-        self.label.setText(_translate("teor1", "Метод следов.Теория."))
+        self.label.setText(_translate("teor1", "Применение метода следов.Теория."))
         self.label_13.setText(_translate("teor1", "TextLabel"))
         self.label_14.setText(_translate("teor1", "TextLabel"))
         self.textBrowser.setHtml(_translate("teor1", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
@@ -258,6 +303,7 @@ class Ui_teor1(object):
 "<li style=\" font-family:\'Georgia,Times New Roman,serif\'; font-size:11pt; font-weight:400; color:#ffffff;\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'georgia,serif\'; font-size:large;\">Если дана (или уже построена) прямая пересечения плоскости сечения с основанием многогранника (след на основании) и есть точка, принадлежащая определенной боковой грани, то нужно определить точку пересечения данного следа с этой боковой гранью ( точка пересечения данного следа с общей прямой основания и данной боковой грани)</span></li>\n"
 "<li style=\" font-family:\'Georgia,Times New Roman,serif\'; font-size:11pt; font-weight:400; color:#ffffff;\" style=\" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'georgia,serif\'; font-size:large;\">Точку пересечения плоскости сечения с основанием можно определить как точку пересечения какой-либо прямой в плоскости сечения с ее проекцией на плоскость основания.</span></li></ul>\n"
 "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'georgia,serif\'; font-size:11pt; font-weight:400; color:#ffffff;\">  То есть, суть метода заключается в построении вспомогательной прямой, являющейся изображением линии пересечения секущей плоскости с плоскостью какой-либо грани фигуры. Удобнее всего строить изображение линии пересечения секущей плоскости с плоскостью нижнего основания. Используя след, легко построить изображения точек секущей плоскости, находящихся на боковых ребрах или гранях фигуры. </span></p></body></html>"))
+        self.go1.setText(_translate("teor1", "Далее"))
         self.label_2.setText(_translate("teor1", "Пример 1"))
         self.textBrowser_2.setHtml(_translate("teor1", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
@@ -273,6 +319,7 @@ class Ui_teor1(object):
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Calibri\'; font-size:12pt; font-style:italic; color:#ffffff;\">Продлим отрезки MN и АС.</span><span style=\" font-size:12pt; font-style:italic; color:#ffffff;\"> </span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Calibri\'; font-size:12pt; font-style:italic; color:#ffffff;\">Проведем РК в плоскости нижней грани.</span><span style=\" font-size:12pt; font-style:italic; color:#ffffff;\"> </span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Calibri\'; font-size:12pt; font-style:italic; color:#ffffff;\">Получившийся четырехугольник  — искомое сечение.</span><span style=\" font-size:12pt; font-style:italic; color:#ffffff;\"> </span></p></body></html>"))
+        self.go2.setText(_translate("teor1", "Далее"))
         self.label_5.setText(_translate("teor1", "Пример 2"))
         self.label_12.setText(_translate("teor1", "Задача: Построить сечение куба, проходящее через точки М, N, L"))
         self.textBrowser_4.setHtml(_translate("teor1", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
@@ -285,6 +332,7 @@ class Ui_teor1(object):
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Calibri\'; font-size:12pt; font-style:italic; color:#ffffff;\">Соединим X1 и N в плоскости A1B1C1D1, поставим точку K на пересечении X1N и A1B1. </span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Calibri\'; font-size:12pt; font-style:italic; color:#ffffff;\">Продлим KN и пересечем с D1C1 в точке X3. Соединим X2 и X3 в плоскости DD1C1C и расставим точки T и P на пересечениях с гранями DC и C1C соответственною</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Calibri\'; font-size:12pt; font-style:italic; color:#ffffff;\">MNKTPL  — искомое сечение.</span><span style=\" font-size:12pt; font-style:italic; color:#ffffff;\"> </span></p></body></html>"))
+        self.go3.setText(_translate("teor1", "Далее"))
         self.label_6.setText(_translate("teor1", "Пример 3"))
         self.textBrowser_5.setHtml(_translate("teor1", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
@@ -304,4 +352,3 @@ class Ui_teor1(object):
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Calibri\'; font-size:10pt; color:#ffffff;\">Соединяем точки отрезками.</span><span style=\" font-size:10pt; color:#ffffff;\"> </span></p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;\"><br /></p></body></html>"))
         self.tomainbutton.setText(_translate("teor1", "Главное меню"))
-import photos

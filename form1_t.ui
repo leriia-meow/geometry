@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>936</width>
-    <height>475</height>
+    <height>538</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -75,7 +75,7 @@ font-size: 25;
 }</string>
     </property>
     <property name="text">
-     <string>Метод следов.Теория.</string>
+     <string>Применение метода следов.Теория.</string>
     </property>
    </widget>
    <widget class="QGroupBox" name="groupBox_2">
@@ -84,7 +84,7 @@ font-size: 25;
       <x>10</x>
       <y>50</y>
       <width>921</width>
-      <height>381</height>
+      <height>371</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -129,7 +129,7 @@ background: black;
        <x>10</x>
        <y>10</y>
        <width>901</width>
-       <height>331</height>
+       <height>361</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -138,7 +138,7 @@ background:black;
 </string>
      </property>
      <property name="currentIndex">
-      <number>3</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="page">
       <widget class="QTextBrowser" name="textBrowser">
@@ -147,7 +147,7 @@ background:black;
          <x>0</x>
          <y>10</y>
          <width>901</width>
-         <height>341</height>
+         <height>321</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -174,6 +174,33 @@ p, li { white-space: pre-wrap; }
 &lt;li style=&quot; font-family:'Georgia,Times New Roman,serif'; font-size:11pt; font-weight:400; color:#ffffff;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'georgia,serif'; font-size:large;&quot;&gt;Если дана (или уже построена) прямая пересечения плоскости сечения с основанием многогранника (след на основании) и есть точка, принадлежащая определенной боковой грани, то нужно определить точку пересечения данного следа с этой боковой гранью ( точка пересечения данного следа с общей прямой основания и данной боковой грани)&lt;/span&gt;&lt;/li&gt;
 &lt;li style=&quot; font-family:'Georgia,Times New Roman,serif'; font-size:11pt; font-weight:400; color:#ffffff;&quot; style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'georgia,serif'; font-size:large;&quot;&gt;Точку пересечения плоскости сечения с основанием можно определить как точку пересечения какой-либо прямой в плоскости сечения с ее проекцией на плоскость основания.&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;
 &lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'georgia,serif'; font-size:11pt; font-weight:400; color:#ffffff;&quot;&gt;  То есть, суть метода заключается в построении вспомогательной прямой, являющейся изображением линии пересечения секущей плоскости с плоскостью какой-либо грани фигуры. Удобнее всего строить изображение линии пересечения секущей плоскости с плоскостью нижнего основания. Используя след, легко построить изображения точек секущей плоскости, находящихся на боковых ребрах или гранях фигуры. &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="go1">
+       <property name="geometry">
+        <rect>
+         <x>700</x>
+         <y>320</y>
+         <width>91</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  user-select: none;
+  outline: none;
+  border: 2px solid white;
+  border-radius: 1px;
+  transition: 0.2s;
+} 
+QPushButton:hover { background: rgba(255,255,255,.2); }
+QPushButton:pressed { background: white; }</string>
+       </property>
+       <property name="text">
+        <string>Далее</string>
        </property>
       </widget>
      </widget>
@@ -215,7 +242,7 @@ font: 18pt &quot;MS Sans Serif&quot;;</string>
        <property name="geometry">
         <rect>
          <x>600</x>
-         <y>90</y>
+         <y>70</y>
          <width>291</width>
          <height>231</height>
         </rect>
@@ -289,6 +316,33 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Calibri'; font-size:12pt; font-style:italic; color:#ffffff;&quot;&gt;Получившийся четырехугольник  — искомое сечение.&lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-style:italic; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
+      <widget class="QPushButton" name="go2">
+       <property name="geometry">
+        <rect>
+         <x>700</x>
+         <y>320</y>
+         <width>91</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  user-select: none;
+  outline: none;
+  border: 2px solid white;
+  border-radius: 1px;
+  transition: 0.2s;
+} 
+QPushButton:hover { background: rgba(255,255,255,.2); }
+QPushButton:pressed { background: white; }</string>
+       </property>
+       <property name="text">
+        <string>Далее</string>
+       </property>
+      </widget>
      </widget>
      <widget class="QWidget" name="page_3">
       <widget class="QLabel" name="label_5">
@@ -328,7 +382,7 @@ font: 18pt &quot;MS Sans Serif&quot;;</string>
        <property name="geometry">
         <rect>
          <x>540</x>
-         <y>70</y>
+         <y>60</y>
          <width>351</width>
          <height>241</height>
         </rect>
@@ -389,6 +443,33 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Calibri'; font-size:12pt; font-style:italic; color:#ffffff;&quot;&gt;Соединим X1 и N в плоскости A1B1C1D1, поставим точку K на пересечении X1N и A1B1. &lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Calibri'; font-size:12pt; font-style:italic; color:#ffffff;&quot;&gt;Продлим KN и пересечем с D1C1 в точке X3. Соединим X2 и X3 в плоскости DD1C1C и расставим точки T и P на пересечениях с гранями DC и C1C соответственною&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Calibri'; font-size:12pt; font-style:italic; color:#ffffff;&quot;&gt;MNKTPL  — искомое сечение.&lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-style:italic; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="go3">
+       <property name="geometry">
+        <rect>
+         <x>700</x>
+         <y>320</y>
+         <width>91</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  user-select: none;
+  outline: none;
+  border: 2px solid white;
+  border-radius: 1px;
+  transition: 0.2s;
+} 
+QPushButton:hover { background: rgba(255,255,255,.2); }
+QPushButton:pressed { background: white; }</string>
+       </property>
+       <property name="text">
+        <string>Далее</string>
        </property>
       </widget>
      </widget>
@@ -513,7 +594,7 @@ p, li { white-space: pre-wrap; }
      <property name="geometry">
       <rect>
        <x>814</x>
-       <y>342</y>
+       <y>330</y>
        <width>91</width>
        <height>31</height>
       </rect>

@@ -75,7 +75,7 @@ font-size: 25;
 }</string>
     </property>
     <property name="text">
-     <string>Комбинированный метод.Теория.</string>
+     <string>Применение комбинированный метода.Теория.</string>
     </property>
    </widget>
    <widget class="QGroupBox" name="groupBox_2">
@@ -129,7 +129,7 @@ background: black;
        <x>10</x>
        <y>10</y>
        <width>901</width>
-       <height>341</height>
+       <height>361</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -178,6 +178,33 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Merriweather,Georgia,sans-serif'; font-size:11pt; font-weight:600; color:#ffffff;&quot;&gt;Координатный метод построения сечений.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Merriweather,Georgia,sans-serif'; font-size:11pt; font-weight:400; color:#ffffff;&quot;&gt;Суть координатного метода заключается в вычислении координат точек пересечения ребер или многогранника с секущей плоскостью, которая задается уравнением плоскости. Уравнение плоскости сечения вычисляется на основе условий задачи.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Merriweather,Georgia,sans-serif'; font-size:11pt; font-weight:600; color:#ffffff;&quot;&gt;Заметим&lt;/span&gt;&lt;span style=&quot; font-family:'Merriweather,Georgia,sans-serif'; font-size:11pt; font-weight:400; color:#ffffff;&quot;&gt;, что это способ построения сечения многогранника приемлем для компьютера, так как он связан с большим объемом вычислений и поэтому этот метод целесообразно реализовать с помощью ЭВМ.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="go1">
+       <property name="geometry">
+        <rect>
+         <x>690</x>
+         <y>330</y>
+         <width>91</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  user-select: none;
+  outline: none;
+  border: 2px solid white;
+  border-radius: 1px;
+  transition: 0.2s;
+} 
+QPushButton:hover { background: rgba(255,255,255,.2); }
+QPushButton:pressed { background: white; }</string>
+       </property>
+       <property name="text">
+        <string>Далее</string>
        </property>
       </widget>
      </widget>
@@ -274,6 +301,33 @@ p, li { white-space: pre-wrap; }
         <string/>
        </property>
       </widget>
+      <widget class="QPushButton" name="go2">
+       <property name="geometry">
+        <rect>
+         <x>690</x>
+         <y>330</y>
+         <width>91</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  user-select: none;
+  outline: none;
+  border: 2px solid white;
+  border-radius: 1px;
+  transition: 0.2s;
+} 
+QPushButton:hover { background: rgba(255,255,255,.2); }
+QPushButton:pressed { background: white; }</string>
+       </property>
+       <property name="text">
+        <string>Далее</string>
+       </property>
+      </widget>
      </widget>
      <widget class="QWidget" name="page_3">
       <widget class="QLabel" name="label_5">
@@ -355,6 +409,33 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Calibri'; font-size:12pt; font-weight:600; font-style:italic; color:#ffffff;&quot;&gt;Решение:&lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; font-style:italic; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Calibri'; font-size:12pt; color:#ffffff;&quot;&gt;Построим след секущей плоскости α = (РQR) на плоскости АВС Для этого строим точки Т1 = РQ ∩ Р1В, где PP1║AA1, P1 є AC, и T2 = RQ ∩ ВD. Построив след Т1Т2, замечаем, что точка Р лежит в плоскости А1B1C1, которая параллельна плоскости АВС. Это означает, что плоскость α пересекает плоскость А1B1C1 по прямой, проходящей через точку Р и параллельной прямой Т1Т2. Проведем эту прямую и обозначим через М и Е точки ее пересечения с ребрами соответственно А1B1 и А1D1. Получаем: М = α ∩ А1B1, Е =α∩ А1D1. Тогда отрезки ЕR и QМ являются сторонами искомого сечения.&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Calibri'; font-size:12pt; color:#ffffff;&quot;&gt;Далее, так как плоскость ВСС1 параллельна плоскости грани ADD1A1, то плоскость α пересекает грань ВСC1B1 по от резку QF (F= α ∩ СС1), параллельному прямой ЕR. Таким образом, пятиугольник ERFQM - искомое сечение. Точку F можно получить, проведя RF║ MQ.&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="go3">
+       <property name="geometry">
+        <rect>
+         <x>690</x>
+         <y>330</y>
+         <width>91</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  user-select: none;
+  outline: none;
+  border: 2px solid white;
+  border-radius: 1px;
+  transition: 0.2s;
+} 
+QPushButton:hover { background: rgba(255,255,255,.2); }
+QPushButton:pressed { background: white; }</string>
+       </property>
+       <property name="text">
+        <string>Далее</string>
        </property>
       </widget>
      </widget>
