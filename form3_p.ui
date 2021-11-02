@@ -238,7 +238,7 @@ QPushButton:pressed { background: white; }</string>
        <string notr="true">color:white;</string>
       </property>
       <property name="text">
-       <string>Задача:</string>
+       <string>Задача: постройте сечение по заданным точкам</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_7">
@@ -326,7 +326,7 @@ QPushButton:pressed { background: white; }</string>
        <string notr="true">color:white;</string>
       </property>
       <property name="text">
-       <string>Задача:</string>
+       <string>Задача: постройте сечение по заданным точкам</string>
       </property>
      </widget>
      <widget class="QLabel" name="pic2">
@@ -427,7 +427,7 @@ QPushButton:pressed { background: white; }</string>
        <string notr="true">color:white;</string>
       </property>
       <property name="text">
-       <string>Задача:</string>
+       <string>Задача: постройте сечение по заданным точкам</string>
       </property>
      </widget>
     </widget>
