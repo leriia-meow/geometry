@@ -18,6 +18,7 @@ from formerror import Ui_errorwindow
 from main_window import Ui_mainWindow
 from formstop import Ui_stopwindow
 import sqlite3
+import yadisk
 
 
 class MainWindow(QMainWindow, Ui_mainWindow):
@@ -370,11 +371,15 @@ class Pract1(QMainWindow, Ui_pract1):
         self.tomain1.clicked.connect(self.back)
         self.tomain2.clicked.connect(self.back)
         self.tomain3.clicked.connect(self.back)
+        self.con = sqlite3.connect("user.db")
+        self.cur = self.con.cursor()
 
     def back(self):
         self.win = MainWindow(self.id)
         self.win.show()
         self.close()
+        self.con.commit()
+        self.con.close()
 
 
 class Pract2(QMainWindow, Ui_pract2):
@@ -391,11 +396,15 @@ class Pract2(QMainWindow, Ui_pract2):
         self.tomain1.clicked.connect(self.back)
         self.tomain2.clicked.connect(self.back)
         self.tomain3.clicked.connect(self.back)
+        self.con = sqlite3.connect("user.db")
+        self.cur = self.con.cursor()
 
     def back(self):
         self.win = MainWindow(self.id)
         self.win.show()
         self.close()
+        self.con.commit()
+        self.con.close()
 
 
 class Pract3(QMainWindow, Ui_pract3):
@@ -412,11 +421,15 @@ class Pract3(QMainWindow, Ui_pract3):
         self.tomain2.clicked.connect(self.back)
         self.tomain3.clicked.connect(self.back)
         self.setFixedSize(self.size())
+        self.con = sqlite3.connect("user.db")
+        self.cur = self.con.cursor()
 
     def back(self):
         self.win = MainWindow(self.id)
         self.win.show()
         self.close()
+        self.con.commit()
+        self.con.close()
 
 
 class Stop(QMainWindow, Ui_stopwindow):
@@ -447,8 +460,13 @@ class Error(QMainWindow, Ui_errorwindow):
         self.layout().addWidget(self.closebutton)  # кнопочка закрытия окна и завершения программы
 
 
+y = yadisk.YaDisk(token="AQAAAABE8FllAAd6ntFbwMKB-02KqLvhcIbTWso")
+y.download("/user.db", "user.db")
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     ex = Authorize()
     ex.show()
-    sys.exit(app.exec())
+    app.exec()
+y.remove("/user.db", permanently=True)
+y.upload("user.db", "/user.db")
+sys.exit()
