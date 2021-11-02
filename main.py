@@ -19,10 +19,12 @@ from main_window import Ui_mainWindow
 from formstop import Ui_stopwindow
 import sqlite3
 import yadisk
-
+ID = 0
 
 class MainWindow(QMainWindow, Ui_mainWindow):
     def __init__(self, id):
+        global ID
+        ID = id
         super().__init__()
         self.setupUi(self)
         self.setFixedSize(self.size())
@@ -467,6 +469,45 @@ if __name__ == '__main__':
     ex = Authorize()
     ex.show()
     app.exec()
+y.download("/user.db", "user1.db")
+con1 = sqlite3.connect("user.db")
+cur1 = con1.cursor()
+con2 = sqlite3.connect("user1.db")
+cur2 = con2.cursor()
+flag = True
+log = log1 = ""
+try:
+    log = cur2.execute("""SELECT id FROM users WHERE id = ?""", (ID,)).fetchall()[0]
+    log1 = cur1.execute("""SELECT id FROM users WHERE id = ?""", (ID,)).fetchall()[0]
+except Exception:
+    flag = False
+    log = None
+if log == log1:
+    cur2.execute("""UPDATE progress SET les1t = ?, les1ex1 = ?, les1ex2 = ?, les1ex3 = ?, les2t = ?, les2ex1 = ?, 
+    les2ex2 = ?, les2ex3 = ?, les3t = ?, les3ex1 = ?, les3ex2 = ?, les3ex3 = ?, lesk = ?, lesk1 = ?, lesk2 = ?,
+     lesk3 = ? WHERE id = ?""", cur1.execute("""SELECT * FROM progress WHERE id = ?""", (ID,)).fetchall()[0])
+elif log == None and ID > 0:
+    cur2.execute("""INSERT INTO users(id, login, password, photo) VALUES(?, ?, ?, ?)""", cur1.execute("""SELECT *
+     FROM users WHERE id = ?""", (ID,)).fetchall())
+    cur2.execute("""INSERT INTO progress(id, les1t, les1ex1, les1ex2, les1ex3, les2t, les2ex1, les2ex2,
+                 les2ex3, les3t, les3ex1, les3ex2, les3ex3, lesk, lesk1, lesk2, lesk3) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?,
+                  ?, ?, ?, ?, ?, ?, ?, ?)""", cur1.execute("""SELECT * FROM progress WHERE id = ?""",
+                                                           (ID,)).fetchall()[0])
+elif ID > 0:
+    id = ID + 1
+    while flag:
+        try:
+            log = cur2.execute("""SELECT id FROM users WHERE id = ?""", (id,)).fetchall()[0]
+        except Exception:
+            cur2.execute("""INSERT INTO users(login, password, photo) VALUES(?, ?, ?, ?)""",
+                         cur1.execute("""SELECT login, password, photo FROM users WHERE id = ?""", (ID,)).fetchall()[0])
+            cur2.execute("""INSERT INTO progress(les1t, les1ex1, les1ex2, les1ex3, les2t, les2ex1, les2ex2, les2ex3,
+             les3t, les3ex1, les3ex2, les3ex3, lesk, lesk1, lesk2, lesk3) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
+              ?, ?, ?, ?)""", cur1.execute("""SELECT * FROM progress WHERE id = ?""", (ID,)).fetchall()[0][1:])
+con1.commit()
+con1.close()
+con2.commit()
+con2.close()
 y.remove("/user.db", permanently=True)
-y.upload("user.db", "/user.db")
+y.upload("user1.db", "/user.db")
 sys.exit()
