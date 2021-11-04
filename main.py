@@ -1,6 +1,7 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QDialog, QTableWidgetItem, QFileDialog
-from PyQt5.QtGui import QPixmap
+from PyQt5.QtWidgets import QApplication, QMainWindow, QDialog, QTableWidgetItem, QFileDialog, QFrame
+from PyQt5.QtGui import QPixmap, QPainter, QColor, QPen
+from PyQt5.QtCore import QRect
 from PIL import Image
 from PIL.ImageQt import ImageQt
 import random
@@ -20,6 +21,7 @@ from formstop import Ui_stopwindow
 import sqlite3
 import yadisk
 ID = 0
+
 
 class MainWindow(QMainWindow, Ui_mainWindow):
     def __init__(self, id):
@@ -375,6 +377,21 @@ class Pract1(QMainWindow, Ui_pract1):
         self.tomain3.clicked.connect(self.back)
         self.con = sqlite3.connect("user.db")
         self.cur = self.con.cursor()
+        self.p11 = Painting(11, self.ex1)
+        self.p11.setGeometry(QRect(10, 50, 921, 620))
+        self.p11.setFrameShape(QFrame.StyledPanel)
+        self.p11.setFrameShadow(QFrame.Raised)
+        self.p11.setObjectName("frame_11")
+        self.p12 = Painting(12, self.ex2)
+        self.p12.setGeometry(QRect(10, 50, 921, 620))
+        self.p12.setFrameShape(QFrame.StyledPanel)
+        self.p12.setFrameShadow(QFrame.Raised)
+        self.p12.setObjectName("frame_12")
+        self.p13 = Painting(13, self.ex3)
+        self.p13.setGeometry(QRect(10, 50, 921, 620))
+        self.p13.setFrameShape(QFrame.StyledPanel)
+        self.p13.setFrameShadow(QFrame.Raised)
+        self.p13.setObjectName("frame_13")
 
     def back(self):
         self.win = MainWindow(self.id)
@@ -400,6 +417,21 @@ class Pract2(QMainWindow, Ui_pract2):
         self.tomain3.clicked.connect(self.back)
         self.con = sqlite3.connect("user.db")
         self.cur = self.con.cursor()
+        self.p21 = Painting(21, self.ex1)
+        self.p21.setGeometry(QRect(10, 50, 921, 620))
+        self.p21.setFrameShape(QFrame.StyledPanel)
+        self.p21.setFrameShadow(QFrame.Raised)
+        self.p21.setObjectName("frame_21")
+        self.p22 = Painting(22, self.ex2)
+        self.p22.setGeometry(QRect(10, 50, 921, 620))
+        self.p22.setFrameShape(QFrame.StyledPanel)
+        self.p22.setFrameShadow(QFrame.Raised)
+        self.p22.setObjectName("frame_22")
+        self.p23 = Painting(23, self.ex3)
+        self.p23.setGeometry(QRect(10, 50, 921, 620))
+        self.p23.setFrameShape(QFrame.StyledPanel)
+        self.p23.setFrameShadow(QFrame.Raised)
+        self.p23.setObjectName("frame_23")
 
     def back(self):
         self.win = MainWindow(self.id)
@@ -425,6 +457,21 @@ class Pract3(QMainWindow, Ui_pract3):
         self.setFixedSize(self.size())
         self.con = sqlite3.connect("user.db")
         self.cur = self.con.cursor()
+        self.p31 = Painting(31, self.ex1)
+        self.p31.setGeometry(QRect(10, 50, 921, 620))
+        self.p31.setFrameShape(QFrame.StyledPanel)
+        self.p31.setFrameShadow(QFrame.Raised)
+        self.p31.setObjectName("frame_31")
+        self.p32 = Painting(32, self.ex2)
+        self.p32.setGeometry(QRect(10, 50, 921, 620))
+        self.p32.setFrameShape(QFrame.StyledPanel)
+        self.p32.setFrameShadow(QFrame.Raised)
+        self.p32.setObjectName("frame_32")
+        self.p33 = Painting(33, self.ex3)
+        self.p33.setGeometry(QRect(10, 50, 921, 620))
+        self.p33.setFrameShape(QFrame.StyledPanel)
+        self.p33.setFrameShadow(QFrame.Raised)
+        self.p33.setObjectName("frame_33")
 
     def back(self):
         self.win = MainWindow(self.id)
@@ -432,6 +479,31 @@ class Pract3(QMainWindow, Ui_pract3):
         self.close()
         self.con.commit()
         self.con.close()
+
+
+class Painting(QFrame):
+    def __init__(self, number, parent=None):
+        super().__init__(parent)
+        self.num = number
+
+    def paintEvent(self, e):
+        painter = QPainter(self)
+        painter.setRenderHint(QPainter.Antialiasing)
+        if self.num == 11:
+            pass
+        elif self.num == 12 or self.num == 22 or self.num == 32:
+            pass
+        elif self.num == 13 or self.num == 23 or self.num == 33:
+            pass
+        elif self.num == 21 or self.num == 31:
+            pass
+        elif self.num == 41:
+            pass
+        elif self.num == 42:
+            pass
+        elif self.num == 43:
+            pass
+        painter.end()
 
 
 class Stop(QMainWindow, Ui_stopwindow):
@@ -488,7 +560,7 @@ if log == log1:
      lesk3 = ? WHERE id = ?""", cur1.execute("""SELECT * FROM progress WHERE id = ?""", (ID,)).fetchall()[0])
 elif log == None and ID > 0:
     cur2.execute("""INSERT INTO users(id, login, password, photo) VALUES(?, ?, ?, ?)""", cur1.execute("""SELECT *
-     FROM users WHERE id = ?""", (ID,)).fetchall())
+     FROM users WHERE id = ?""", (ID,)).fetchall()[0])
     cur2.execute("""INSERT INTO progress(id, les1t, les1ex1, les1ex2, les1ex3, les2t, les2ex1, les2ex2,
                  les2ex3, les3t, les3ex1, les3ex2, les3ex3, lesk, lesk1, lesk2, lesk3) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?,
                   ?, ?, ?, ?, ?, ?, ?, ?)""", cur1.execute("""SELECT * FROM progress WHERE id = ?""",
