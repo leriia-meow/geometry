@@ -237,14 +237,17 @@ QPushButton:pressed { background: white; }</string>
        <string>Задача: постройте сечение по заданным точкам.</string>
       </property>
      </widget>
-     <widget class="QLabel" name="pic1">
+     <widget class="QLabel" name="exe1_2">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>90</y>
-        <width>871</width>
-        <height>561</height>
+        <x>10</x>
+        <y>80</y>
+        <width>901</width>
+        <height>591</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:white;</string>
       </property>
       <property name="text">
        <string/>
@@ -325,14 +328,17 @@ QPushButton:pressed { background: white; }</string>
        <string>Задача: постройте сечение по заданным точкам</string>
       </property>
      </widget>
-     <widget class="QLabel" name="pic2">
+     <widget class="QLabel" name="exe1_3">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>90</y>
-        <width>871</width>
-        <height>561</height>
+        <x>0</x>
+        <y>70</y>
+        <width>901</width>
+        <height>591</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:white;</string>
       </property>
       <property name="text">
        <string/>
@@ -397,19 +403,6 @@ QPushButton:pressed { background: white; }</string>
        <string>Сдать</string>
       </property>
      </widget>
-     <widget class="QLabel" name="pic3">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>90</y>
-        <width>871</width>
-        <height>561</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
      <widget class="QLabel" name="exe3">
       <property name="geometry">
        <rect>
@@ -426,8 +419,27 @@ QPushButton:pressed { background: white; }</string>
        <string>Задача: постройте сечение по заданным точкам</string>
       </property>
      </widget>
+     <widget class="QLabel" name="exe1_4">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>80</y>
+        <width>901</width>
+        <height>591</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:white;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
     </widget>
    </widget>
+   <zorder>tabWidget</zorder>
+   <zorder>closebutton</zorder>
+   <zorder>label</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
