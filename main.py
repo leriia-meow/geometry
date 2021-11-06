@@ -178,7 +178,7 @@ class Authorize(QMainWindow, Ui_authwindow):
             flag = False
         except Exception:
             flag = True
-        if self.name.isalnum() and flag:
+        if self.name.isalnum() and flag and not self.name.isdigit():
             with open(self.nameofphoto, 'rb') as file:
                 self.nameofphoto = file.read()
             self.cur.execute("""INSERT INTO users(id, login, password, photo) VALUES(?, ?, ?, ?)""", (self.i, self.name,
@@ -194,6 +194,8 @@ class Authorize(QMainWindow, Ui_authwindow):
             self.window.show()
         elif not flag:
             self.error.setText("Такой логин уже есть. Придумайте новый")
+        elif self.name.isdigit():
+            self.error.setText("Логин должен содержать символы, отличные от цифр")
 
     def input_photo(self):
         try:
@@ -489,12 +491,78 @@ class Painting(QFrame):
     def paintEvent(self, e):
         painter = QPainter(self)
         painter.setRenderHint(QPainter.Antialiasing)
+        painter.setPen(Qt.white)
         if self.num == 11:
-            pass
+            pen = QPen(Qt.white, 3, Qt.SolidLine)
+            painter.setPen(pen)
+            painter.drawLine(40, 370, 280, 10)
+            painter.drawLine(280, 10, 640, 290)
+            painter.drawLine(640, 290, 400, 610)
+            painter.drawLine(400, 610, 40, 370)
+            painter.drawLine(280, 10, 400, 610)
+            pen.setStyle(Qt.DotLine)
+            painter.setPen(pen)
+            painter.drawLine(40, 370, 640, 290)
+            pen = QPen(Qt.blue, 7, Qt.SolidLine)
+            painter.setPen(pen)
+            painter.drawPoint(40, 370)
+            painter.drawPoint(520, 450)
+            painter.drawPoint(160, 190)
         elif self.num == 12 or self.num == 22 or self.num == 32:
+            pen = QPen(Qt.white, 3, Qt.SolidLine)
+            painter.setPen(pen)
+            painter.drawLine(50, 610, 350, 610)
+            painter.drawLine(50, 610, 50, 300)
+            painter.drawLine(50, 300, 350, 300)
+            painter.drawLine(350, 300, 350, 610)
+            painter.drawLine(350, 610, 530, 490)
+            painter.drawLine(530, 490, 530, 190)
+            painter.drawLine(530, 190, 230, 190)
+            painter.drawLine(230, 190, 50, 300)
+            painter.drawLine(350, 300, 530, 190)
+            pen.setStyle(Qt.DotLine)
+            painter.setPen(pen)
+            painter.drawLine(230, 190, 230, 490)
+            painter.drawLine(230, 490, 50, 610)
+            painter.drawLine(230, 490, 530, 490)
+            pen = QPen(Qt.blue, 7, Qt.SolidLine)
+            painter.setPen(pen)
+            if self.num == 12:
+                painter.drawPoint(50, 610)
+                painter.drawPoint(140, 245)
+                painter.drawPoint(380, 190)
+            elif self.num == 22:
+                pen = QPen(Qt.white, 3, Qt.SolidLine)
+                painter.setPen(pen)
+                painter.drawLine(200, 520, 200, 610)
+                pen = QPen(Qt.blue, 7, Qt.SolidLine)
+                painter.setPen(pen)
+                painter.drawPoint(50, 455)
+                painter.drawPoint(200, 520)
+                painter.drawPoint(230, 190)
+            elif self.num == 32:
+                pass
+        elif self.num == 13:
             pass
-        elif self.num == 13 or self.num == 23 or self.num == 33:
-            pass
+        elif self.num == 23:
+            pen = QPen(Qt.white, 3, Qt.SolidLine)
+            painter.setPen(pen)
+            painter.drawLine(50, 60, 580, 60)
+            painter.drawLine(50, 340, 50, 60)
+            painter.drawLine(580, 340, 580, 60)
+            painter.drawLine(50, 60, 410, 300)
+            painter.drawLine(410, 300, 580, 60)
+            painter.drawLine(410, 300, 410, 580)
+            painter.drawLine(50, 340, 410, 580)
+            painter.drawLine(580, 340, 410, 580)
+            pen.setStyle(Qt.DotLine)
+            painter.setPen(pen)
+            painter.drawLine(580, 340, 50, 340)
+            pen = QPen(Qt.blue, 7, Qt.SolidLine)
+            painter.setPen(pen)
+            painter.drawPoint(495, 180)
+            painter.drawPoint(170, 420)
+            painter.drawPoint(170, 140)
         elif self.num == 21 or self.num == 31:
             pass
         elif self.num == 41:
