@@ -129,9 +129,9 @@ QPushButton:pressed { background: white; }</string>
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>70</y>
+        <y>20</y>
         <width>871</width>
-        <height>601</height>
+        <height>641</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -154,9 +154,10 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:28pt; font-weight:600; font-style:italic; color:#ffffff;&quot;&gt;Как играть?&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:28pt; font-weight:600; font-style:italic; color:#ffffff;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:22pt; color:#ffffff;&quot;&gt;Возможные построения этого урока:&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:22pt; color:#ffffff;&quot;&gt;     1) Точка. Чтобы поставить точку необходимо нажать левой кнопкой мыши на выбранное место. Важно! Точки можно ставить только на ПЕРЕСЕЧЕНИИ прямых. (+ скрещивающиеся прямые также могут выглядеть пересекающимися на картинке)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:22pt; color:#ffffff;&quot;&gt;     2) Отрезок.Чтобы построить отрезок, необходимо выбрать 2 точки левой кнопкой мыши и нажать &amp;quot;Enter&amp;quot;.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:22pt; color:#ffffff;&quot;&gt;     3) Прямая. Чтобы продлить отрезок до прямой необходимо выбрать прямую левой кнопкой мыши и нажать пробел.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:22pt; color:#ffffff;&quot;&gt;     1) Точка. Чтобы поставить точку необходимо выбрать 2 прямые и нажать &amp;quot;Shift&amp;quot;. Важно! Скрещивающиеся прямые также могут выглядеть пересекающимися на картинке, и программа даст возможо поставить точку на месте их &amp;quot;пересечения&amp;quot;)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:22pt; color:#ffffff;&quot;&gt;     2) Отрезок.Чтобы построить отрезок, необходимо выбрать 2 точки правой кнопкой мыши и нажать &amp;quot;Enter&amp;quot;.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:22pt; color:#ffffff;&quot;&gt;     3) Прямая. Чтобы продлить отрезок до прямой необходимо выбрать прямую правой кнопкой мыши и нажать пробел.&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:22pt; color:#ffffff;&quot;&gt;(Доп. Чтобы выбрать прямую необходимо нажать правой кнопкой мыши на любую точку прямой прямой и нажать &amp;quot;w&amp;quot;, старайтесь не выбирать точки пересечения множества прямых)&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#ffffff;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:18pt; color:#ffffff;&quot;&gt;Удачи!&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#ffffff;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -165,7 +166,7 @@ p, li { white-space: pre-wrap; }
     </widget>
     <widget class="QWidget" name="ex1">
      <attribute name="title">
-      <string>Задача 1</string>
+      <string>Задача</string>
      </attribute>
      <widget class="QPushButton" name="tomain1">
       <property name="geometry">
@@ -253,188 +254,10 @@ QPushButton:pressed { background: white; }</string>
        <string/>
       </property>
      </widget>
-    </widget>
-    <widget class="QWidget" name="ex2">
-     <attribute name="title">
-      <string>Задача 2</string>
-     </attribute>
-     <widget class="QPushButton" name="tomain2">
-      <property name="geometry">
-       <rect>
-        <x>800</x>
-        <y>670</y>
-        <width>101</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-  display: inline-block;
-  color: white;
-  text-decoration: none;
-  user-select: none;
-  outline: none;
-  border: 2px solid white;
-  border-radius: 1px;
-  transition: 0.2s;
-} 
-QPushButton:hover { background: rgba(255,255,255,.2); }
-QPushButton:pressed { background: white; }</string>
-      </property>
-      <property name="text">
-       <string>Главное меню</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="go2">
-      <property name="geometry">
-       <rect>
-        <x>680</x>
-        <y>670</y>
-        <width>101</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-  display: inline-block;
-  color: white;
-  text-decoration: none;
-  user-select: none;
-  outline: none;
-  border: 2px solid white;
-  border-radius: 1px;
-  transition: 0.2s;
-} 
-QPushButton:hover { background: rgba(255,255,255,.2); }
-QPushButton:pressed { background: white; }</string>
-      </property>
-      <property name="text">
-       <string>Сдать</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="exe2">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>10</y>
-        <width>901</width>
-        <height>61</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color:white;</string>
-      </property>
-      <property name="text">
-       <string>Задача: постройте сечение по заданным точкам</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="exe1_3">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>70</y>
-        <width>901</width>
-        <height>591</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color:white;</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="ex3">
-     <attribute name="title">
-      <string>Задача 3</string>
-     </attribute>
-     <widget class="QPushButton" name="tomain3">
-      <property name="geometry">
-       <rect>
-        <x>800</x>
-        <y>670</y>
-        <width>101</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-  display: inline-block;
-  color: white;
-  text-decoration: none;
-  user-select: none;
-  outline: none;
-  border: 2px solid white;
-  border-radius: 1px;
-  transition: 0.2s;
-} 
-QPushButton:hover { background: rgba(255,255,255,.2); }
-QPushButton:pressed { background: white; }</string>
-      </property>
-      <property name="text">
-       <string>Главное меню</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="go3">
-      <property name="geometry">
-       <rect>
-        <x>680</x>
-        <y>670</y>
-        <width>101</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-  display: inline-block;
-  color: white;
-  text-decoration: none;
-  user-select: none;
-  outline: none;
-  border: 2px solid white;
-  border-radius: 1px;
-  transition: 0.2s;
-} 
-QPushButton:hover { background: rgba(255,255,255,.2); }
-QPushButton:pressed { background: white; }</string>
-      </property>
-      <property name="text">
-       <string>Сдать</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="exe3">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>10</y>
-        <width>901</width>
-        <height>61</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color:white;</string>
-      </property>
-      <property name="text">
-       <string>Задача: постройте сечение по заданным точкам</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="exe1_4">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>80</y>
-        <width>901</width>
-        <height>591</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color:white;</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
+     <zorder>exe1_2</zorder>
+     <zorder>tomain1</zorder>
+     <zorder>go1</zorder>
+     <zorder>exe1</zorder>
     </widget>
    </widget>
    <zorder>tabWidget</zorder>

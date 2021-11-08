@@ -72,7 +72,7 @@ class Ui_pract1(object):
 "QPushButton:pressed { background: white; }")
         self.tomain.setObjectName("tomain")
         self.textBrowser_3 = QtWidgets.QTextBrowser(self.rules)
-        self.textBrowser_3.setGeometry(QtCore.QRect(20, 70, 871, 601))
+        self.textBrowser_3.setGeometry(QtCore.QRect(20, 20, 871, 641))
         self.textBrowser_3.setStyleSheet("QTextBrowser{\n"
 "color: white;\n"
 "border: 1px solid black;\n"
@@ -126,91 +126,11 @@ class Ui_pract1(object):
         self.exe1_2.setStyleSheet("color:white;")
         self.exe1_2.setText("")
         self.exe1_2.setObjectName("exe1_2")
+        self.exe1_2.raise_()
+        self.tomain1.raise_()
+        self.go1.raise_()
+        self.exe1.raise_()
         self.tabWidget.addTab(self.ex1, "")
-        self.ex2 = QtWidgets.QWidget()
-        self.ex2.setObjectName("ex2")
-        self.tomain2 = QtWidgets.QPushButton(self.ex2)
-        self.tomain2.setGeometry(QtCore.QRect(800, 670, 101, 41))
-        self.tomain2.setStyleSheet("QPushButton {\n"
-"  display: inline-block;\n"
-"  color: white;\n"
-"  text-decoration: none;\n"
-"  user-select: none;\n"
-"  outline: none;\n"
-"  border: 2px solid white;\n"
-"  border-radius: 1px;\n"
-"  transition: 0.2s;\n"
-"} \n"
-"QPushButton:hover { background: rgba(255,255,255,.2); }\n"
-"QPushButton:pressed { background: white; }")
-        self.tomain2.setObjectName("tomain2")
-        self.go2 = QtWidgets.QPushButton(self.ex2)
-        self.go2.setGeometry(QtCore.QRect(680, 670, 101, 41))
-        self.go2.setStyleSheet("QPushButton {\n"
-"  display: inline-block;\n"
-"  color: white;\n"
-"  text-decoration: none;\n"
-"  user-select: none;\n"
-"  outline: none;\n"
-"  border: 2px solid white;\n"
-"  border-radius: 1px;\n"
-"  transition: 0.2s;\n"
-"} \n"
-"QPushButton:hover { background: rgba(255,255,255,.2); }\n"
-"QPushButton:pressed { background: white; }")
-        self.go2.setObjectName("go2")
-        self.exe2 = QtWidgets.QLabel(self.ex2)
-        self.exe2.setGeometry(QtCore.QRect(10, 10, 901, 61))
-        self.exe2.setStyleSheet("color:white;")
-        self.exe2.setObjectName("exe2")
-        self.exe1_3 = QtWidgets.QLabel(self.ex2)
-        self.exe1_3.setGeometry(QtCore.QRect(0, 70, 901, 591))
-        self.exe1_3.setStyleSheet("color:white;")
-        self.exe1_3.setText("")
-        self.exe1_3.setObjectName("exe1_3")
-        self.tabWidget.addTab(self.ex2, "")
-        self.ex3 = QtWidgets.QWidget()
-        self.ex3.setObjectName("ex3")
-        self.tomain3 = QtWidgets.QPushButton(self.ex3)
-        self.tomain3.setGeometry(QtCore.QRect(800, 670, 101, 41))
-        self.tomain3.setStyleSheet("QPushButton {\n"
-"  display: inline-block;\n"
-"  color: white;\n"
-"  text-decoration: none;\n"
-"  user-select: none;\n"
-"  outline: none;\n"
-"  border: 2px solid white;\n"
-"  border-radius: 1px;\n"
-"  transition: 0.2s;\n"
-"} \n"
-"QPushButton:hover { background: rgba(255,255,255,.2); }\n"
-"QPushButton:pressed { background: white; }")
-        self.tomain3.setObjectName("tomain3")
-        self.go3 = QtWidgets.QPushButton(self.ex3)
-        self.go3.setGeometry(QtCore.QRect(680, 670, 101, 41))
-        self.go3.setStyleSheet("QPushButton {\n"
-"  display: inline-block;\n"
-"  color: white;\n"
-"  text-decoration: none;\n"
-"  user-select: none;\n"
-"  outline: none;\n"
-"  border: 2px solid white;\n"
-"  border-radius: 1px;\n"
-"  transition: 0.2s;\n"
-"} \n"
-"QPushButton:hover { background: rgba(255,255,255,.2); }\n"
-"QPushButton:pressed { background: white; }")
-        self.go3.setObjectName("go3")
-        self.exe3 = QtWidgets.QLabel(self.ex3)
-        self.exe3.setGeometry(QtCore.QRect(10, 10, 901, 61))
-        self.exe3.setStyleSheet("color:white;")
-        self.exe3.setObjectName("exe3")
-        self.exe1_4 = QtWidgets.QLabel(self.ex3)
-        self.exe1_4.setGeometry(QtCore.QRect(10, 80, 901, 591))
-        self.exe1_4.setStyleSheet("color:white;")
-        self.exe1_4.setText("")
-        self.exe1_4.setObjectName("exe1_4")
-        self.tabWidget.addTab(self.ex3, "")
         self.tabWidget.raise_()
         self.closebutton.raise_()
         self.label.raise_()
@@ -239,9 +159,10 @@ class Ui_pract1(object):
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:28pt; font-weight:600; font-style:italic; color:#ffffff;\">Как играть?</span></p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:28pt; font-weight:600; font-style:italic; color:#ffffff;\"><br /></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:22pt; color:#ffffff;\">Возможные построения этого урока:</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:22pt; color:#ffffff;\">     1) Точка. Чтобы поставить точку необходимо нажать левой кнопкой мыши на выбранное место. Важно! Точки можно ставить только на ПЕРЕСЕЧЕНИИ прямых. (+ скрещивающиеся прямые также могут выглядеть пересекающимися на картинке)</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:22pt; color:#ffffff;\">     2) Отрезок.Чтобы построить отрезок, необходимо выбрать 2 точки левой кнопкой мыши и нажать &quot;Enter&quot;.</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:22pt; color:#ffffff;\">     3) Прямая. Чтобы продлить отрезок до прямой необходимо выбрать прямую левой кнопкой мыши и нажать пробел.</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:22pt; color:#ffffff;\">     1) Точка. Чтобы поставить точку необходимо выбрать 2 прямые и нажать &quot;Shift&quot;. Важно! Скрещивающиеся прямые также могут выглядеть пересекающимися на картинке, и программа даст возможо поставить точку на месте их &quot;пересечения&quot;)</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:22pt; color:#ffffff;\">     2) Отрезок.Чтобы построить отрезок, необходимо выбрать 2 точки правой кнопкой мыши и нажать &quot;Enter&quot;.</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:22pt; color:#ffffff;\">     3) Прямая. Чтобы продлить отрезок до прямой необходимо выбрать прямую правой кнопкой мыши и нажать пробел.</span></p>\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:22pt; color:#ffffff;\">(Доп. Чтобы выбрать прямую необходимо нажать правой кнопкой мыши на любую точку прямой прямой и нажать &quot;w&quot;, старайтесь не выбирать точки пересечения множества прямых)</span></p>\n"
 "<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#ffffff;\"><br /></p>\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:18pt; color:#ffffff;\">Удачи!</span></p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#ffffff;\"><br /></p></body></html>"))
@@ -249,12 +170,4 @@ class Ui_pract1(object):
         self.tomain1.setText(_translate("pract1", "Главное меню"))
         self.go1.setText(_translate("pract1", "Сдать"))
         self.exe1.setText(_translate("pract1", "Задача: постройте сечение по заданным точкам."))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.ex1), _translate("pract1", "Задача 1"))
-        self.tomain2.setText(_translate("pract1", "Главное меню"))
-        self.go2.setText(_translate("pract1", "Сдать"))
-        self.exe2.setText(_translate("pract1", "Задача: постройте сечение по заданным точкам"))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.ex2), _translate("pract1", "Задача 2"))
-        self.tomain3.setText(_translate("pract1", "Главное меню"))
-        self.go3.setText(_translate("pract1", "Сдать"))
-        self.exe3.setText(_translate("pract1", "Задача: постройте сечение по заданным точкам"))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.ex3), _translate("pract1", "Задача 3"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.ex1), _translate("pract1", "Задача"))
