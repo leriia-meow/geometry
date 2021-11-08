@@ -20,6 +20,7 @@ from main_window import Ui_mainWindow
 from formstop import Ui_stopwindow
 import sqlite3
 import yadisk
+import math
 ID = 0
 
 
@@ -47,15 +48,15 @@ class MainWindow(QMainWindow, Ui_mainWindow):
         self.log = self.cur.execute("""SELECT login FROM users WHERE id = ?""", (self.id,)).fetchall()[0][0]
         self.namelabel.setText(self.log)
         self.prog = int(sum(list(self.cur.execute("""SELECT * FROM progress 
-        WHERE id = ?""", (self.id,)).fetchall()[0][1:])) / 16 * 100)
-        self.prog1 = int(sum(list(self.cur.execute("""SELECT les1t, les1ex1, les1ex2, les1ex3 FROM progress
-         WHERE id = ?""", (self.id,)).fetchall()[0])) / 4 * 100)
-        self.prog2 = int(sum(list(self.cur.execute("""SELECT les2t, les2ex1, les2ex2, les2ex3 FROM progress
-         WHERE id = ?""", (self.id,)).fetchall()[0])) / 4 * 100)
-        self.prog3 = int(sum(list(self.cur.execute("""SELECT les3t, les3ex1, les3ex2, les3ex3 FROM progress 
-        WHERE id = ?""", (self.id,)).fetchall()[0])) / 4 * 100)
-        self.progk = int(sum(list(self.cur.execute("""SELECT lesk, lesk1, lesk2, lesk3 FROM progress WHERE id = ?""",
-                                                   (self.id,)).fetchall()[0][1:])) / 4 * 100)
+        WHERE id = ?""", (self.id,)).fetchall()[0][1:])) / 8 * 100)
+        self.prog1 = int(sum(list(self.cur.execute("""SELECT les1t, les1ex1 FROM progress
+         WHERE id = ?""", (self.id,)).fetchall()[0])) / 2 * 100)
+        self.prog2 = int(sum(list(self.cur.execute("""SELECT les2t, les2ex1 FROM progress
+         WHERE id = ?""", (self.id,)).fetchall()[0])) / 2 * 100)
+        self.prog3 = int(sum(list(self.cur.execute("""SELECT les3t, les3ex1 FROM progress 
+        WHERE id = ?""", (self.id,)).fetchall()[0])) / 2 * 100)
+        self.progk = int(sum(list(self.cur.execute("""SELECT lesk, lesk1 FROM progress WHERE id = ?""",
+                                                   (self.id,)).fetchall()[0][1:])) / 2 * 100)
         self.mainprogress.setMaximum(100)
         self.progress1.setMaximum(100)
         self.progress2.setMaximum(100)
@@ -75,6 +76,7 @@ class MainWindow(QMainWindow, Ui_mainWindow):
         if self.prog < 75:
             self.butpk.clicked.connect(self.dont)
         else:
+
             self.butpk.clicked.connect(self.practk)
 
     def dont(self):
@@ -130,6 +132,7 @@ class MainWindow(QMainWindow, Ui_mainWindow):
         self.close()
 
     def practk(self):
+        self.con.execute("""UPDATE progress SET lesk = 1 WHERE id = ?""", (self.id,))
         self.con.commit()
         self.con.close()
         self.win = Kontrless(self.id)
@@ -375,25 +378,72 @@ class Pract1(QMainWindow, Ui_pract1):
         self.id = id
         self.tomain.clicked.connect(self.back)
         self.tomain1.clicked.connect(self.back)
-        self.tomain2.clicked.connect(self.back)
-        self.tomain3.clicked.connect(self.back)
         self.con = sqlite3.connect("user.db")
         self.cur = self.con.cursor()
-        self.p11 = Painting(11, self.ex1)
-        self.p11.setGeometry(QRect(10, 50, 921, 620))
-        self.p11.setFrameShape(QFrame.StyledPanel)
-        self.p11.setFrameShadow(QFrame.Raised)
-        self.p11.setObjectName("frame_11")
-        self.p12 = Painting(12, self.ex2)
-        self.p12.setGeometry(QRect(10, 50, 921, 620))
-        self.p12.setFrameShape(QFrame.StyledPanel)
-        self.p12.setFrameShadow(QFrame.Raised)
-        self.p12.setObjectName("frame_12")
-        self.p13 = Painting(13, self.ex3)
-        self.p13.setGeometry(QRect(10, 50, 921, 620))
-        self.p13.setFrameShape(QFrame.StyledPanel)
-        self.p13.setFrameShadow(QFrame.Raised)
-        self.p13.setObjectName("frame_13")
+        self.p1 = Painting(1, self.ex1)
+        self.p1.setGeometry(QRect(10, 50, 921, 620))
+        self.p1.setFrameShape(QFrame.StyledPanel)
+        self.p1.setFrameShadow(QFrame.Raised)
+        self.p1.setObjectName("frame_11")
+        super().setMouseTracking(True)
+        self.go1.clicked.connect(self.check)
+        self.fig = Figures([(50, 610, 350, 610), (50, 610, 50, 300), (50, 300, 350, 300), (350, 300, 350, 610),
+                               (350, 610, 530, 490), (530, 490, 530, 190), (530, 190, 230, 190), (230, 190, 50, 300),
+                               (350, 300, 530, 190), (230, 190, 230, 490), (230, 490, 50, 610), (230, 490, 530, 490)],
+                              [(50, 610), (140, 245), (380, 190)])
+        self.choisepoints = []
+        self.choiselines = []
+
+    def check(self):
+        points = self.fig.outputp()
+        if (50, 610,) in points and (140, 245,) in points and (380, 190,) in points and (530, 490,) in points:
+            self.con.execute("""UPDATE progress SET les1ex1 = 1 WHERE id = ?""", (self.id,))
+            self.con.commit()
+        else:
+            pass
+
+    def keyPressEvent(self, event):
+        key = event.key()
+        if event.key() == Qt.Key.Key_W:
+            self.update()
+        elif event.key() == Qt.Key_Space:
+            self.update()
+        elif event.key() == Qt.Key_Shift:
+            self.update()
+        elif event.key() == Qt.Key_Enter:
+            self.p1.setnum([self.choisepoints[-1][0], self.choisepoints[-1][1], self.choisepoints[-2][0],
+                               self.choisepoints[-2][1]])
+            self.update()
+
+    def mousePressEvent(self, event):
+        points = self.fig.outputp()
+        lines = self.fig.outputl()
+        x = event.x()
+        y = event.y()
+        otvx = 0
+        otvy = 0
+        if event.button() == Qt.LeftButton:
+            r = 1000000000
+            otvx2 = 0
+            otvy2 = 0
+            for a, b, c, d in lines:
+                if x + y > 0 and abs((b - d) * x + (d - a) * y + a * d - b * c) / math.sqrt(x ** 2 + y ** 2) < r:
+                    r = abs((b - d) * x + (d - a) * y + a * d - b * c) / math.sqrt(x ** 2 + y ** 2)
+                    otvx2 = c
+                    otvy2 = d
+                    otvx = a
+                    otvy = b
+            self.choiselines.append((otvx, otvy, otvx2, otvy2,))
+            self.update()
+        if event.button() == Qt.RightButton:
+            for i, j in points:
+                if abs(x - i) + abs(y - j) < abs(otvx - x) + abs(otvy - y):
+                    otvx = i
+                    otvy = j
+            self.choisepoints.append((otvx, otvy,))
+            if len(self.choisepoints) == 3:
+                del self.choisepoints[0]
+            self.update()
 
     def back(self):
         self.win = MainWindow(self.id)
@@ -415,25 +465,24 @@ class Pract2(QMainWindow, Ui_pract2):
         self.id = id
         self.tomain.clicked.connect(self.back)
         self.tomain1.clicked.connect(self.back)
-        self.tomain2.clicked.connect(self.back)
-        self.tomain3.clicked.connect(self.back)
         self.con = sqlite3.connect("user.db")
         self.cur = self.con.cursor()
-        self.p21 = Painting(21, self.ex1)
+        self.p21 = Painting(2, self.ex1)
         self.p21.setGeometry(QRect(10, 50, 921, 620))
         self.p21.setFrameShape(QFrame.StyledPanel)
         self.p21.setFrameShadow(QFrame.Raised)
         self.p21.setObjectName("frame_21")
-        self.p22 = Painting(22, self.ex2)
-        self.p22.setGeometry(QRect(10, 50, 921, 620))
-        self.p22.setFrameShape(QFrame.StyledPanel)
-        self.p22.setFrameShadow(QFrame.Raised)
-        self.p22.setObjectName("frame_22")
-        self.p23 = Painting(23, self.ex3)
-        self.p23.setGeometry(QRect(10, 50, 921, 620))
-        self.p23.setFrameShape(QFrame.StyledPanel)
-        self.p23.setFrameShadow(QFrame.Raised)
-        self.p23.setObjectName("frame_23")
+        self.go1.clicked.connect(self.check)
+        self.points = Figures([(50, 610, 350, 610), (50, 610, 50, 300), (50, 300, 350, 300), (350, 300, 350, 610),
+                              (350, 610, 530, 490), (530, 490, 530, 190), (530, 190, 230, 190), (230, 190, 50, 300),
+                              (350, 300, 530, 190), (230, 190, 230, 490), (230, 490, 50, 610), (230, 490, 530, 490)],
+                              [(50, 610), (140, 245), (380, 190)])
+
+    def check(self):
+        points = self.points.outputp()
+        if (495, 180,) in points and (170, 420,) in points and (170, 140,) in points and (495, 460,) in points:
+            self.con.execute("""UPDATE progress SET les2ex1 = 1 WHERE id = ?""", (self.id,))
+            self.con.commit()
 
     def back(self):
         self.win = MainWindow(self.id)
@@ -454,26 +503,13 @@ class Pract3(QMainWindow, Ui_pract3):
         self.id = id
         self.tomain.clicked.connect(self.back)
         self.tomain1.clicked.connect(self.back)
-        self.tomain2.clicked.connect(self.back)
-        self.tomain3.clicked.connect(self.back)
         self.setFixedSize(self.size())
         self.con = sqlite3.connect("user.db")
         self.cur = self.con.cursor()
-        self.p31 = Painting(31, self.ex1)
+        self.p31 = Painting(3, self.ex1)
         self.p31.setGeometry(QRect(10, 50, 921, 620))
         self.p31.setFrameShape(QFrame.StyledPanel)
         self.p31.setFrameShadow(QFrame.Raised)
-        self.p31.setObjectName("frame_31")
-        self.p32 = Painting(32, self.ex2)
-        self.p32.setGeometry(QRect(10, 50, 921, 620))
-        self.p32.setFrameShape(QFrame.StyledPanel)
-        self.p32.setFrameShadow(QFrame.Raised)
-        self.p32.setObjectName("frame_32")
-        self.p33 = Painting(33, self.ex3)
-        self.p33.setGeometry(QRect(10, 50, 921, 620))
-        self.p33.setFrameShape(QFrame.StyledPanel)
-        self.p33.setFrameShadow(QFrame.Raised)
-        self.p33.setObjectName("frame_33")
 
     def back(self):
         self.win = MainWindow(self.id)
@@ -488,27 +524,33 @@ class Painting(QFrame):
         super().__init__(parent)
         self.num = number
 
+    def paintlines(self, painter, x1, y1, x2, y2):
+        pen = QPen(Qt.yellow, 3, Qt.SolidLine)
+        painter.setPen(pen)
+        painter.drawLine(x1, y1, x2, y2)
+
+    def setnum(self, u):
+        if len(u) == 2:
+            self.num = 7
+            self.list = u
+        elif len(u) == 4:
+            self.num = 6
+            self.list = u
+
+    def paintpoint(self, painter, x, y):
+        pen = QPen(Qt.yellow, 3, Qt.SolidLine)
+        painter.setPen(pen)
+        painter.drawPoint(x, y)
+
     def paintEvent(self, e):
         painter = QPainter(self)
         painter.setRenderHint(QPainter.Antialiasing)
-        painter.setPen(Qt.white)
-        if self.num == 11:
-            pen = QPen(Qt.white, 3, Qt.SolidLine)
-            painter.setPen(pen)
-            painter.drawLine(40, 370, 280, 10)
-            painter.drawLine(280, 10, 640, 290)
-            painter.drawLine(640, 290, 400, 610)
-            painter.drawLine(400, 610, 40, 370)
-            painter.drawLine(280, 10, 400, 610)
-            pen.setStyle(Qt.DotLine)
-            painter.setPen(pen)
-            painter.drawLine(40, 370, 640, 290)
-            pen = QPen(Qt.blue, 7, Qt.SolidLine)
-            painter.setPen(pen)
-            painter.drawPoint(40, 370)
-            painter.drawPoint(520, 450)
-            painter.drawPoint(160, 190)
-        elif self.num == 12 or self.num == 22 or self.num == 32:
+        painter.begin(self)
+        if self.num == 6:
+            self.paintlines(painter, *self.list)
+        if self.num == 7:
+            self.paintpoints(painter, *self.list)
+        if self.num == 6 or self.num == 1:
             pen = QPen(Qt.white, 3, Qt.SolidLine)
             painter.setPen(pen)
             painter.drawLine(50, 610, 350, 610)
@@ -527,24 +569,10 @@ class Painting(QFrame):
             painter.drawLine(230, 490, 530, 490)
             pen = QPen(Qt.blue, 7, Qt.SolidLine)
             painter.setPen(pen)
-            if self.num == 12:
-                painter.drawPoint(50, 610)
-                painter.drawPoint(140, 245)
-                painter.drawPoint(380, 190)
-            elif self.num == 22:
-                pen = QPen(Qt.white, 3, Qt.SolidLine)
-                painter.setPen(pen)
-                painter.drawLine(200, 520, 200, 610)
-                pen = QPen(Qt.blue, 7, Qt.SolidLine)
-                painter.setPen(pen)
-                painter.drawPoint(50, 455)
-                painter.drawPoint(200, 520)
-                painter.drawPoint(230, 190)
-            elif self.num == 32:
-                pass
-        elif self.num == 13:
-            pass
-        elif self.num == 23:
+            painter.drawPoint(50, 610)
+            painter.drawPoint(140, 245)
+            painter.drawPoint(380, 190)
+        elif self.num == 2:
             pen = QPen(Qt.white, 3, Qt.SolidLine)
             painter.setPen(pen)
             painter.drawLine(50, 60, 580, 60)
@@ -563,15 +591,10 @@ class Painting(QFrame):
             painter.drawPoint(495, 180)
             painter.drawPoint(170, 420)
             painter.drawPoint(170, 140)
-        elif self.num == 21 or self.num == 31:
+        elif self.num == 3:
             pass
-        elif self.num == 41:
+        elif self.num == 4:
             pass
-        elif self.num == 42:
-            pass
-        elif self.num == 43:
-            pass
-        painter.end()
 
 
 class Stop(QMainWindow, Ui_stopwindow):
@@ -600,6 +623,27 @@ class Error(QMainWindow, Ui_errorwindow):
         self.setAttribute(Qt.WA_TranslucentBackground)  # форма прозрачная
         self.closebutton.clicked.connect(self.close)
         self.layout().addWidget(self.closebutton)  # кнопочка закрытия окна и завершения программы
+
+
+class Figures:
+    def __init__(self, l, p):
+        self.points = p
+        self.lines = l
+
+    def addp(self, x, y):
+        self.points.append((x, y,))
+
+    def addl(self, x1, y1, x2, y2):
+        self.points.append((x1, y1, x2, y2))
+
+    def longer(self, x10, y10, x20, y20, x11, y11, x21, y21):
+        pass
+
+    def outputp(self):
+        return self.points
+
+    def outputl(self):
+        return self.lines
 
 
 y = yadisk.YaDisk(token="AQAAAABE8FllAAd6ntFbwMKB-02KqLvhcIbTWso")
