@@ -409,10 +409,29 @@ class Pract1(QMainWindow, Ui_pract1):
         elif event.key() == Qt.Key_Space:
             self.update()
         elif event.key() == Qt.Key_Shift:
-            self.update()
-        elif event.key() == Qt.Key_Enter:
-            self.p1.setnum([self.choisepoints[-1][0], self.choisepoints[-1][1], self.choisepoints[-2][0],
-                               self.choisepoints[-2][1]])
+            n = 100000000000000000000
+            if len(self.choisepoints[0]) == 4 and len(self.choisepoints[1]) == 4:
+                x1 = self.choisepoints[0][0]
+                x2 = self.choisepoints[0][2]
+                x3 = self.choisepoints[1][0]
+                x4 = self.choisepoints[0][2]
+                y1 = self.choisepoints[0][1]
+                y2 = self.choisepoints[0][3]
+                y3 = self.choisepoints[1][1]
+                y4 = self.choisepoints[1][3]
+                if y2 - y1 != 0:
+                    q = (x2 - x1) / (y1 - y2)
+                    sn = (x3 - x4) + (y3 - y4) * q
+                    if sn:
+                        fn = (x3 - x1) + (y3 - y1) * q
+                        n = fn / sn
+                else:
+                    if (y3 - y4) > 0:
+                        n = (y3 - y1) / (y3 - y4)
+                if n != 100000000000000000000:
+                    x = x3 + (x4 - x3) * n
+                    y = y3 + (y4 - y3) * n
+                    self.p1.setnum([x, y])
             self.update()
 
     def mouseReleaseEvent(self, event):
