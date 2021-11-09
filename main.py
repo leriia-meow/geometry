@@ -415,6 +415,23 @@ class Pract1(QMainWindow, Ui_pract1):
                                self.choisepoints[-2][1]])
             self.update()
 
+    def mouseReleaseEvent(self, event):
+        points = self.fig.outputp()
+        lines = self.fig.outputl()
+        x = event.x()
+        y = event.y()
+        otvx = 0
+        otvy = 0
+        if event.button() == Qt.RightButton:
+            for i, j in points:
+                if abs(x - i) + abs(y - j) < abs(otvx - x) + abs(otvy - y):
+                    otvx = i
+                    otvy = j
+            self.choisepoints.append((otvx, otvy,))
+            self.p1.setnum([self.choisepoints[-1][0], self.choisepoints[-1][1], self.choisepoints[-2][0],
+                            self.choisepoints[-2][1]])
+            self.update()
+
     def mousePressEvent(self, event):
         points = self.fig.outputp()
         lines = self.fig.outputl()
@@ -441,7 +458,7 @@ class Pract1(QMainWindow, Ui_pract1):
                     otvx = i
                     otvy = j
             self.choisepoints.append((otvx, otvy,))
-            if len(self.choisepoints) == 3:
+            if len(self.choisepoints) == 2:
                 del self.choisepoints[0]
             self.update()
 
@@ -522,12 +539,12 @@ class Pract3(QMainWindow, Ui_pract3):
 class Painting(QFrame):
     def __init__(self, number, parent=None):
         super().__init__(parent)
+        self.newpoints = []
+        self.newlines = []
         self.num = number
 
-    def paintlines(self, painter, x1, y1, x2, y2):
-        pen = QPen(Qt.yellow, 3, Qt.SolidLine)
-        painter.setPen(pen)
-        painter.drawLine(x1, y1, x2, y2)
+    def paintlines(self, x1, y1, x2, y2):
+        self.newlines.append((x1, y1, x2, y2,))
 
     def setnum(self, u):
         if len(u) == 2:
@@ -537,19 +554,21 @@ class Painting(QFrame):
             self.num = 6
             self.list = u
 
-    def paintpoint(self, painter, x, y):
-        pen = QPen(Qt.yellow, 3, Qt.SolidLine)
-        painter.setPen(pen)
-        painter.drawPoint(x, y)
+    def paintpoint(self, x, y):
+        self.newpoints.append((x, y,))
 
     def paintEvent(self, e):
         painter = QPainter(self)
         painter.setRenderHint(QPainter.Antialiasing)
         painter.begin(self)
         if self.num == 6:
-            self.paintlines(painter, *self.list)
+            self.paintlines(*self.list)
         if self.num == 7:
-            self.paintpoints(painter, *self.list)
+            self.paintpoints(*self.list)
+        for x1, y1, x2, y2 in self.newlines:
+            pen = QPen(Qt.yellow, 3, Qt.SolidLine)
+            painter.setPen(pen)
+            painter.drawLine(x1, y1, x2, y2)
         if self.num == 6 or self.num == 1:
             pen = QPen(Qt.white, 3, Qt.SolidLine)
             painter.setPen(pen)
@@ -595,6 +614,10 @@ class Painting(QFrame):
             pass
         elif self.num == 4:
             pass
+        for x, y in self.newpoints:
+            pen = QPen(Qt.green, 3, Qt.SolidLine)
+            painter.setPen(pen)
+            painter.drawPoint(x, y)
 
 
 class Stop(QMainWindow, Ui_stopwindow):
