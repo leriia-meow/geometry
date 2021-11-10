@@ -21,6 +21,7 @@ from formstop import Ui_stopwindow
 import sqlite3
 import yadisk
 import math
+
 ID = 0
 
 
@@ -485,7 +486,7 @@ class Pract1(QMainWindow, Ui_pract1):
             self.update()
 
     def poisk(self, r):
-        if r == -1 :
+        if r == -1:
             self.p1.delblue()
             self.update()
         else:
