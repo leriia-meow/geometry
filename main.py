@@ -388,11 +388,13 @@ class Pract1(QMainWindow, Ui_pract1):
         super().setMouseTracking(True)
         self.go1.clicked.connect(self.check)
         self.fig = Figures([(50, 610, 350, 610), (50, 610, 50, 300), (50, 300, 350, 300), (350, 300, 350, 610),
-                               (350, 610, 530, 490), (530, 490, 530, 190), (530, 190, 230, 190), (230, 190, 50, 300),
-                               (350, 300, 530, 190), (230, 190, 230, 490), (230, 490, 50, 610), (230, 490, 530, 490)],
-                              [(50, 610), (140, 245), (380, 190)])
+                            (350, 610, 530, 490), (530, 490, 530, 190), (530, 190, 230, 190), (230, 190, 50, 300),
+                            (350, 300, 530, 190), (230, 190, 230, 490), (230, 490, 50, 610), (230, 490, 530, 490)],
+                           [(50, 610), (140, 245), (380, 190)])
         self.choisepoints = []
         self.choiselines = []
+        self.n = -1
+        self.point = []
 
     def check(self):
         points = self.fig.outputp()
@@ -403,40 +405,96 @@ class Pract1(QMainWindow, Ui_pract1):
             pass
 
     def keyPressEvent(self, event):
-        key = event.key()
-        if event.key() == Qt.Key.Key_W:
+        if event.key() == Qt.Key_L:
+            self.poisk(0)
+            self.n = 0
+        if event.key() == Qt.Key_N and self.n != -1:
+            lines = self.fig.outputl()
+            self.n = (self.n + 1) % len(lines)
+            self.poisk(self.n % len(lines))
+        if event.key() == Qt.Key_D and self.n != -1:
+            lines = self.fig.outputl()
+            self.choiselines.append(lines[self.n % len(lines)])
+            self.n = -1
+            self.poisk(self.n)
+        if event.key() == Qt.Key_R and self.n == -1:
+            self.longer()
+        if event.key() == Qt.Key_T:
+            self.makepoints()
+        if event.key() == Qt.Key_P:
+            self.parall()
+
+    def parall(self):
+        if self.point != [] and len(self.choiselines) > 0:
+            k = self.point[0] * (self.choiselines[-1][1] - self.choiselines[-1][3]) + self.point[1] * \
+                (self.choiselines[-1][2] - self.choiselines[-1][0])
+            x1 = 0
+            x2 = int(k / (self.choiselines[-1][1] - self.choiselines[-1][3]) if (self.choiselines[-1][1] -
+                                                                                 self.choiselines[-1][3]) != 0
+                     else self.choiselines[-1][1])
+            y1 = int(k / (self.choiselines[-1][2] - self.choiselines[-1][0]) if (self.choiselines[-1][2] -
+                                                                                 self.choiselines[-1][0]) != 0
+                     else self.choiselines[-1][2])
+            y2 = 0
+            self.fig.addl(x1, y1, x2, y2)
+            self.p1.setnum([x1, y1, x2, y2])
             self.update()
-        elif event.key() == Qt.Key_Space:
+
+    def makepoints(self):
+        n = 100000000000000000000
+        if len(self.choiselines) > 1:
+            x1 = self.choiselines[-1][0]
+            x2 = self.choiselines[-1][2]
+            x3 = self.choiselines[-2][0]
+            x4 = self.choiselines[-2][2]
+            y1 = self.choiselines[-1][1]
+            y2 = self.choiselines[-1][3]
+            y3 = self.choiselines[-2][1]
+            y4 = self.choiselines[-2][3]
+            if y2 - y1 != 0:
+                q = (x2 - x1) / (y1 - y2)
+                sn = (x3 - x4) + (y3 - y4) * q
+                if sn:
+                    fn = (x3 - x1) + (y3 - y1) * q
+                    n = fn / sn
+            else:
+                if (y3 - y4) > 0:
+                    n = (y3 - y1) / (y3 - y4)
+            if n != 100000000000000000000:
+                x = int(x3 + (x4 - x3) * n)
+                y = int(y3 + (y4 - y3) * n)
+                self.p1.setnum([x, y])
+                self.fig.addp(x, y)
             self.update()
-        elif event.key() == Qt.Key_Shift:
-            n = 100000000000000000000
-            if len(self.choisepoints[0]) == 4 and len(self.choisepoints[1]) == 4:
-                x1 = self.choisepoints[0][0]
-                x2 = self.choisepoints[0][2]
-                x3 = self.choisepoints[1][0]
-                x4 = self.choisepoints[0][2]
-                y1 = self.choisepoints[0][1]
-                y2 = self.choisepoints[0][3]
-                y3 = self.choisepoints[1][1]
-                y4 = self.choisepoints[1][3]
-                if y2 - y1 != 0:
-                    q = (x2 - x1) / (y1 - y2)
-                    sn = (x3 - x4) + (y3 - y4) * q
-                    if sn:
-                        fn = (x3 - x1) + (y3 - y1) * q
-                        n = fn / sn
-                else:
-                    if (y3 - y4) > 0:
-                        n = (y3 - y1) / (y3 - y4)
-                if n != 100000000000000000000:
-                    x = x3 + (x4 - x3) * n
-                    y = y3 + (y4 - y3) * n
-                    self.p1.setnum([x, y])
+
+    def longer(self):
+        if len(self.choiselines) > 0:
+            a = self.choiselines[-1]
+            if (a[2] - a[0]) != 0:
+                x1 = 0
+                x2 = 1000
+                y1 = int((a[2] * a[1] - a[0] * a[3]) / (a[2] - a[0]))
+                y2 = int((a[2] * a[1] - a[0] * a[3] + (a[3] - a[1]) * 1000) / (a[2] - a[0]))
+            else:
+                y1 = 0
+                y2 = 1000
+                x1 = int((a[2] * a[1] - a[0] * a[3]) / (a[1] - a[3]))
+                x2 = int((a[2] * a[1] - a[0] * a[3] + (a[0] - a[2]) * 1000) / (a[1] - a[3]))
+            self.fig.longer(a[0], a[1], a[2], a[3], x1, y1, x2, y2)
+            self.p1.setnum([x1, y1, x2, y2])
+            self.update()
+
+    def poisk(self, r):
+        if r == -1 :
+            self.p1.delblue()
+            self.update()
+        else:
+            lines = self.fig.outputl()
+            self.p1.getblue(lines[r][0], lines[r][1], lines[r][2], lines[r][3])
             self.update()
 
     def mouseReleaseEvent(self, event):
         points = self.fig.outputp()
-        lines = self.fig.outputl()
         x = event.x()
         y = event.y()
         otvx = 0
@@ -447,38 +505,41 @@ class Pract1(QMainWindow, Ui_pract1):
                     otvx = i
                     otvy = j
             self.choisepoints.append((otvx, otvy,))
-            self.p1.setnum([self.choisepoints[-1][0], self.choisepoints[-1][1], self.choisepoints[-2][0],
-                            self.choisepoints[-2][1]])
-            self.update()
+            if len(self.choisepoints) > 0 and (self.choisepoints[-1][0], self.choisepoints[-1][1],
+                                               self.choisepoints[-2][0], self.choisepoints[-2][1]) not in points and \
+                    (self.choisepoints[-2][0], self.choisepoints[-2][1], self.choisepoints[-1][0],
+                     self.choisepoints[-1][1]) not in points:
+                self.p1.setnum([self.choisepoints[-1][0], self.choisepoints[-1][1], self.choisepoints[-2][0],
+                                self.choisepoints[-2][1]])
+                self.fig.addl(self.choisepoints[-1][0], self.choisepoints[-1][1], self.choisepoints[-2][0],
+                              self.choisepoints[-2][1])
+                self.choisepoints.clear()
+                self.update()
 
     def mousePressEvent(self, event):
-        points = self.fig.outputp()
-        lines = self.fig.outputl()
-        x = event.x()
-        y = event.y()
-        otvx = 0
-        otvy = 0
-        if event.button() == Qt.LeftButton:
-            r = 1000000000
-            otvx2 = 0
-            otvy2 = 0
-            for a, b, c, d in lines:
-                if x + y > 0 and abs((b - d) * x + (d - a) * y + a * d - b * c) / math.sqrt(x ** 2 + y ** 2) < r:
-                    r = abs((b - d) * x + (d - a) * y + a * d - b * c) / math.sqrt(x ** 2 + y ** 2)
-                    otvx2 = c
-                    otvy2 = d
-                    otvx = a
-                    otvy = b
-            self.choiselines.append((otvx, otvy, otvx2, otvy2,))
-            self.update()
         if event.button() == Qt.RightButton:
+            points = sorted(self.fig.outputp())
+            x = event.x()
+            y = event.y()
+            otvx = 0
+            otvy = 0
             for i, j in points:
                 if abs(x - i) + abs(y - j) < abs(otvx - x) + abs(otvy - y):
                     otvx = i
                     otvy = j
             self.choisepoints.append((otvx, otvy,))
-            if len(self.choisepoints) == 2:
-                del self.choisepoints[0]
+            self.update()
+        elif event.button() == Qt.LeftButton:
+            points = sorted(self.fig.outputp())
+            x = event.x()
+            y = event.y()
+            otvx = 0
+            otvy = 0
+            for i, j in points:
+                if abs(x - i) + abs(y - j) < abs(otvx - x) + abs(otvy - y):
+                    otvx = i
+                    otvy = j
+            self.point = [otvx, otvy]
             self.update()
 
     def back(self):
@@ -510,8 +571,8 @@ class Pract2(QMainWindow, Ui_pract2):
         self.p21.setObjectName("frame_21")
         self.go1.clicked.connect(self.check)
         self.points = Figures([(50, 610, 350, 610), (50, 610, 50, 300), (50, 300, 350, 300), (350, 300, 350, 610),
-                              (350, 610, 530, 490), (530, 490, 530, 190), (530, 190, 230, 190), (230, 190, 50, 300),
-                              (350, 300, 530, 190), (230, 190, 230, 490), (230, 490, 50, 610), (230, 490, 530, 490)],
+                               (350, 610, 530, 490), (530, 490, 530, 190), (530, 190, 230, 190), (230, 190, 50, 300),
+                               (350, 300, 530, 190), (230, 190, 230, 490), (230, 490, 50, 610), (230, 490, 530, 490)],
                               [(50, 610), (140, 245), (380, 190)])
 
     def check(self):
@@ -558,9 +619,11 @@ class Pract3(QMainWindow, Ui_pract3):
 class Painting(QFrame):
     def __init__(self, number, parent=None):
         super().__init__(parent)
+        self.n = number
         self.newpoints = []
         self.newlines = []
         self.num = number
+        self.blue = 0
 
     def paintlines(self, x1, y1, x2, y2):
         self.newlines.append((x1, y1, x2, y2,))
@@ -573,8 +636,14 @@ class Painting(QFrame):
             self.num = 6
             self.list = u
 
-    def paintpoint(self, x, y):
+    def paintpoints(self, x, y):
         self.newpoints.append((x, y,))
+
+    def getblue(self, x1, y1, x2, y2):
+        self.blue = (x1, y1, x2, y2,)
+
+    def delblue(self):
+        self.blue = 0
 
     def paintEvent(self, e):
         painter = QPainter(self)
@@ -582,13 +651,15 @@ class Painting(QFrame):
         painter.begin(self)
         if self.num == 6:
             self.paintlines(*self.list)
+            self.num = 1
         if self.num == 7:
             self.paintpoints(*self.list)
+            self.num = 1
         for x1, y1, x2, y2 in self.newlines:
             pen = QPen(Qt.yellow, 3, Qt.SolidLine)
             painter.setPen(pen)
             painter.drawLine(x1, y1, x2, y2)
-        if self.num == 6 or self.num == 1:
+        if self.n == 1:
             pen = QPen(Qt.white, 3, Qt.SolidLine)
             painter.setPen(pen)
             painter.drawLine(50, 610, 350, 610)
@@ -634,9 +705,13 @@ class Painting(QFrame):
         elif self.num == 4:
             pass
         for x, y in self.newpoints:
-            pen = QPen(Qt.green, 3, Qt.SolidLine)
+            pen = QPen(Qt.green, 7, Qt.SolidLine)
             painter.setPen(pen)
             painter.drawPoint(x, y)
+        if self.blue != 0:
+            pen = QPen(Qt.blue, 7, Qt.SolidLine)
+            painter.setPen(pen)
+            painter.drawLine(self.blue[0], self.blue[1], self.blue[2], self.blue[3])
 
 
 class Stop(QMainWindow, Ui_stopwindow):
@@ -674,12 +749,15 @@ class Figures:
 
     def addp(self, x, y):
         self.points.append((x, y,))
+        self.points = list(set(self.points))
 
     def addl(self, x1, y1, x2, y2):
-        self.points.append((x1, y1, x2, y2))
+        self.lines.append((x1, y1, x2, y2))
+        self.lines = list(set(self.lines))
 
     def longer(self, x10, y10, x20, y20, x11, y11, x21, y21):
-        pass
+        del self.lines[self.lines.index((x10, y10, x20, y20,))]
+        self.lines.append((x11, y11, x21, y21,))
 
     def outputp(self):
         return self.points
