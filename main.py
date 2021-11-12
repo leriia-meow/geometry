@@ -1271,8 +1271,8 @@ class Painting(QFrame):
         elif self.f == 3:
             pen = QPen(QColor(139, 0, 255), 7, Qt.SolidLine)
             painter.setPen(pen)
+            painter.drawLine(580, 220, 460, 520)
             painter.drawLine(340, 220, 360, 520)
-            painter.drawLine(580, 220, 580, 520)
             pen.setStyle(Qt.DotLine)
             painter.setPen(pen)
             painter.drawLine(340, 220, 580, 220)
