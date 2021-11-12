@@ -780,7 +780,7 @@ class Pract2(QMainWindow, Ui_pract2):
             self.con.commit()
             self.win = Right(self.id, 2, self.centralwidget)
             self.win.show()
-            self.p1.right(1)
+            self.p1.right(2)
         else:
             self.win = Error(self.id, 2)
             self.win.show()
@@ -1267,12 +1267,12 @@ class Painting(QFrame):
             painter.drawLine(170, 140, 170, 420)
             pen.setStyle(Qt.DotLine)
             painter.setPen(pen)
-            painter.drawLine(170, 420, 495, 180)
+            painter.drawLine(170, 420, 495, 460)
         elif self.f == 3:
             pen = QPen(QColor(139, 0, 255), 7, Qt.SolidLine)
             painter.setPen(pen)
             painter.drawLine(340, 220, 360, 520)
-            painter.drawLine(580, 220, 580, 520)
+            painter.drawLine(580, 220, 460, 520)
             pen.setStyle(Qt.DotLine)
             painter.setPen(pen)
             painter.drawLine(340, 220, 580, 220)
