@@ -989,16 +989,21 @@ except Exception:
     flag = False
     log = None
 if log == log1:
+    res = list(cur1.execute("""SELECT * FROM progress WHERE id = ?""", (ID,)).fetchall()[0])
+    res.append(res[0])
+    del res[0]
     cur2.execute("""UPDATE progress SET les1t = ?, les1ex1 = ?, les1ex2 = ?, les1ex3 = ?, les2t = ?, les2ex1 = ?, 
     les2ex2 = ?, les2ex3 = ?, les3t = ?, les3ex1 = ?, les3ex2 = ?, les3ex3 = ?, lesk = ?, lesk1 = ?, lesk2 = ?,
-     lesk3 = ? WHERE id = ?""", cur1.execute("""SELECT * FROM progress WHERE id = ?""", (ID,)).fetchall()[0])
+     lesk3 = ? WHERE id = ?""", tuple(res))
 elif log == None and ID > 0:
-    cur2.execute("""INSERT INTO users(id, login, password, photo) VALUES(?, ?, ?, ?)""", cur1.execute("""SELECT *
-     FROM users WHERE id = ?""", (ID,)).fetchall()[0])
+    res = list(cur1.execute("""SELECT * FROM progress WHERE id = ?""", (ID,)).fetchall()[0])
+    res.append(res[0])
+    res2 = list(cur1.execute("""SELECT * FROM users WHERE id = ?""", (ID,)).fetchall()[0])
+    res2.append(res2[0])
+    cur2.execute("""INSERT INTO users(id, login, password, photo) VALUES(?, ?, ?, ?)""", tuple(res2))
     cur2.execute("""INSERT INTO progress(id, les1t, les1ex1, les1ex2, les1ex3, les2t, les2ex1, les2ex2,
                  les2ex3, les3t, les3ex1, les3ex2, les3ex3, lesk, lesk1, lesk2, lesk3) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?,
-                  ?, ?, ?, ?, ?, ?, ?, ?)""", cur1.execute("""SELECT * FROM progress WHERE id = ?""",
-                                                           (ID,)).fetchall()[0])
+                  ?, ?, ?, ?, ?, ?, ?, ?)""", tuple(res))
 elif ID > 0:
     id = ID + 1
     while flag:
