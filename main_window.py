@@ -202,7 +202,7 @@ class Ui_mainWindow(object):
 "\n"
 "QProgressBar::chunk {\n"
 "    border-radius:13px;\n"
-"    background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0,  stop:0 rgb(0, 255, 0), stop:1 rgb(255, 255, 127));\n"
+"    background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0,  stop:0 rgb(0, 255, 0), stop:1 rgb(251, 255, 2));\n"
 "}")
         self.progress.setProperty("value", 24)
         self.progress.setObjectName("progress")
