@@ -59,7 +59,7 @@ class MainWindow(QMainWindow, Ui_mainWindow):
         self.prog3 = int(sum(list(self.cur.execute("""SELECT les3t, les3ex1 FROM progress 
         WHERE id = ?""", (self.id,)).fetchall()[0])) / 2 * 100)
         self.progk = int(sum(list(self.cur.execute("""SELECT lesk, lesk1 FROM progress WHERE id = ?""",
-                                                   (self.id,)).fetchall()[0][1:])) / 2 * 100)
+                                                   (self.id,)).fetchall()[0])) / 2 * 100)
         self.mainprogress.setMaximum(100)
         self.progress1.setMaximum(100)
         self.progress2.setMaximum(100)
@@ -272,7 +272,182 @@ class Kontrless(QMainWindow, Ui_kontrless):
         self.closebutton.clicked.connect(self.close)
         self.layout().addWidget(self.closebutton)  # кнопочка закрытия окна и завершения программы
         self.id = id
-        self.tomainbutton.clicked.connect(self.back)
+        self.tomain.clicked.connect(self.back)
+        self.tomain1.clicked.connect(self.back)
+        self.con = sqlite3.connect("user.db")
+        self.cur = self.con.cursor()
+        self.p1 = Painting(1, self.ex1)
+        self.p1.setGeometry(QRect(10, 50, 921, 620))
+        self.p1.setFrameShape(QFrame.StyledPanel)
+        self.p1.setFrameShadow(QFrame.Raised)
+        self.p1.setObjectName("frame_11")
+        super().setMouseTracking(True)
+        self.go1.clicked.connect(self.check)
+        self.fig = Figures([(50, 610, 250, 610), (50, 610, 50, 410), (50, 410, 250, 410), (250, 610, 250, 410),
+                            (170, 330, 50, 410), (370, 330, 250, 410), (370, 330, 170, 330), (370, 330, 370, 530),
+                            (250, 610, 370, 530), (170, 530, 370, 530), (170, 530, 50, 610), (170, 530, 170, 330)],
+                           [(50, 610), (270, 330), (110, 370)])
+        self.choisepoints = []
+        self.choiselines = []
+        self.n = -1
+        self.point = []
+
+    def check(self):
+        points = self.fig.outputp()
+        if (50, 610) in points and (270, 330) in points and (110, 370) in points and (370, 530) in points:
+            self.con.execute("""UPDATE progress SET lesk1 = 1 WHERE id = ?""", (self.id,))
+            self.con.commit()
+            self.win = Right(self.id, 4, self.centralwidget)
+            self.win.show()
+            self.p1.right(4)
+        else:
+            self.win = Error(self.id, 4)
+            self.win.show()
+
+    def keyPressEvent(self, event):
+        if event.key() == Qt.Key_L:
+            self.poisk(0)
+            self.n = 0
+        if event.key() == Qt.Key_N and self.n != -1:
+            lines = self.fig.outputl()
+            self.n = (self.n + 1) % len(lines)
+            self.poisk(self.n % len(lines))
+        if event.key() == Qt.Key_D and self.n != -1:
+            lines = self.fig.outputl()
+            self.choiselines.append(lines[self.n % len(lines)])
+            self.n = -1
+            self.poisk(self.n)
+        if event.key() == Qt.Key_R and self.n == -1:
+            self.longer()
+        if event.key() == Qt.Key_T:
+            self.makepoints()
+        if event.key() == Qt.Key_P:
+            self.parall()
+
+    def parall(self):
+        if self.point != [] and len(self.choiselines) > 0:
+            k = self.point[0] * (self.choiselines[-1][1] - self.choiselines[-1][3]) + self.point[1] * \
+                (self.choiselines[-1][2] - self.choiselines[-1][0])
+            if (self.choiselines[-1][1] - self.choiselines[-1][3]) == 0:
+                x1 = 0
+                x2 = 1000
+                y1 = self.point[1]
+                y2 = self.point[1]
+            elif (self.choiselines[-1][2] - self.choiselines[-1][0]) == 0:
+                x1 = self.point[0]
+                x2 = self.point[0]
+                y1 = 0
+                y2 = 1000
+            else:
+                x1 = 0
+                x2 = int(k / (self.choiselines[-1][1] - self.choiselines[-1][3]))
+                y1 = int(k / (self.choiselines[-1][2] - self.choiselines[-1][0]))
+                y2 = 0
+            self.fig.addl(x1, y1, x2, y2)
+            self.p1.setnum([x1, y1, x2, y2])
+            self.update()
+
+    def makepoints(self):
+        n = 100000000000000000000
+        if len(self.choiselines) > 1:
+            x1 = self.choiselines[-1][0]
+            x2 = self.choiselines[-1][2]
+            x3 = self.choiselines[-2][0]
+            x4 = self.choiselines[-2][2]
+            y1 = self.choiselines[-1][1]
+            y2 = self.choiselines[-1][3]
+            y3 = self.choiselines[-2][1]
+            y4 = self.choiselines[-2][3]
+            if y2 - y1 != 0:
+                q = (x2 - x1) / (y1 - y2)
+                sn = (x3 - x4) + (y3 - y4) * q
+                if sn:
+                    fn = (x3 - x1) + (y3 - y1) * q
+                    n = fn / sn
+            else:
+                if (y3 - y4) > 0:
+                    n = (y3 - y1) / (y3 - y4)
+            if n != 100000000000000000000:
+                x = int(x3 + (x4 - x3) * n)
+                y = int(y3 + (y4 - y3) * n)
+                self.p1.setnum([x, y])
+                self.fig.addp(x, y)
+            self.update()
+
+    def longer(self):
+        if len(self.choiselines) > 0:
+            a = self.choiselines[-1]
+            if (a[2] - a[0]) != 0:
+                x1 = 0
+                x2 = 1000
+                y1 = int((a[2] * a[1] - a[0] * a[3]) / (a[2] - a[0]))
+                y2 = int((a[2] * a[1] - a[0] * a[3] + (a[3] - a[1]) * 1000) / (a[2] - a[0]))
+            else:
+                y1 = 0
+                y2 = 1000
+                x1 = int((a[2] * a[1] - a[0] * a[3]) / (a[1] - a[3]))
+                x2 = int((a[2] * a[1] - a[0] * a[3] + (a[0] - a[2]) * 1000) / (a[1] - a[3]))
+            self.fig.longer(a[0], a[1], a[2], a[3], x1, y1, x2, y2)
+            self.p1.setnum([x1, y1, x2, y2])
+            self.update()
+
+    def poisk(self, r):
+        if r == -1:
+            self.p1.delblue()
+            self.update()
+        else:
+            lines = self.fig.outputl()
+            self.p1.getblue(lines[r][0], lines[r][1], lines[r][2], lines[r][3])
+            self.update()
+
+    def mouseReleaseEvent(self, event):
+        points = self.fig.outputp()
+        x = event.x()
+        y = event.y()
+        otvx = 0
+        otvy = 0
+        if event.button() == Qt.RightButton:
+            for i, j in points:
+                if abs(x - i) + abs(y - j) < abs(otvx - x) + abs(otvy - y):
+                    otvx = i
+                    otvy = j
+            self.choisepoints.append((otvx, otvy,))
+            if len(self.choisepoints) > 0 and (self.choisepoints[-1][0], self.choisepoints[-1][1],
+                                               self.choisepoints[-2][0], self.choisepoints[-2][1]) not in points and \
+                    (self.choisepoints[-2][0], self.choisepoints[-2][1], self.choisepoints[-1][0],
+                     self.choisepoints[-1][1]) not in points:
+                self.p1.setnum([self.choisepoints[-1][0], self.choisepoints[-1][1], self.choisepoints[-2][0],
+                                self.choisepoints[-2][1]])
+                self.fig.addl(self.choisepoints[-1][0], self.choisepoints[-1][1], self.choisepoints[-2][0],
+                              self.choisepoints[-2][1])
+                self.choisepoints.clear()
+                self.update()
+
+    def mousePressEvent(self, event):
+        if event.button() == Qt.RightButton:
+            points = sorted(self.fig.outputp())
+            x = event.x()
+            y = event.y()
+            otvx = 0
+            otvy = 0
+            for i, j in points:
+                if abs(x - i) + abs(y - j) < abs(otvx - x) + abs(otvy - y):
+                    otvx = i
+                    otvy = j
+            self.choisepoints.append((otvx, otvy,))
+            self.update()
+        elif event.button() == Qt.LeftButton:
+            points = sorted(self.fig.outputp())
+            x = event.x()
+            y = event.y()
+            otvx = 0
+            otvy = 0
+            for i, j in points:
+                if abs(x - i) + abs(y - j) < abs(otvx - x) + abs(otvy - y):
+                    otvx = i
+                    otvy = j
+            self.point = [otvx, otvy]
+            self.update()
 
     def back(self):
         self.win = MainWindow(self.id)
@@ -410,8 +585,9 @@ class Pract1(QMainWindow, Ui_pract1):
             self.con.commit()
             self.win = Right(self.id, 1, self.centralwidget)
             self.win.show()
+            self.p1.right(1)
         else:
-            self.win = Error()
+            self.win = Error(self.id, 1)
             self.win.show()
 
     def keyPressEvent(self, event):
@@ -604,8 +780,9 @@ class Pract2(QMainWindow, Ui_pract2):
             self.con.commit()
             self.win = Right(self.id, 2, self.centralwidget)
             self.win.show()
+            self.p1.right(1)
         else:
-            self.win = Error()
+            self.win = Error(self.id, 2)
             self.win.show()
 
     def keyPressEvent(self, event):
@@ -775,10 +952,179 @@ class Pract3(QMainWindow, Ui_pract3):
         self.setFixedSize(self.size())
         self.con = sqlite3.connect("user.db")
         self.cur = self.con.cursor()
-        self.p31 = Painting(3, self.ex1)
-        self.p31.setGeometry(QRect(10, 50, 921, 620))
-        self.p31.setFrameShape(QFrame.StyledPanel)
-        self.p31.setFrameShadow(QFrame.Raised)
+        self.fig = Figures([(490, 100, 190, 340), (490, 100, 550, 580), (190, 340, 550, 580), (550, 580, 670, 340),
+                            (670, 340, 490, 100), (400, 370, 370, 460), (580, 280, 640, 400), (190, 340, 670, 340)],
+                           [(400, 370), (580, 280), (460, 520)])
+        self.p1 = Painting(3, self.ex1)
+        self.p1.setGeometry(QRect(10, 50, 921, 620))
+        self.p1.setFrameShape(QFrame.StyledPanel)
+        self.p1.setFrameShadow(QFrame.Raised)
+        self.p1.setObjectName("frame_31")
+        super().setMouseTracking(True)
+        self.go1.clicked.connect(self.check)
+        self.choisepoints = []
+        self.choiselines = []
+        self.n = -1
+        self.point = []
+        self.update()
+
+    def check(self):
+        points = self.fig.outputp()
+        if (340, 220) in points and (580, 220) in points and (580, 520) in points and (460, 520) in points:
+            self.con.execute("""UPDATE progress SET les3ex1 = 1 WHERE id = ?""", (self.id,))
+            self.con.commit()
+            self.win = Right(self.id, 3, self.centralwidget)
+            self.win.show()
+            self.p1.right(3)
+        else:
+            self.win = Error(self.id, 3)
+            self.win.show()
+
+    def keyPressEvent(self, event):
+        if event.key() == Qt.Key_L:
+            self.poisk(0)
+            self.n = 0
+        if event.key() == Qt.Key_N and self.n != -1:
+            lines = self.fig.outputl()
+            self.n = (self.n + 1) % len(lines)
+            self.poisk(self.n % len(lines))
+        if event.key() == Qt.Key_D and self.n != -1:
+            lines = self.fig.outputl()
+            self.choiselines.append(lines[self.n % len(lines)])
+            self.n = -1
+            self.poisk(self.n)
+        if event.key() == Qt.Key_R and self.n == -1:
+            self.longer()
+        if event.key() == Qt.Key_T:
+            self.makepoints()
+        if event.key() == Qt.Key_P:
+            self.parall()
+
+    def parall(self):
+        if self.point != [] and len(self.choiselines) > 0:
+            k = self.point[0] * (self.choiselines[-1][1] - self.choiselines[-1][3]) + self.point[1] * \
+                (self.choiselines[-1][2] - self.choiselines[-1][0])
+            if (self.choiselines[-1][1] - self.choiselines[-1][3]) == 0:
+                x1 = 0
+                x2 = 1000
+                y1 = self.point[1]
+                y2 = self.point[1]
+            elif (self.choiselines[-1][2] - self.choiselines[-1][0]) == 0:
+                x1 = self.point[0]
+                x2 = self.point[0]
+                y1 = 0
+                y2 = 1000
+            else:
+                x1 = 0
+                x2 = int(k / (self.choiselines[-1][1] - self.choiselines[-1][3]))
+                y1 = int(k / (self.choiselines[-1][2] - self.choiselines[-1][0]))
+                y2 = 0
+            self.fig.addl(x1, y1, x2, y2)
+            self.p1.setnum([x1, y1, x2, y2])
+            self.update()
+
+    def makepoints(self):
+        n = 100000000000000000000
+        if len(self.choiselines) > 1:
+            x1 = self.choiselines[-1][0]
+            x2 = self.choiselines[-1][2]
+            x3 = self.choiselines[-2][0]
+            x4 = self.choiselines[-2][2]
+            y1 = self.choiselines[-1][1]
+            y2 = self.choiselines[-1][3]
+            y3 = self.choiselines[-2][1]
+            y4 = self.choiselines[-2][3]
+            if y2 - y1 != 0:
+                q = (x2 - x1) / (y1 - y2)
+                sn = (x3 - x4) + (y3 - y4) * q
+                if sn:
+                    fn = (x3 - x1) + (y3 - y1) * q
+                    n = fn / sn
+            else:
+                if (y3 - y4) > 0:
+                    n = (y3 - y1) / (y3 - y4)
+            if n != 100000000000000000000:
+                x = int(x3 + (x4 - x3) * n)
+                y = int(y3 + (y4 - y3) * n)
+                self.p1.setnum([x, y])
+                self.fig.addp(x, y)
+            self.update()
+
+    def longer(self):
+        if len(self.choiselines) > 0:
+            a = self.choiselines[-1]
+            if (a[2] - a[0]) != 0:
+                x1 = 0
+                x2 = 1000
+                y1 = int((a[2] * a[1] - a[0] * a[3]) / (a[2] - a[0]))
+                y2 = int((a[2] * a[1] - a[0] * a[3] + (a[3] - a[1]) * 1000) / (a[2] - a[0]))
+            else:
+                y1 = 0
+                y2 = 1000
+                x1 = int((a[2] * a[1] - a[0] * a[3]) / (a[1] - a[3]))
+                x2 = int((a[2] * a[1] - a[0] * a[3] + (a[0] - a[2]) * 1000) / (a[1] - a[3]))
+            self.fig.longer(a[0], a[1], a[2], a[3], x1, y1, x2, y2)
+            self.p1.setnum([x1, y1, x2, y2])
+            self.update()
+
+    def poisk(self, r):
+        if r == -1:
+            self.p1.delblue()
+            self.update()
+        else:
+            lines = self.fig.outputl()
+            self.p1.getblue(lines[r][0], lines[r][1], lines[r][2], lines[r][3])
+            self.update()
+
+    def mouseReleaseEvent(self, event):
+        points = self.fig.outputp()
+        x = event.x()
+        y = event.y()
+        otvx = 0
+        otvy = 0
+        if event.button() == Qt.RightButton:
+            for i, j in points:
+                if abs(x - i) + abs(y - j) < abs(otvx - x) + abs(otvy - y) or abs(x - i) <= abs(otvx - x) \
+                        and abs(y - j) <= abs(otvy - y):
+                    otvx = i
+                    otvy = j
+            self.choisepoints.append((otvx, otvy,))
+            if len(self.choisepoints) > 0 and (self.choisepoints[-1][0], self.choisepoints[-1][1],
+                                               self.choisepoints[-2][0], self.choisepoints[-2][1]) not in points and \
+                    (self.choisepoints[-2][0], self.choisepoints[-2][1], self.choisepoints[-1][0],
+                     self.choisepoints[-1][1]) not in points:
+                self.p1.setnum([self.choisepoints[-1][0], self.choisepoints[-1][1], self.choisepoints[-2][0],
+                                self.choisepoints[-2][1]])
+                self.fig.addl(self.choisepoints[-1][0], self.choisepoints[-1][1], self.choisepoints[-2][0],
+                              self.choisepoints[-2][1])
+                self.choisepoints.clear()
+                self.update()
+
+    def mousePressEvent(self, event):
+        if event.button() == Qt.RightButton:
+            points = sorted(self.fig.outputp())
+            x = event.x()
+            y = event.y()
+            otvx = 0
+            otvy = 0
+            for i, j in points:
+                if abs(x - i) <= abs(otvx - x) and abs(y - j)  <= abs(otvy - y):
+                    otvx = i
+                    otvy = j
+            self.choisepoints.append((otvx, otvy,))
+        elif event.button() == Qt.LeftButton:
+            points = sorted(self.fig.outputp())
+            x = event.x()
+            y = event.y()
+            otvx = 0
+            otvy = 0
+            for i, j in points:
+                if abs(x - i) + abs(y - j) < abs(otvx - x) + abs(otvy - y) or abs(x - i) <= abs(otvx - x)\
+                        and abs(y - j) <= abs(otvy - y):
+                    otvx = i
+                    otvy = j
+            self.point = [otvx, otvy]
+            self.update()
 
     def back(self):
         self.win = MainWindow(self.id)
@@ -796,6 +1142,7 @@ class Painting(QFrame):
         self.newlines = []
         self.num = number
         self.blue = 0
+        self.f = 0
 
     def paintlines(self, x1, y1, x2, y2):
         self.newlines.append((x1, y1, x2, y2,))
@@ -816,6 +1163,9 @@ class Painting(QFrame):
 
     def delblue(self):
         self.blue = 0
+
+    def right(self, n):
+        self.f = n
 
     def paintEvent(self, e):
         painter = QPainter(self)
@@ -872,9 +1222,25 @@ class Painting(QFrame):
             painter.drawPoint(495, 180)
             painter.drawPoint(170, 420)
             painter.drawPoint(170, 140)
-        elif self.num == 3:
-            pass
-        elif self.num == 4:
+        elif self.n == 3:
+            pen = QPen(Qt.white, 3, Qt.SolidLine)
+            painter.setPen(pen)
+            painter.drawLine(490, 100, 190, 340)
+            painter.drawLine(490, 100, 550, 580)
+            painter.drawLine(190, 340, 550, 580)
+            painter.drawLine(550, 580, 670, 340)
+            painter.drawLine(670, 340, 490, 100)
+            painter.drawLine(400, 370, 370, 460)
+            painter.drawLine(580, 280, 640, 400)
+            pen.setStyle(Qt.DotLine)
+            painter.setPen(pen)
+            painter.drawLine(190, 340, 670, 340)
+            pen = QPen(Qt.blue, 7, Qt.SolidLine)
+            painter.setPen(pen)
+            painter.drawPoint(400, 370)
+            painter.drawPoint(580, 280)
+            painter.drawPoint(460, 520)
+        elif self.n == 4:
             pass
         for x, y in self.newpoints:
             pen = QPen(Qt.green, 7, Qt.SolidLine)
@@ -884,6 +1250,33 @@ class Painting(QFrame):
             pen = QPen(Qt.blue, 7, Qt.SolidLine)
             painter.setPen(pen)
             painter.drawLine(self.blue[0], self.blue[1], self.blue[2], self.blue[3])
+        if self.f == 1:
+            pen = QPen(QColor(139, 0, 255), 7, Qt.SolidLine)
+            painter.setPen(pen)
+            painter.drawLine(50, 610, 110, 370)
+            pen.setStyle(Qt.DotLine)
+            painter.setPen(pen)
+            painter.drawLine(270, 330, 110, 370)
+            painter.drawLine(370, 530, 50, 610)
+            painter.drawLine(370, 530, 270, 330)
+        elif self.f == 2:
+            pen = QPen(QColor(139, 0, 255), 7, Qt.SolidLine)
+            painter.setPen(pen)
+            painter.drawLine(170, 140, 495, 180)
+            painter.drawLine(495, 180, 495, 460)
+            painter.drawLine(170, 140, 170, 420)
+            pen.setStyle(Qt.DotLine)
+            painter.setPen(pen)
+            painter.drawLine(170, 420, 495, 180)
+        elif self.f == 3:
+            pen = QPen(QColor(139, 0, 255), 7, Qt.SolidLine)
+            painter.setPen(pen)
+            painter.drawLine(340, 220, 360, 520)
+            painter.drawLine(580, 220, 580, 520)
+            pen.setStyle(Qt.DotLine)
+            painter.setPen(pen)
+            painter.drawLine(340, 220, 580, 220)
+            painter.drawLine(580, 520, 460, 520)
 
 
 class Stop(QMainWindow, Ui_stopwindow):
@@ -905,13 +1298,57 @@ class Stop(QMainWindow, Ui_stopwindow):
 
 
 class Error(QMainWindow, Ui_errorwindow):
-    def __init__(self):
+    def __init__(self, id, n):
         super().__init__()
         self.setupUi(self)
         self.setWindowFlags(Qt.FramelessWindowHint)  # окно без рамки
         self.setAttribute(Qt.WA_TranslucentBackground)  # форма прозрачная
         self.closebutton.clicked.connect(self.close)
         self.layout().addWidget(self.closebutton)  # кнопочка закрытия окна и завершения программы
+        self.repeat.clicked.connect(self.rep)
+        self.teor.clicked.connect(self.t)
+        self.id = id
+        self.num = n
+
+    def t(self):
+        global MAINPRACT
+        MAINPRACT.close()
+        if self.num == 1:
+            self.win = Teor1(self.id)
+            self.win.show()
+            self.close()
+        elif self.num == 2:
+            self.win = Teor2(self.id)
+            self.win.show()
+            self.close()
+        elif self.num == 3:
+            self.win = Teor3(self.id)
+            self.win.show()
+            self.close()
+        elif self.num == 4:
+            self.win = Teor3(self.id)
+            self.win.show()
+            self.close()
+
+    def rep(self):
+        global MAINPRACT
+        MAINPRACT.close()
+        if self.num == 1:
+            self.win = Pract1(self.id)
+            self.win.show()
+            self.close()
+        elif self.num == 2:
+            self.win = Pract2(self.id)
+            self.win.show()
+            self.close()
+        elif self.num == 3:
+            self.win = Pract3(self.id)
+            self.win.show()
+            self.close()
+        elif self.num == 4:
+            self.win = Kontrless(self.id)
+            self.win.show()
+            self.close()
 
 
 class Right(QMainWindow, Ui_rightwindow):
@@ -939,7 +1376,9 @@ class Right(QMainWindow, Ui_rightwindow):
             self.win.show()
             self.close()
         elif self.num == 3:
-            pass
+            self.win = MainWindow(self.id)
+            self.win.show()
+            self.close()
         elif self.num == 4:
             pass
 
