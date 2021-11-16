@@ -204,8 +204,8 @@ class Authorize(QMainWindow, Ui_authwindow):
             self.window.show()
         elif not flag:
             self.error.setText("Такой логин уже есть. Придумайте новый")
-        elif self.name.isdigit():
-            self.error.setText("Логин должен содержать символы, отличные от цифр")
+        elif not self.name.isalnum():
+            self.error.setText("Логин может содержать только буквы и цифры")
 
     def input_photo(self):
         try:
@@ -276,17 +276,18 @@ class Kontrless(QMainWindow, Ui_kontrless):
         self.tomain1.clicked.connect(self.back)
         self.con = sqlite3.connect("user.db")
         self.cur = self.con.cursor()
-        self.p1 = Painting(1, self.ex1)
+        self.p1 = Painting(4, self.ex1)
         self.p1.setGeometry(QRect(10, 50, 921, 620))
         self.p1.setFrameShape(QFrame.StyledPanel)
         self.p1.setFrameShadow(QFrame.Raised)
         self.p1.setObjectName("frame_11")
         super().setMouseTracking(True)
         self.go1.clicked.connect(self.check)
-        self.fig = Figures([(50, 610, 250, 610), (50, 610, 50, 410), (50, 410, 250, 410), (250, 610, 250, 410),
-                            (170, 330, 50, 410), (370, 330, 250, 410), (370, 330, 170, 330), (370, 330, 370, 530),
-                            (250, 610, 370, 530), (170, 530, 370, 530), (170, 530, 50, 610), (170, 530, 170, 330)],
-                           [(50, 610), (270, 330), (110, 370)])
+        self.fig = Figures([(165, 100, 285, 115), (285, 115, 345, 235), (345, 385, 345, 235), (255, 325, 345, 235),
+                           (255, 325, 255, 475), (255, 475, 345, 385), (255, 475, 180, 460), (180, 460, 180, 310),
+                           (180, 310, 255, 325), (180, 310, 120, 160), (180, 460, 120, 310), (120, 160, 120, 310),
+                           (120, 160, 165, 100), (165, 250, 165, 100), (285, 265, 285, 115), (120, 310, 165, 250),
+                           (165, 250, 285, 265), (285, 265, 345, 385)], [(165, 100), (285, 115), (255, 475)])
         self.choisepoints = []
         self.choiselines = []
         self.n = -1
@@ -294,7 +295,8 @@ class Kontrless(QMainWindow, Ui_kontrless):
 
     def check(self):
         points = self.fig.outputp()
-        if (50, 610) in points and (270, 330) in points and (110, 370) in points and (370, 530) in points:
+        if (165, 100) in points and (285, 115) in points and (255, 475) in points and (180, 460) in points and\
+                (120, 210) in points and (345, 310) in points:
             self.con.execute("""UPDATE progress SET lesk1 = 1 WHERE id = ?""", (self.id,))
             self.con.commit()
             self.win = Right(self.id, 4, self.centralwidget)
@@ -431,7 +433,8 @@ class Kontrless(QMainWindow, Ui_kontrless):
             otvx = 0
             otvy = 0
             for i, j in points:
-                if abs(x - i) + abs(y - j) < abs(otvx - x) + abs(otvy - y):
+                if abs(x - i) + abs(y - j) < abs(otvx - x) + abs(otvy - y) or abs(x - i) <= abs(otvx - x) \
+                        and abs(y - j) <= abs(otvy - y):
                     otvx = i
                     otvy = j
             self.choisepoints.append((otvx, otvy,))
@@ -1241,7 +1244,33 @@ class Painting(QFrame):
             painter.drawPoint(580, 280)
             painter.drawPoint(460, 520)
         elif self.n == 4:
-            pass
+            pen = QPen(Qt.white, 3, Qt.SolidLine)
+            painter.setPen(pen)
+            painter.drawLine(165, 100, 285, 115)
+            painter.drawLine(285, 115, 345, 235)
+            painter.drawLine(345, 385, 345, 235)
+            painter.drawLine(255, 325, 345, 235)
+            painter.drawLine(255, 325, 255, 475)
+            painter.drawLine(255, 475, 345, 385)
+            painter.drawLine(255, 475, 180, 460)
+            painter.drawLine(180, 460, 180, 310)
+            painter.drawLine(180, 310, 255, 325)
+            painter.drawLine(180, 310, 120, 160)
+            painter.drawLine(180, 460, 120, 310)
+            painter.drawLine(120, 160, 120, 310)
+            painter.drawLine(120, 160, 165, 100)
+            pen.setStyle(Qt.DotLine)
+            painter.setPen(pen)
+            painter.drawLine(165, 250, 165, 100)
+            painter.drawLine(285, 265, 285, 115)
+            painter.drawLine(120, 310, 165, 250)
+            painter.drawLine(165, 250, 285, 265)
+            painter.drawLine(285, 265, 345, 385)
+            pen = QPen(Qt.blue, 7, Qt.SolidLine)
+            painter.setPen(pen)
+            painter.drawPoint(165, 100)
+            painter.drawPoint(285, 115)
+            painter.drawPoint(255, 475)
         for x, y in self.newpoints:
             pen = QPen(Qt.green, 7, Qt.SolidLine)
             painter.setPen(pen)
@@ -1277,6 +1306,17 @@ class Painting(QFrame):
             painter.setPen(pen)
             painter.drawLine(340, 220, 580, 220)
             painter.drawLine(580, 520, 460, 520)
+        elif self.f == 4:
+            pen = QPen(QColor(139, 0, 255), 7, Qt.SolidLine)
+            painter.setPen(pen)
+            painter.drawLine(165, 100, 285, 115)
+            painter.drawLine(120, 210, 180, 460)
+            painter.drawLine(255, 475, 180, 460)
+            painter.drawLine(255, 475, 345, 310)
+            pen.setStyle(Qt.DotLine)
+            painter.setPen(pen)
+            painter.drawLine(345, 310, 285, 115)
+            painter.drawLine(165, 100, 120, 210)
 
 
 class Stop(QMainWindow, Ui_stopwindow):
@@ -1380,7 +1420,9 @@ class Right(QMainWindow, Ui_rightwindow):
             self.win.show()
             self.close()
         elif self.num == 4:
-            pass
+            self.win = MainWindow(self.id)
+            self.win.show()
+            self.close()
 
 
 class Figures:
@@ -1436,9 +1478,7 @@ if log == log1:
      lesk3 = ? WHERE id = ?""", tuple(res))
 elif log == None and ID > 0:
     res = list(cur1.execute("""SELECT * FROM progress WHERE id = ?""", (ID,)).fetchall()[0])
-    res.append(res[0])
     res2 = list(cur1.execute("""SELECT * FROM users WHERE id = ?""", (ID,)).fetchall()[0])
-    res2.append(res2[0])
     cur2.execute("""INSERT INTO users(id, login, password, photo) VALUES(?, ?, ?, ?)""", tuple(res2))
     cur2.execute("""INSERT INTO progress(id, les1t, les1ex1, les1ex2, les1ex3, les2t, les2ex1, les2ex2,
                  les2ex3, les3t, les3ex1, les3ex2, les3ex3, lesk, lesk1, lesk2, lesk3) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?,
