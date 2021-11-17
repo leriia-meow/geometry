@@ -26,19 +26,19 @@ MAINPRACT = 0
 ID = 0
 
 
-class MainWindow(QMainWindow, Ui_mainWindow):
+class MainWindow(QMainWindow, Ui_mainWindow):  # главное окошко
     def __init__(self, id):
         global ID
         ID = id
         super().__init__()
         self.setupUi(self)
-        self.setFixedSize(self.size())
+        self.setFixedSize(self.size())  # размер фиксированный
         self.setWindowFlags(Qt.FramelessWindowHint)  # окно без рамки
         self.setAttribute(Qt.WA_TranslucentBackground)  # форма прозрачная
         self.closebutton.clicked.connect(self.close)
         self.layout().addWidget(self.closebutton)  # кнопочка закрытия окна и завершения программы
         self.id = id
-        self.con = sqlite3.connect("user.db")
+        self.con = sqlite3.connect("user.db")  # Подключение БД
         self.cur = self.con.cursor()
         self.ph = self.cur.execute("""SELECT photo FROM users WHERE id = ?""", (self.id,)).fetchall()[0][0]
         with open("photos/photo.jpg", 'wb') as file:
@@ -58,13 +58,13 @@ class MainWindow(QMainWindow, Ui_mainWindow):
         self.prog3 = int(sum(list(self.cur.execute("""SELECT les3t, les3ex1 FROM progress 
         WHERE id = ?""", (self.id,)).fetchall()[0])) / 2 * 100)
         self.progk = int(sum(list(self.cur.execute("""SELECT lesk, lesk1 FROM progress WHERE id = ?""",
-                                                   (self.id,)).fetchall()[0])) / 2 * 100)
-        self.mainprogress.setMaximum(100)
+                                                   (self.id,)).fetchall()[0])) / 2 * 100)  # рассчет прогресса
+        self.mainprogress.setMaximum(100)  # новый максимум
         self.progress1.setMaximum(100)
         self.progress2.setMaximum(100)
         self.progress3.setMaximum(100)
         self.progress.setMaximum(100)
-        self.mainprogress.setValue(self.prog)
+        self.mainprogress.setValue(self.prog)  # обновление результата
         self.progress1.setValue(self.prog1)
         self.progress2.setValue(self.prog2)
         self.progress3.setValue(self.prog3)
@@ -81,14 +81,14 @@ class MainWindow(QMainWindow, Ui_mainWindow):
 
             self.butpk.clicked.connect(self.practk)
 
-    def dont(self):
+    def dont(self):  # не все пройдено, поэтому окошечко уведомления
         self.con.commit()
         self.con.close()
         self.win = Stop(self.id)
         self.win.show()
         self.close()
 
-    def teor1(self):
+    def teor1(self):  # теория
         self.con.execute("""UPDATE progress SET les1t = 1 WHERE id = ?""", (self.id,))
         self.con.commit()
         self.con.close()
@@ -96,7 +96,7 @@ class MainWindow(QMainWindow, Ui_mainWindow):
         self.win.show()
         self.close()
 
-    def teor2(self):
+    def teor2(self):  # теория
         self.con.execute("""UPDATE progress SET les2t = 1 WHERE id = ?""", (self.id,))
         self.con.commit()
         self.con.close()
@@ -104,7 +104,7 @@ class MainWindow(QMainWindow, Ui_mainWindow):
         self.win.show()
         self.close()
 
-    def teor3(self):
+    def teor3(self):  # теория
         self.con.execute("""UPDATE progress SET les3t = 1 WHERE id = ?""", (self.id,))
         self.con.commit()
         self.con.close()
@@ -112,7 +112,7 @@ class MainWindow(QMainWindow, Ui_mainWindow):
         self.win.show()
         self.close()
 
-    def pract1(self):
+    def pract1(self):  # практика
         global MAINPRACT
         self.con.commit()
         self.con.close()
@@ -120,7 +120,7 @@ class MainWindow(QMainWindow, Ui_mainWindow):
         MAINPRACT.show()
         self.close()
 
-    def pract2(self):
+    def pract2(self):  # практика
         global MAINPRACT
         self.con.commit()
         self.con.close()
@@ -128,7 +128,7 @@ class MainWindow(QMainWindow, Ui_mainWindow):
         MAINPRACT.show()
         self.close()
 
-    def pract3(self):
+    def pract3(self):  # практика
         global MAINPRACT
         self.con.commit()
         self.con.close()
@@ -136,7 +136,7 @@ class MainWindow(QMainWindow, Ui_mainWindow):
         MAINPRACT.show()
         self.close()
 
-    def practk(self):
+    def practk(self):  # практика
         global MAINPRACT
         self.con.execute("""UPDATE progress SET lesk = 1 WHERE id = ?""", (self.id,))
         self.con.commit()
@@ -146,7 +146,7 @@ class MainWindow(QMainWindow, Ui_mainWindow):
         self.close()
 
 
-class Authorize(QMainWindow, Ui_authwindow):
+class Authorize(QMainWindow, Ui_authwindow):  # регистрация с занесением в БД
     def __init__(self):
         super().__init__()
         self.setupUi(self)
@@ -164,14 +164,14 @@ class Authorize(QMainWindow, Ui_authwindow):
         self.con = sqlite3.connect("user.db")
         self.cur = self.con.cursor()
 
-    def oth(self):
+    def oth(self):  # есть аккаунт
         self.con.commit()
         self.con.close()
         self.win = Input()
         self.win.show()
         self.close()
 
-    def inp(self):
+    def inp(self):  # ввод данных
         self.name = self.login.text()
         self.passw = self.password.text()
         self.i = 1
@@ -206,7 +206,7 @@ class Authorize(QMainWindow, Ui_authwindow):
         elif not self.name.isalnum():
             self.error.setText("Логин может содержать только буквы и цифры")
 
-    def input_photo(self):
+    def input_photo(self):  # выбор своей фотографии
         try:
             self.nameofphoto = QFileDialog.getOpenFileName(self, 'Выбрать картинку',
                                                            '', "Картинка (*.jpeg);;"
@@ -219,7 +219,7 @@ class Authorize(QMainWindow, Ui_authwindow):
                                               'photos/lion.jpg', 'photos/cat.jpg'])
 
 
-class Input(QMainWindow, Ui_inputwindow):
+class Input(QMainWindow, Ui_inputwindow):  # вход в существующий аккаунт
     def __init__(self):
         super().__init__()
         self.setupUi(self)
@@ -232,8 +232,10 @@ class Input(QMainWindow, Ui_inputwindow):
         self.back.clicked.connect(self.backing)
         self.con = sqlite3.connect("user.db")
         self.cur = self.con.cursor()
+        self.logerror.setText("")
+        self.passerror.setText("")
 
-    def entry(self):
+    def entry(self):  # вход по логину и паролю
         self.name = self.login.text()
         self.passw = self.password.text()
         password = ''
@@ -253,7 +255,7 @@ class Input(QMainWindow, Ui_inputwindow):
         elif password != self.passw or flag:
             self.passerror.setText("Неправильный пароль")
 
-    def backing(self):
+    def backing(self):  # возвращение к окун регистрации
         self.win = Authorize()
         self.win.show()
         self.con.commit()
@@ -261,7 +263,7 @@ class Input(QMainWindow, Ui_inputwindow):
         self.close()
 
 
-class Kontrless(QMainWindow, Ui_kontrless):
+class Kontrless(QMainWindow, Ui_kontrless):  # контрольный урок
     def __init__(self, id):
         super().__init__()
         self.setupUi(self)
@@ -275,26 +277,26 @@ class Kontrless(QMainWindow, Ui_kontrless):
         self.tomain1.clicked.connect(self.back)
         self.con = sqlite3.connect("user.db")
         self.cur = self.con.cursor()
-        self.p1 = Painting(4, self.ex1)
+        self.p1 = Painting(4, self.ex1)  # в класс рисования фигуры
         self.p1.setGeometry(QRect(10, 50, 921, 620))
-        self.p1.setFrameShape(QFrame.StyledPanel)
+        self.p1.setFrameShape(QFrame.StyledPanel)  # это необходимо для рисования (чтобы на этом рисовать)
         self.p1.setFrameShadow(QFrame.Raised)
         self.p1.setObjectName("frame_11")
         super().setMouseTracking(True)
         self.go1.clicked.connect(self.check)
         self.fig = Figures([(165, 100, 285, 115), (285, 115, 345, 235), (345, 385, 345, 235), (255, 325, 345, 235),
-                           (255, 325, 255, 475), (255, 475, 345, 385), (255, 475, 180, 460), (180, 460, 180, 310),
-                           (180, 310, 255, 325), (180, 310, 120, 160), (180, 460, 120, 310), (120, 160, 120, 310),
-                           (120, 160, 165, 100), (165, 250, 165, 100), (285, 265, 285, 115), (120, 310, 165, 250),
-                           (165, 250, 285, 265), (285, 265, 345, 385)], [(165, 100), (285, 115), (255, 475)])
+                            (255, 325, 255, 475), (255, 475, 345, 385), (255, 475, 180, 460), (180, 460, 180, 310),
+                            (180, 310, 255, 325), (180, 310, 120, 160), (180, 460, 120, 310), (120, 160, 120, 310),
+                            (120, 160, 165, 100), (165, 250, 165, 100), (285, 265, 285, 115), (120, 310, 165, 250),
+                            (165, 250, 285, 265), (285, 265, 345, 385)], [(165, 100), (285, 115), (255, 475)])
         self.choisepoints = []
         self.choiselines = []
         self.n = -1
         self.point = []
 
-    def check(self):
+    def check(self):  # проверка наличия необходимых точек иперенаправление на другие окошки
         points = self.fig.outputp()
-        if (165, 100) in points and (285, 115) in points and (255, 475) in points and (180, 460) in points and\
+        if (165, 100) in points and (285, 115) in points and (255, 475) in points and (180, 460) in points and \
                 (120, 210) in points and (345, 310) in points:
             self.con.execute("""UPDATE progress SET lesk1 = 1 WHERE id = ?""", (self.id,))
             self.con.commit()
@@ -305,7 +307,7 @@ class Kontrless(QMainWindow, Ui_kontrless):
             self.win = Error(self.id, 4)
             self.win.show()
 
-    def keyPressEvent(self, event):
+    def keyPressEvent(self, event):  # Управление кнопочками для выбора прямых и манипуляция с ними
         if event.key() == Qt.Key_L:
             self.poisk(0)
             self.n = 0
@@ -325,7 +327,7 @@ class Kontrless(QMainWindow, Ui_kontrless):
         if event.key() == Qt.Key_P:
             self.parall()
 
-    def parall(self):
+    def parall(self):  # рисование параллельной прямой
         if self.point != [] and len(self.choiselines) > 0:
             k = self.point[0] * (self.choiselines[-1][1] - self.choiselines[-1][3]) + self.point[1] * \
                 (self.choiselines[-1][2] - self.choiselines[-1][0])
@@ -348,7 +350,7 @@ class Kontrless(QMainWindow, Ui_kontrless):
             self.p1.setnum([x1, y1, x2, y2])
             self.update()
 
-    def makepoints(self):
+    def makepoints(self):  # исование точечек
         n = 100000000000000000000
         if len(self.choiselines) > 1:
             x1 = self.choiselines[-1][0]
@@ -375,7 +377,7 @@ class Kontrless(QMainWindow, Ui_kontrless):
                 self.fig.addp(x, y)
             self.update()
 
-    def longer(self):
+    def longer(self):  # продление прямой
         if len(self.choiselines) > 0:
             a = self.choiselines[-1]
             if (a[2] - a[0]) != 0:
@@ -392,7 +394,7 @@ class Kontrless(QMainWindow, Ui_kontrless):
             self.p1.setnum([x1, y1, x2, y2])
             self.update()
 
-    def poisk(self, r):
+    def poisk(self, r):  # поиск прямой, с которой будем работать
         if r == -1:
             self.p1.delblue()
             self.update()
@@ -401,7 +403,7 @@ class Kontrless(QMainWindow, Ui_kontrless):
             self.p1.getblue(lines[r][0], lines[r][1], lines[r][2], lines[r][3])
             self.update()
 
-    def mouseReleaseEvent(self, event):
+    def mouseReleaseEvent(self, event):  # обработка отпускания мышки для рисования отрезка по точкам
         points = self.fig.outputp()
         x = event.x()
         y = event.y()
@@ -424,7 +426,7 @@ class Kontrless(QMainWindow, Ui_kontrless):
                 self.choisepoints.clear()
                 self.update()
 
-    def mousePressEvent(self, event):
+    def mousePressEvent(self, event):  # обработка мыши для выбора точек при рисовании прямой и построении прямой
         if event.button() == Qt.RightButton:
             points = sorted(self.fig.outputp())
             x = event.x()
@@ -451,13 +453,19 @@ class Kontrless(QMainWindow, Ui_kontrless):
             self.point = [otvx, otvy]
             self.update()
 
-    def back(self):
+    def back(self):  # выход в главное меню
         self.win = MainWindow(self.id)
         self.win.show()
         self.close()
 
 
-class Teor1(QMainWindow, Ui_teor1):
+'''
+Во всех следущих 3х классах практики комментарии и суть одно именных функций одинакова(изменения есть только при
+некоторых подсчетах расстояний)
+'''
+
+
+class Teor1(QMainWindow, Ui_teor1):  # теория
     def __init__(self, id):
         super().__init__()
         self.setupUi(self)
@@ -468,9 +476,9 @@ class Teor1(QMainWindow, Ui_teor1):
         self.layout().addWidget(self.closebutton)  # кнопочка закрытия окна и завершения программы
         self.tomainbutton.clicked.connect(self.back)
         self.id = id
-        self.go1.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(1))
-        self.go2.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(2))
-        self.go3.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(3))
+        self.go1.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(1))  # в главное меню
+        self.go2.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(2))  # в главное меню
+        self.go3.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(3))  # в главное меню
         self.label_4.setPixmap(QPixmap.fromImage(ImageQt(Image.open("photos/тет 1.png").convert("RGBA"))
                                                  ).scaled(self.label_4.size()))
         self.label_3.setPixmap(QPixmap.fromImage(ImageQt(Image.open("photos/тет 2.jpg").convert("RGBA"))
@@ -484,13 +492,13 @@ class Teor1(QMainWindow, Ui_teor1):
         self.label_10.setPixmap(QPixmap.fromImage(ImageQt(Image.open("photos/призма2.png").convert("RGBA"))
                                                   ).scaled(self.label_10.size()))
 
-    def back(self):
+    def back(self):  # в главное меню
         self.win = MainWindow(self.id)
         self.win.show()
         self.close()
 
 
-class Teor2(QMainWindow, Ui_teor2):
+class Teor2(QMainWindow, Ui_teor2):  # теория
     def __init__(self, id):
         super().__init__()
         self.setupUi(self)
@@ -501,9 +509,9 @@ class Teor2(QMainWindow, Ui_teor2):
         self.layout().addWidget(self.closebutton)  # кнопочка закрытия окна и завершения программы
         self.id = id
         self.tomainbutton.clicked.connect(self.back)
-        self.go1.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(1))
-        self.go2.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(2))
-        self.go3.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(3))
+        self.go1.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(1))  # в главное меню
+        self.go2.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(2))  # в главное меню
+        self.go3.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(3))  # в главное меню
         self.label_4.setPixmap(QPixmap.fromImage(ImageQt(Image.open("photos/пирамидка 21.png").convert("RGBA"))
                                                  ).scaled(self.label_4.size()))
         self.label_3.setPixmap(QPixmap.fromImage(ImageQt(Image.open("photos/пирамидка22.jpg.png").convert("RGBA"))
@@ -517,13 +525,13 @@ class Teor2(QMainWindow, Ui_teor2):
         self.label_10.setPixmap(QPixmap.fromImage(ImageQt(Image.open("photos/призма 22.png").convert("RGBA"))
                                                   ).scaled(self.label_10.size()))
 
-    def back(self):
+    def back(self):  # в главное меню
         self.win = MainWindow(self.id)
         self.win.show()
         self.close()
 
 
-class Teor3(QMainWindow, Ui_teor3):
+class Teor3(QMainWindow, Ui_teor3):  # теория
     def __init__(self, id):
         super().__init__()
         self.setupUi(self)
@@ -534,9 +542,9 @@ class Teor3(QMainWindow, Ui_teor3):
         self.layout().addWidget(self.closebutton)  # кнопочка закрытия окна и завершения программы
         self.id = id
         self.tomainbutton.clicked.connect(self.back)
-        self.go1.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(1))
-        self.go2.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(2))
-        self.go3.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(3))
+        self.go1.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(1))  # в главное меню
+        self.go2.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(2))  # в главное меню
+        self.go3.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(3))  # в главное меню
         self.label_3.setPixmap(QPixmap.fromImage(ImageQt(Image.open("photos/Паралл.jpg").convert("RGBA")
                                                          )).scaled(self.label_3.size()))
         self.label_7.setPixmap(QPixmap.fromImage(ImageQt(Image.open("photos/параллA.png").convert("RGBA")
@@ -544,7 +552,7 @@ class Teor3(QMainWindow, Ui_teor3):
         self.label_9.setPixmap(QPixmap.fromImage(ImageQt(Image.open("photos/параллБ.png").convert("RGBA")
                                                          )).scaled(self.label_9.size()))
 
-    def back(self):
+    def back(self):  # в главное меню
         self.win = MainWindow(self.id)
         self.win.show()
         self.close()
@@ -1110,7 +1118,7 @@ class Pract3(QMainWindow, Ui_pract3):
             otvx = 0
             otvy = 0
             for i, j in points:
-                if abs(x - i) <= abs(otvx - x) and abs(y - j)  <= abs(otvy - y):
+                if abs(x - i) <= abs(otvx - x) and abs(y - j) <= abs(otvy - y):
                     otvx = i
                     otvy = j
             self.choisepoints.append((otvx, otvy,))
@@ -1121,7 +1129,7 @@ class Pract3(QMainWindow, Ui_pract3):
             otvx = 0
             otvy = 0
             for i, j in points:
-                if abs(x - i) + abs(y - j) < abs(otvx - x) + abs(otvy - y) or abs(x - i) <= abs(otvx - x)\
+                if abs(x - i) + abs(y - j) < abs(otvx - x) + abs(otvy - y) or abs(x - i) <= abs(otvx - x) \
                         and abs(y - j) <= abs(otvy - y):
                     otvx = i
                     otvy = j
@@ -1136,18 +1144,18 @@ class Pract3(QMainWindow, Ui_pract3):
         self.con.close()
 
 
-class Painting(QFrame):
+class Painting(QFrame):  # класс рисования
     def __init__(self, number, parent=None):
         super().__init__(parent)
         self.n = number
-        self.newpoints = []
-        self.newlines = []
+        self.newpoints = []  # хранит построенные прямые
+        self.newlines = []  # хранит построенные точки
         self.num = number
         self.blue = 0
-        self.f = 0
+        self.f = 0  # если все правильно, то будет хранить число, по которому будут рисовать правильное сечение
 
     def paintlines(self, x1, y1, x2, y2):
-        self.newlines.append((x1, y1, x2, y2,))
+        self.newlines.append((x1, y1, x2, y2,))  # добавление новых линий
 
     def setnum(self, u):
         if len(u) == 2:
@@ -1158,18 +1166,18 @@ class Painting(QFrame):
             self.list = u
 
     def paintpoints(self, x, y):
-        self.newpoints.append((x, y,))
+        self.newpoints.append((x, y,))  # добавление новых точек
 
     def getblue(self, x1, y1, x2, y2):
-        self.blue = (x1, y1, x2, y2,)
+        self.blue = (x1, y1, x2, y2,)  # выделение новых прямых
 
     def delblue(self):
-        self.blue = 0
+        self.blue = 0  # отмена выделения
 
     def right(self, n):
-        self.f = n
+        self.f = n  # изменения циферки, если все точки есть на чертеже
 
-    def paintEvent(self, e):
+    def paintEvent(self, e):  # класс рисования, где рисуют так: каркас - новые линии - точки каркаса - новые точки
         painter = QPainter(self)
         painter.setRenderHint(QPainter.Antialiasing)
         painter.begin(self)
@@ -1318,7 +1326,7 @@ class Painting(QFrame):
             painter.drawLine(165, 100, 120, 210)
 
 
-class Stop(QMainWindow, Ui_stopwindow):
+class Stop(QMainWindow, Ui_stopwindow):  # окошко для вывода, если контрольных урок пока открыть нельзя
     def __init__(self, id):
         super().__init__()
         self.setupUi(self)
@@ -1336,7 +1344,7 @@ class Stop(QMainWindow, Ui_stopwindow):
         self.close()
 
 
-class Error(QMainWindow, Ui_errorwindow):
+class Error(QMainWindow, Ui_errorwindow):  # окошко ошибки
     def __init__(self, id, n):
         super().__init__()
         self.setupUi(self)
@@ -1390,7 +1398,7 @@ class Error(QMainWindow, Ui_errorwindow):
             self.close()
 
 
-class Right(QMainWindow, Ui_rightwindow):
+class Right(QMainWindow, Ui_rightwindow):  # все правильно сделано, окошко по этому поводу
     def __init__(self, id, n, closing):
         super().__init__()
         self.setupUi(self)
@@ -1424,7 +1432,7 @@ class Right(QMainWindow, Ui_rightwindow):
             self.close()
 
 
-class Figures:
+class Figures:  # класс для хранения всех геометрических объектов
     def __init__(self, l, p):
         self.points = p
         self.lines = l
@@ -1448,9 +1456,9 @@ class Figures:
         return self.lines
 
 
-y = yadisk.YaDisk(token="AQAAAABE8FllAAeB1mwUHovqH0_koVCUlEEdpI4")
+y = yadisk.YaDisk(token="AQAAAABE8FllAAeB1mwUHovqH0_koVCUlEEdpI4")  # доступ к яндекс.Диску
 try:
-    y.download("/user.db", "user.db")
+    y.download("/user.db", "user.db")  # сохранение БД изначальной, для добавления в нее всех изменений
 except Exception:
     pass
 if __name__ == '__main__':
@@ -1458,7 +1466,7 @@ if __name__ == '__main__':
     ex = Authorize()
     ex.show()
     app.exec()
-y.download("/user.db", "user1.db")
+y.download("/user.db", "user1.db")  # сохранение Бд новой, в которую будут вноситьь изменения и выгружать обратно
 con1 = sqlite3.connect("user.db")
 cur1 = con1.cursor()
 con2 = sqlite3.connect("user1.db")
@@ -1471,21 +1479,21 @@ try:
 except Exception:
     flag = False
     log = None
-if log == log1:
+if log == log1:  # если аккаунт был
     res = list(cur1.execute("""SELECT * FROM progress WHERE id = ?""", (ID,)).fetchall()[0])
     res.append(res[0])
     del res[0]
     cur2.execute("""UPDATE progress SET les1t = ?, les1ex1 = ?, les1ex2 = ?, les1ex3 = ?, les2t = ?, les2ex1 = ?, 
     les2ex2 = ?, les2ex3 = ?, les3t = ?, les3ex1 = ?, les3ex2 = ?, les3ex3 = ?, lesk = ?, lesk1 = ?, lesk2 = ?,
      lesk3 = ? WHERE id = ?""", tuple(res))
-elif log == None and ID > 0:
+elif log == None and ID > 0:  # если аккаунт не существовал и новых в тот момент добавлено не было
     res = list(cur1.execute("""SELECT * FROM progress WHERE id = ?""", (ID,)).fetchall()[0])
     res2 = list(cur1.execute("""SELECT * FROM users WHERE id = ?""", (ID,)).fetchall()[0])
     cur2.execute("""INSERT INTO users(id, login, password, photo) VALUES(?, ?, ?, ?)""", tuple(res2))
     cur2.execute("""INSERT INTO progress(id, les1t, les1ex1, les1ex2, les1ex3, les2t, les2ex1, les2ex2,
                  les2ex3, les3t, les3ex1, les3ex2, les3ex3, lesk, lesk1, lesk2, lesk3) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?,
                   ?, ?, ?, ?, ?, ?, ?, ?)""", tuple(res))
-elif ID > 0:
+elif ID > 0:  # если аккаунт не существовал и был добавлен новый пользователь
     id = ID + 1
     while flag:
         try:
@@ -1499,13 +1507,13 @@ elif ID > 0:
 con1.commit()
 con1.close()
 con2.commit()
-con2.close()
+con2.close()  # закрытие БД
 try:
-    y.remove("/user.db", permanently=True)
+    y.remove("/user.db", permanently=True)  # удаление старой БД
 except Exception:
     pass
 try:
-    y.upload("user1.db", "/user.db")
+    y.upload("user1.db", "/user.db")  # загрузка новой БД
 except Exception:
     pass
 sys.exit()
