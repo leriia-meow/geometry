@@ -20,7 +20,6 @@ from main_window import Ui_mainWindow
 from formstop import Ui_stopwindow
 import sqlite3
 import yadisk
-import math
 from formright import Ui_rightwindow
 
 MAINPRACT = 0
@@ -1283,9 +1282,9 @@ class Painting(QFrame):
             pen = QPen(QColor(139, 0, 255), 7, Qt.SolidLine)
             painter.setPen(pen)
             painter.drawLine(50, 610, 110, 370)
+            painter.drawLine(270, 330, 110, 370)
             pen.setStyle(Qt.DotLine)
             painter.setPen(pen)
-            painter.drawLine(270, 330, 110, 370)
             painter.drawLine(370, 530, 50, 610)
             painter.drawLine(370, 530, 270, 330)
         elif self.f == 2:
@@ -1449,8 +1448,11 @@ class Figures:
         return self.lines
 
 
-y = yadisk.YaDisk(token="AQAAAABE8FllAAd6ntFbwMKB-02KqLvhcIbTWso")
-y.download("/user.db", "user.db")
+y = yadisk.YaDisk(token="AQAAAABE8FllAAeB1mwUHovqH0_koVCUlEEdpI4")
+try:
+    y.download("/user.db", "user.db")
+except Exception:
+    pass
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     ex = Authorize()
@@ -1498,6 +1500,12 @@ con1.commit()
 con1.close()
 con2.commit()
 con2.close()
-y.remove("/user.db", permanently=True)
-y.upload("user1.db", "/user.db")
+try:
+    y.remove("/user.db", permanently=True)
+except Exception:
+    pass
+try:
+    y.upload("user1.db", "/user.db")
+except Exception:
+    pass
 sys.exit()
